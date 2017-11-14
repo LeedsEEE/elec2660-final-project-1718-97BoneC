@@ -1,18 +1,18 @@
 //
-//  FirstViewController.m
+//  TechnicalViewController.m
 //  FPESeals
 //
 //  Created by Christopher Bone on 14/11/2017.
 //  Copyright © 2017 University Of Leeds. All rights reserved.
 //
 
-#import "FirstViewController.h"
+#import "TechnicalViewController.h"
 
-@interface FirstViewController ()
+@interface TechnicalViewController ()
 
 @end
 
-@implementation FirstViewController
+@implementation TechnicalViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];

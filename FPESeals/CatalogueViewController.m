@@ -1,18 +1,18 @@
 //
-//  SecondViewController.m
+//  CatalogueViewController.m
 //  FPESeals
 //
 //  Created by Christopher Bone on 14/11/2017.
 //  Copyright © 2017 University Of Leeds. All rights reserved.
 //
 
-#import "SecondViewController.h"
+#import "CatalogueViewController.h"
 
-@interface SecondViewController ()
+@interface CatalogueViewController ()
 
 @end
 
-@implementation SecondViewController
+@implementation CatalogueViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];

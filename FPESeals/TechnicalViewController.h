@@ -1,5 +1,5 @@
 //
-//  FirstViewController.h
+//  TechnicalViewController.h
 //  FPESeals
 //
 //  Created by Christopher Bone on 14/11/2017.
@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface FirstViewController : UIViewController
+@interface TechnicalViewController : UIViewController
 
 
 @end
