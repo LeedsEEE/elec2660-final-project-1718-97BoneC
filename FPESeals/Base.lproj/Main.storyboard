@@ -10,7 +10,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Technical Detail View Controller-->
+        <!--Property-->
         <scene sceneID="Mq0-4h-CS7">
             <objects>
                 <viewController id="2Ub-58-BV9" customClass="TechnicalDetailViewController" sceneMemberID="viewController">
@@ -22,9 +22,9 @@
                                 <rect key="frame" x="16" y="92" width="343" height="197"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Variable" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YmV-3C-zH8">
-                                <rect key="frame" x="156" y="323" width="62" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Variable" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YmV-3C-zH8">
+                                <rect key="frame" x="16" y="323" width="343" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -45,15 +45,17 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="kj9-CR-c6w"/>
                     </view>
+                    <navigationItem key="navigationItem" title="Property" id="i3S-OO-ud0"/>
                     <connections>
                         <outlet property="cylinderImageOutlet" destination="3Fu-Lb-O2J" id="ELx-LV-RJq"/>
                         <outlet property="descriptionOutlet" destination="r4V-8W-rnN" id="SSO-8U-5sL"/>
+                        <outlet property="propertyHeaderOutlet" destination="i3S-OO-ud0" id="6du-ok-CJy"/>
                         <outlet property="propertyTitleOutlet" destination="YmV-3C-zH8" id="B50-Yl-ozu"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="duK-NE-DJs" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1478" y="-1"/>
+            <point key="canvasLocation" x="1477.5999999999999" y="-1.3493253373313345"/>
         </scene>
         <!--Our Offices-->
         <scene sceneID="11q-lh-c3e">
@@ -109,17 +111,20 @@
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <textField opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="millimetres" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="KSF-oZ-ITA">
+                                        <textField opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="millimetres" textAlignment="center" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="KSF-oZ-ITA">
                                             <rect key="frame" x="163" y="9" width="164" height="30"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                             <nil key="textColor"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                            <textInputTraits key="textInputTraits"/>
+                                            <textInputTraits key="textInputTraits" autocorrectionType="no" keyboardType="numbersAndPunctuation"/>
+                                            <connections>
+                                                <outlet property="delegate" destination="LIX-qf-Yos" id="TdZ-OZ-LOk"/>
+                                            </connections>
                                         </textField>
                                     </subviews>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <segue destination="2Ub-58-BV9" kind="show" trigger="accessoryAction" id="VCU-55-MlS"/>
+                                    <segue destination="2Ub-58-BV9" kind="show" identifier="PropertyDetail" trigger="accessoryAction" id="VCU-55-MlS"/>
                                 </connections>
                             </tableViewCell>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="detailButton" indentationWidth="10" reuseIdentifier="OutputCells" textLabel="vuc-XG-x17" detailTextLabel="qxu-si-E2y" style="IBUITableViewCellStyleValue1" id="rkE-Kn-ZZM">
@@ -146,7 +151,7 @@
                                     </subviews>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <segue destination="2Ub-58-BV9" kind="show" trigger="accessoryAction" id="lRx-Qi-l4w"/>
+                                    <segue destination="2Ub-58-BV9" kind="show" identifier="PropertyDetail" trigger="accessoryAction" id="lRx-Qi-l4w"/>
                                 </connections>
                             </tableViewCell>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="SpacerCell" id="Ig0-8A-qbc">
@@ -418,6 +423,6 @@
         <image name="second" width="30" height="30"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="VCU-55-MlS"/>
+        <segue reference="lRx-Qi-l4w"/>
     </inferredMetricsTieBreakers>
 </document>

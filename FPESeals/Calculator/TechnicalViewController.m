@@ -9,6 +9,7 @@
 #import "TechnicalViewController.h"
 #import "CylinderProperty.h"
 #import "CylinderProperties.h"
+#import "TechnicalDetailViewController.h"
 
 @interface TechnicalViewController ()
 
@@ -32,7 +33,7 @@
     // Dispose of any resources that can be recreated.
 }
 
-#pragma mark - Table view data source
+#pragma mark - Table View Data Source
 
 // Number Of Sections in Table
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {  return 1; }    // Only 1 section in Table View
@@ -70,14 +71,30 @@
     return cell;
 }
 
-/*
 #pragma mark - Navigation
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+    
+    if ([[segue identifier] isEqualToString:@"PropertyDetail"]) {       // Segue Identifier = "PropertyDetail"
+        
+        TechnicalDetailViewController *destinationVC = [segue destinationViewController];       // Destination View Controller
+        
+        NSIndexPath *indexPath = [self.tableView indexPathForCell:sender];          // Grabbing the index path of the cell who's accessory button was pressed
+        
+        CylinderProperty *tempProperty = [ self.cylinder.cylinderProperties objectAtIndex:indexPath.row];       // Getting assocaited cylinder property temporiarly
+        
+        destinationVC.property = tempProperty;      // Setting the destination cylinder property
+    }
 }
-*/
+
+#pragma mark UITextField Delegates
+
+- (BOOL)textFieldShouldReturn:(UITextField *)textField {
+    
+    [textField resignFirstResponder];
+    return YES;
+    
+}
+
 
 @end

@@ -7,8 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
-
+#import "CylinderProperty.h"
 
 @interface TechnicalDetailViewController : UIViewController
+
+@property (strong, nonatomic) CylinderProperty *property;
 
 @end

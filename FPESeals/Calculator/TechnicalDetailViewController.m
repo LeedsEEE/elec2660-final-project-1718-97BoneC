@@ -15,6 +15,7 @@
 
 // Main Body Title
 @property (weak, nonatomic) IBOutlet UILabel *propertyTitleOutlet;
+@property (weak, nonatomic) IBOutlet UINavigationItem *propertyHeaderOutlet;
 
 // Body Description Label
 @property (weak, nonatomic) IBOutlet UILabel *descriptionOutlet;
@@ -25,6 +26,11 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    
+    self.propertyTitleOutlet.text = self.property.propertyTitle;
+    self.propertyHeaderOutlet.title = self.property.propertyTitle;
+    self.descriptionOutlet.text = self.property.propertyDescription;
+    
 }
 
 - (void)didReceiveMemoryWarning {
