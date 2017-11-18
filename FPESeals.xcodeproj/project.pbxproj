@@ -7,9 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E6DB1E791FBBB8CC00C5B7D5 /* company_logo.png in Resources */ = {isa = PBXBuildFile; fileRef = E6DB1E781FBBB8CC00C5B7D5 /* company_logo.png */; };
+		E6DB1E7D1FBCF23300C5B7D5 /* TechnicalViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E6DB1E7C1FBCF23300C5B7D5 /* TechnicalViewController.m */; };
+		E6DB1E801FBCFF9700C5B7D5 /* TechnicalDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E6DB1E7F1FBCFF9700C5B7D5 /* TechnicalDetailViewController.m */; };
+		E6DB1E831FBD91D500C5B7D5 /* CatalogueViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E6DB1E821FBD91D500C5B7D5 /* CatalogueViewController.m */; };
+		E6DB1E891FBF967900C5B7D5 /* CylinderProperty.m in Sources */ = {isa = PBXBuildFile; fileRef = E6DB1E881FBF967900C5B7D5 /* CylinderProperty.m */; };
+		E6DB1E8D1FBF980F00C5B7D5 /* CylinderProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = E6DB1E8C1FBF980F00C5B7D5 /* CylinderProperties.m */; };
 		E6FEC0841FBB585600949685 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E6FEC0831FBB585600949685 /* AppDelegate.m */; };
-		E6FEC0871FBB585600949685 /* CatalogueViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E6FEC0861FBB585600949685 /* CatalogueViewController.m */; };
-		E6FEC08A1FBB585600949685 /* TechnicalViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E6FEC0891FBB585600949685 /* TechnicalViewController.m */; };
 		E6FEC08D1FBB585600949685 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E6FEC08B1FBB585600949685 /* Main.storyboard */; };
 		E6FEC08F1FBB585600949685 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E6FEC08E1FBB585600949685 /* Assets.xcassets */; };
 		E6FEC0921FBB585600949685 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E6FEC0901FBB585600949685 /* LaunchScreen.storyboard */; };
@@ -38,13 +42,20 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		E6DB1E781FBBB8CC00C5B7D5 /* company_logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = company_logo.png; sourceTree = "<group>"; };
+		E6DB1E7B1FBCF23300C5B7D5 /* TechnicalViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TechnicalViewController.h; sourceTree = "<group>"; };
+		E6DB1E7C1FBCF23300C5B7D5 /* TechnicalViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TechnicalViewController.m; sourceTree = "<group>"; };
+		E6DB1E7E1FBCFF9700C5B7D5 /* TechnicalDetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TechnicalDetailViewController.h; sourceTree = "<group>"; };
+		E6DB1E7F1FBCFF9700C5B7D5 /* TechnicalDetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TechnicalDetailViewController.m; sourceTree = "<group>"; };
+		E6DB1E811FBD91D500C5B7D5 /* CatalogueViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CatalogueViewController.h; sourceTree = "<group>"; };
+		E6DB1E821FBD91D500C5B7D5 /* CatalogueViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CatalogueViewController.m; sourceTree = "<group>"; };
+		E6DB1E871FBF967900C5B7D5 /* CylinderProperty.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CylinderProperty.h; sourceTree = "<group>"; };
+		E6DB1E881FBF967900C5B7D5 /* CylinderProperty.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CylinderProperty.m; sourceTree = "<group>"; };
+		E6DB1E8B1FBF980F00C5B7D5 /* CylinderProperties.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CylinderProperties.h; sourceTree = "<group>"; };
+		E6DB1E8C1FBF980F00C5B7D5 /* CylinderProperties.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CylinderProperties.m; sourceTree = "<group>"; };
 		E6FEC07F1FBB585600949685 /* FPESeals.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FPESeals.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E6FEC0821FBB585600949685 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		E6FEC0831FBB585600949685 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		E6FEC0851FBB585600949685 /* CatalogueViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CatalogueViewController.h; sourceTree = "<group>"; };
-		E6FEC0861FBB585600949685 /* CatalogueViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CatalogueViewController.m; sourceTree = "<group>"; };
-		E6FEC0881FBB585600949685 /* TechnicalViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TechnicalViewController.h; sourceTree = "<group>"; };
-		E6FEC0891FBB585600949685 /* TechnicalViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TechnicalViewController.m; sourceTree = "<group>"; };
 		E6FEC08C1FBB585600949685 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		E6FEC08E1FBB585600949685 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E6FEC0911FBB585600949685 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -87,6 +98,57 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		E6DB1E7A1FBBB8D700C5B7D5 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				E6DB1E781FBBB8CC00C5B7D5 /* company_logo.png */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		E6DB1E841FBF94C400C5B7D5 /* Calculator */ = {
+			isa = PBXGroup;
+			children = (
+				E6DB1E7C1FBCF23300C5B7D5 /* TechnicalViewController.m */,
+				E6DB1E7B1FBCF23300C5B7D5 /* TechnicalViewController.h */,
+				E6DB1E7F1FBCFF9700C5B7D5 /* TechnicalDetailViewController.m */,
+				E6DB1E7E1FBCFF9700C5B7D5 /* TechnicalDetailViewController.h */,
+				E6DB1E8A1FBF97BD00C5B7D5 /* Model */,
+			);
+			path = Calculator;
+			sourceTree = "<group>";
+		};
+		E6DB1E851FBF94E000C5B7D5 /* ContactUs */ = {
+			isa = PBXGroup;
+			children = (
+				E6FEC0B81FBB612800949685 /* MapViewController.m */,
+				E6FEC0B71FBB612800949685 /* MapViewController.h */,
+				E6FEC0BB1FBB615A00949685 /* LocationDetailViewController.m */,
+				E6FEC0BA1FBB615A00949685 /* LocationDetailViewController.h */,
+			);
+			path = ContactUs;
+			sourceTree = "<group>";
+		};
+		E6DB1E861FBF94F900C5B7D5 /* Catalogue */ = {
+			isa = PBXGroup;
+			children = (
+				E6DB1E821FBD91D500C5B7D5 /* CatalogueViewController.m */,
+				E6DB1E811FBD91D500C5B7D5 /* CatalogueViewController.h */,
+			);
+			path = Catalogue;
+			sourceTree = "<group>";
+		};
+		E6DB1E8A1FBF97BD00C5B7D5 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				E6DB1E881FBF967900C5B7D5 /* CylinderProperty.m */,
+				E6DB1E871FBF967900C5B7D5 /* CylinderProperty.h */,
+				E6DB1E8C1FBF980F00C5B7D5 /* CylinderProperties.m */,
+				E6DB1E8B1FBF980F00C5B7D5 /* CylinderProperties.h */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		E6FEC0761FBB585600949685 = {
 			isa = PBXGroup;
 			children = (
@@ -112,17 +174,13 @@
 			children = (
 				E6FEC0821FBB585600949685 /* AppDelegate.h */,
 				E6FEC0831FBB585600949685 /* AppDelegate.m */,
-				E6FEC0851FBB585600949685 /* CatalogueViewController.h */,
-				E6FEC0861FBB585600949685 /* CatalogueViewController.m */,
-				E6FEC0881FBB585600949685 /* TechnicalViewController.h */,
-				E6FEC0891FBB585600949685 /* TechnicalViewController.m */,
-				E6FEC0B71FBB612800949685 /* MapViewController.h */,
-				E6FEC0B81FBB612800949685 /* MapViewController.m */,
-				E6FEC0BA1FBB615A00949685 /* LocationDetailViewController.h */,
-				E6FEC0BB1FBB615A00949685 /* LocationDetailViewController.m */,
+				E6DB1E861FBF94F900C5B7D5 /* Catalogue */,
+				E6DB1E851FBF94E000C5B7D5 /* ContactUs */,
+				E6DB1E841FBF94C400C5B7D5 /* Calculator */,
 				E6FEC08B1FBB585600949685 /* Main.storyboard */,
 				E6FEC08E1FBB585600949685 /* Assets.xcassets */,
 				E6FEC0901FBB585600949685 /* LaunchScreen.storyboard */,
+				E6DB1E7A1FBBB8D700C5B7D5 /* Resources */,
 				E6FEC0931FBB585600949685 /* Info.plist */,
 				E6FEC0941FBB585600949685 /* main.m */,
 			);
@@ -256,6 +314,7 @@
 				E6FEC0921FBB585600949685 /* LaunchScreen.storyboard in Resources */,
 				E6FEC08F1FBB585600949685 /* Assets.xcassets in Resources */,
 				E6FEC08D1FBB585600949685 /* Main.storyboard in Resources */,
+				E6DB1E791FBBB8CC00C5B7D5 /* company_logo.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -280,12 +339,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E6DB1E831FBD91D500C5B7D5 /* CatalogueViewController.m in Sources */,
+				E6DB1E7D1FBCF23300C5B7D5 /* TechnicalViewController.m in Sources */,
 				E6FEC0BC1FBB615A00949685 /* LocationDetailViewController.m in Sources */,
-				E6FEC08A1FBB585600949685 /* TechnicalViewController.m in Sources */,
 				E6FEC0841FBB585600949685 /* AppDelegate.m in Sources */,
+				E6DB1E891FBF967900C5B7D5 /* CylinderProperty.m in Sources */,
+				E6DB1E801FBCFF9700C5B7D5 /* TechnicalDetailViewController.m in Sources */,
 				E6FEC0B91FBB612800949685 /* MapViewController.m in Sources */,
 				E6FEC0951FBB585600949685 /* main.m in Sources */,
-				E6FEC0871FBB585600949685 /* CatalogueViewController.m in Sources */,
+				E6DB1E8D1FBF980F00C5B7D5 /* CylinderProperties.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

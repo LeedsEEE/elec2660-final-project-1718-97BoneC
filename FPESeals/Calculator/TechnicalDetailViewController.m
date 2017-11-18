@@ -1,18 +1,26 @@
 //
-//  LocationDetailViewController.m
+//  TechnicalDetailViewController.m
 //  FPESeals
 //
-//  Created by Christopher Bone on 14/11/2017.
+//  Created by Christopher Bone on 15/11/2017.
 //  Copyright © 2017 University Of Leeds. All rights reserved.
 //
 
-#import "LocationDetailViewController.h"
+#import "TechnicalDetailViewController.h"
 
-@interface LocationDetailViewController ()
+@interface TechnicalDetailViewController ()
 
+// Image Viewer
+@property (weak, nonatomic) IBOutlet UIImageView *cylinderImageOutlet;
+
+// Main Body Title
+@property (weak, nonatomic) IBOutlet UILabel *propertyTitleOutlet;
+
+// Body Description Label
+@property (weak, nonatomic) IBOutlet UILabel *descriptionOutlet;
 @end
 
-@implementation LocationDetailViewController
+@implementation TechnicalDetailViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
