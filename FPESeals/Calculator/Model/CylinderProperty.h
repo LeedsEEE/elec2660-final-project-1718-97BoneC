@@ -12,8 +12,14 @@
 
 @property (strong, nonatomic) NSString *propertyTitle;
 
+@property (nonatomic) BOOL isInput;
+
 @property (strong, nonatomic) NSString *propertyImageName;
 
 @property (strong, nonatomic) NSString *propertyDescription;
+
+@property (strong, nonatomic) NSString *propertyUnitsMet;
+
+@property (strong, nonatomic) NSString *propertyUnitsImp;
 
 @end

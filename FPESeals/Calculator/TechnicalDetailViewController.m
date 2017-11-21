@@ -14,7 +14,6 @@
 @property (weak, nonatomic) IBOutlet UIImageView *cylinderImageOutlet;
 
 // Main Body Title
-@property (weak, nonatomic) IBOutlet UILabel *propertyTitleOutlet;
 @property (weak, nonatomic) IBOutlet UINavigationItem *propertyHeaderOutlet;
 
 // Body Description Label
@@ -27,9 +26,11 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
-    self.propertyTitleOutlet.text = self.property.propertyTitle;
     self.propertyHeaderOutlet.title = self.property.propertyTitle;
     self.descriptionOutlet.text = self.property.propertyDescription;
+    
+    //Temporary Image Placeholder
+    
     
 }
 

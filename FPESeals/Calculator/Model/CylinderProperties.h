@@ -11,6 +11,9 @@
 
 @interface CylinderProperties : NSObject
 
-@property (strong,nonatomic) NSMutableArray *cylinderProperties;
+@property (strong, nonatomic) NSMutableArray *cylinderPropertiesInput;
+@property (strong, nonatomic) NSMutableArray *cylinderPropertiesOuput;
+
+@property (strong, nonatomic) CylinderProperty *Blank;
 
 @end
