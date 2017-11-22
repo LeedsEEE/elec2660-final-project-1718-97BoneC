@@ -12,28 +12,27 @@
 #import "TechnicalDetailViewController.h"
 #import "InputCell.h"
 #import "OutputCell.h"
+#import "CylinderCalculations.h"
 
 @interface TechnicalViewController ()
 
 // Private Properties
-@property (strong, nonatomic) NSMutableArray *LayoutArray;
-@property (strong, nonatomic) CylinderProperties *cylinder;
-
-
-
-@property (nonatomic) NSUInteger chosenTextField;
+@property (strong, nonatomic) NSMutableArray *LayoutArray;      // Array for Layout
+@property (strong, nonatomic) CylinderProperties *cylinder;     // Object of Cylinder Properties (to get array to display)
+@property (nonatomic) NSUInteger chosenTextField;               // Integer to store index of current chosen Text Field
+@property (strong, nonatomic) CylinderCalculations *calculator; // Calculator Object
 
 
 // Private Functions
-- (NSMutableArray *)determineLayoutArray:(CylinderProperties *) inputarray;
+- (NSMutableArray *)determineLayoutArray:(CylinderProperties *) inputarray;     // Determing the layout
 
 // Private Actions
-- (IBAction)textFieldEdited:(id)sender;
-- (IBAction)backgroundPressed:(id)sender;
-
-
+- (IBAction)textFieldEdited:(UITextField *) sender;     // UITextField Action
+- (IBAction)backgroundPressed:(id)sender;               // Tap Gesture
 
 @end
+
+
 
 @implementation TechnicalViewController
 
@@ -42,9 +41,10 @@
     
     self.tableView.allowsSelection = NO;    // Disables Selecting rows
     
-    
+    // Intialising Objects and Arrays
     self.cylinder = [[CylinderProperties alloc] init];
     self.LayoutArray = [self determineLayoutArray:self.cylinder];
+    self.calculator = [[CylinderCalculations alloc] init];
 
 }
 
@@ -64,7 +64,7 @@
         [layout addObject:[inputarray.cylinderPropertiesInput objectAtIndex:i]];
     }
     
-    [layout addObject:inputarray.Blank];
+    [layout addObject:inputarray.Blank];        // Adding in blank spacers
     
     for (int i = 0; i < inputarray.cylinderPropertiesOuput.count; i++) {
         // Transferring Input Properties
@@ -88,6 +88,7 @@
     return count;
 }
 
+// Cell For Row
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
     
@@ -101,7 +102,7 @@
         cell = [tableView dequeueReusableCellWithIdentifier:@"InputCells" forIndexPath:indexPath];
         cell.textLabel.text = temp.propertyTitle;
         cell.inputTextField.placeholder = temp.propertyUnitsMet;
-        cell.contentView.tag = indexPath.row;       // To determine which Text Field corresponds to which cell(.contentView)
+        cell.inputTextField.tag = indexPath.row;                        //For use later to determine textfields row index
         return cell;
         
     } else if (!(temp.isInput) && [temp.propertyTitle isEqualToString:@"Blank"]) {
@@ -146,7 +147,8 @@
 - (BOOL)textFieldShouldBeginEditing:(UITextField *)textField
 {
     // Gets the row index of the current (about to be editted) text field
-    self.chosenTextField = [self rowIndexOfTextField:textField];
+    // Help obtained from: https://stackoverflow.com/questions/5732438/how-to-get-uitableviewcells-index-from-its-edited-uitextfield
+    self.chosenTextField = textField.tag;
     return YES;
 }
 
@@ -159,40 +161,76 @@
     
 }
 
-- (IBAction)textFieldEdited:(id)sender
-{
-    // Help obtained from: https://stackoverflow.com/questions/8483967/how-to-check-text-field-input-at-real-time
-    UITextField *textField = (UITextField *)sender;
-    NSLog(@"%2f", [textField.text doubleValue]);
-}
-
 // When tap gesture is recognised
 - (IBAction)backgroundPressed:(id)sender
 {
-    // Loop through every cell in Table View
-    for (NSUInteger i = 0; i < self.LayoutArray.count; i++) {
+    NSIndexPath *indexPath = [NSIndexPath indexPathForRow:self.chosenTextField inSection:0];
+    InputCell *cell = [self.tableView cellForRowAtIndexPath:indexPath];
+    if ( [cell.inputTextField isFirstResponder]) {
+        [cell.inputTextField resignFirstResponder];
+    }
+}
+
+// Getting "Live" entered data
+- (IBAction)textFieldEdited:(UITextField *)sender
+{
+    // Help obtained from: https://stackoverflow.com/questions/8483967/how-to-check-text-field-input-at-real-time
+    float data = [sender.text doubleValue];
+    NSLog(@"%2f", data);
+    
+    if (self.chosenTextField == 0)      // Bore Diameter
+    {
+        NSLog(@"Bore Diameter = %2f", data);
+        [self.calculator setBoreDiameter:data];
         
-        // Getting cell at associated index path
+    }
+    else if ( self.chosenTextField == 1)        // Rod Diameter
+    {
+        NSLog(@"Rod Diameter = %2f", data);
+        [self.calculator setRodDiameter:data];
+    }
+    else if (self.chosenTextField == 2 )        // Stroke Length
+    {
+        NSLog(@"Stroke Length = %2f", data);
+        [self.calculator setStrokeLength:data];
+    }
+    else if (self.chosenTextField == 3)         // Input Pressure
+    {
+        NSLog(@"Input Pressure = %2f", data);
+        [self.calculator setInputPressure:data];
+    }
+    else if (self.chosenTextField == 4)         // Input Flow
+    {
+        NSLog(@"Input Flow = %2f", data);
+    }
+    
+    [self updateValues];
+    
+}
+
+- (void) updateValues
+{
+    NSArray *data = [self.calculator getData];
+    int i = 6;
+    for (NSNumber *value in data) {
+        float number = [value floatValue];
         NSIndexPath *indexPath = [NSIndexPath indexPathForRow:i inSection:0];
-        InputCell *cell = [self.tableView cellForRowAtIndexPath:indexPath];
-        
-        // If cells TextField is first responder, resign and break loop
-        if ( [cell.inputTextField isFirstResponder]) {
-            [cell.inputTextField resignFirstResponder];
-            break;
+        OutputCell *cell = [self.tableView cellForRowAtIndexPath:indexPath];
+        CylinderProperty *temp = [[CylinderProperty alloc] init];
+        if (!(number == 0))
+        {
+            cell.outputTextLabel.text = [NSString stringWithFormat:@"%.2f",number];
+            NSLog(@"Value = %@", value);
+        } else 
+        {
+            temp = [self.LayoutArray objectAtIndex:indexPath.row];
+            cell.outputTextLabel.text = temp.propertyUnitsMet;
         }
+        i++;
     }
 }
 
 
-- (NSUInteger)rowIndexOfTextField:(UITextField *)textField {
-    
-    // Help obtained from: https://stackoverflow.com/questions/5732438/how-to-get-uitableviewcells-index-from-its-edited-uitextfield
-    UIView *contentView = textField.superview;      // Associated ContentView of TextField
-    NSLog(@"Row = %ld", contentView.tag);           // Printing to console
-    NSUInteger rowIndex = contentView.tag;          // Setting rowIndex to textfields row index (tag numbers specified in cellForRow function
-    
-    return rowIndex;
-}
+
 
 @end

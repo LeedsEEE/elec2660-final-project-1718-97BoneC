@@ -122,7 +122,7 @@
                                     </subviews>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <outlet property="inputTextField" destination="KSF-oZ-ITA" id="STe-Q6-DX9"/>
+                                    <outlet property="inputTextField" destination="KSF-oZ-ITA" id="Qtu-h3-gQj"/>
                                     <segue destination="2Ub-58-BV9" kind="show" identifier="PropertyDetail" trigger="accessoryAction" id="VCU-55-MlS"/>
                                 </connections>
                             </tableViewCell>
@@ -140,7 +140,7 @@
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Result" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="qxu-si-E2y">
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Result" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="qxu-si-E2y">
                                             <rect key="frame" x="279" y="14" width="48" height="21"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="17"/>

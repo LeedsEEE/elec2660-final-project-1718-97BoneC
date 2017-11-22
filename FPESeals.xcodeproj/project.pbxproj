@@ -10,6 +10,7 @@
 		E65280841FC44F93009731AA /* GreySquare.png in Resources */ = {isa = PBXBuildFile; fileRef = E65280831FC44F93009731AA /* GreySquare.png */; };
 		E65280871FC47484009731AA /* InputCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E65280861FC47484009731AA /* InputCell.m */; };
 		E652808A1FC49334009731AA /* OutputCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E65280891FC49334009731AA /* OutputCell.m */; };
+		E652808D1FC4A9F0009731AA /* CylinderCalculations.m in Sources */ = {isa = PBXBuildFile; fileRef = E652808C1FC4A9F0009731AA /* CylinderCalculations.m */; };
 		E6DB1E791FBBB8CC00C5B7D5 /* company_logo.png in Resources */ = {isa = PBXBuildFile; fileRef = E6DB1E781FBBB8CC00C5B7D5 /* company_logo.png */; };
 		E6DB1E7D1FBCF23300C5B7D5 /* TechnicalViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E6DB1E7C1FBCF23300C5B7D5 /* TechnicalViewController.m */; };
 		E6DB1E801FBCFF9700C5B7D5 /* TechnicalDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E6DB1E7F1FBCFF9700C5B7D5 /* TechnicalDetailViewController.m */; };
@@ -50,6 +51,8 @@
 		E65280861FC47484009731AA /* InputCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = InputCell.m; sourceTree = "<group>"; };
 		E65280881FC49334009731AA /* OutputCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OutputCell.h; sourceTree = "<group>"; };
 		E65280891FC49334009731AA /* OutputCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OutputCell.m; sourceTree = "<group>"; };
+		E652808B1FC4A9F0009731AA /* CylinderCalculations.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CylinderCalculations.h; sourceTree = "<group>"; };
+		E652808C1FC4A9F0009731AA /* CylinderCalculations.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CylinderCalculations.m; sourceTree = "<group>"; };
 		E6DB1E781FBBB8CC00C5B7D5 /* company_logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = company_logo.png; sourceTree = "<group>"; };
 		E6DB1E7B1FBCF23300C5B7D5 /* TechnicalViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TechnicalViewController.h; sourceTree = "<group>"; };
 		E6DB1E7C1FBCF23300C5B7D5 /* TechnicalViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TechnicalViewController.m; sourceTree = "<group>"; };
@@ -158,6 +161,8 @@
 				E6DB1E871FBF967900C5B7D5 /* CylinderProperty.h */,
 				E6DB1E8C1FBF980F00C5B7D5 /* CylinderProperties.m */,
 				E6DB1E8B1FBF980F00C5B7D5 /* CylinderProperties.h */,
+				E652808B1FC4A9F0009731AA /* CylinderCalculations.h */,
+				E652808C1FC4A9F0009731AA /* CylinderCalculations.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -354,6 +359,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E6DB1E831FBD91D500C5B7D5 /* CatalogueViewController.m in Sources */,
+				E652808D1FC4A9F0009731AA /* CylinderCalculations.m in Sources */,
 				E6DB1E7D1FBCF23300C5B7D5 /* TechnicalViewController.m in Sources */,
 				E65280871FC47484009731AA /* InputCell.m in Sources */,
 				E652808A1FC49334009731AA /* OutputCell.m in Sources */,
