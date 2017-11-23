@@ -174,59 +174,61 @@
 // Getting "Live" entered data
 - (IBAction)textFieldEdited:(UITextField *)sender
 {
+    self.chosenTextField = sender.tag;
     // Help obtained from: https://stackoverflow.com/questions/8483967/how-to-check-text-field-input-at-real-time
-    float data = [sender.text doubleValue];
-    NSLog(@"%2f", data);
+    float data = [sender.text doubleValue];     // Converting from string to float
     
     if (self.chosenTextField == 0)      // Bore Diameter
     {
         NSLog(@"Bore Diameter = %2f", data);
-        [self.calculator setBoreDiameter:data];
+        [self.calculator setBoreDiameter:data];     // Setting value
         
     }
     else if ( self.chosenTextField == 1)        // Rod Diameter
     {
         NSLog(@"Rod Diameter = %2f", data);
-        [self.calculator setRodDiameter:data];
+        [self.calculator setRodDiameter:data];      // Setting value
     }
     else if (self.chosenTextField == 2 )        // Stroke Length
     {
         NSLog(@"Stroke Length = %2f", data);
-        [self.calculator setStrokeLength:data];
+        [self.calculator setStrokeLength:data];     // Setting value
     }
     else if (self.chosenTextField == 3)         // Input Pressure
     {
         NSLog(@"Input Pressure = %2f", data);
-        [self.calculator setInputPressure:data];
+        [self.calculator setInputPressure:data];    // Setting value
     }
     else if (self.chosenTextField == 4)         // Input Flow
     {
+        [self.calculator setInputFlow:data];        // Setting value
         NSLog(@"Input Flow = %2f", data);
     }
     
-    [self updateValues];
+    [self updateValues];        // Update Values shown to User
     
 }
 
 - (void) updateValues
 {
-    NSArray *data = [self.calculator getData];
-    int i = 6;
-    for (NSNumber *value in data) {
-        float number = [value floatValue];
-        NSIndexPath *indexPath = [NSIndexPath indexPathForRow:i inSection:0];
-        OutputCell *cell = [self.tableView cellForRowAtIndexPath:indexPath];
-        CylinderProperty *temp = [[CylinderProperty alloc] init];
-        if (!(number == 0))
+    NSArray *data = [self.calculator getData];      // Array of calculated data from model
+    int i = 6;                                      // For iteration
+    for (NSNumber *value in data) {                 // Looping through values in array
+        //NSUInteger i = [data indexOfObject:value] + 6;
+        float number = [value floatValue];          // Converting to float value
+        NSIndexPath *indexPath = [NSIndexPath indexPathForRow:i inSection:0];       // Generating appropaite indexPath
+        OutputCell *cell = [self.tableView cellForRowAtIndexPath:indexPath];        // Getting appropaite cell
+        CylinderProperty *temp = [[CylinderProperty alloc] init];                   // Getting appropaite property
+        temp = [self.LayoutArray objectAtIndex:indexPath.row];
+        if (!(number == 0))     // If number is non zero
         {
-            cell.outputTextLabel.text = [NSString stringWithFormat:@"%.2f",number];
-            NSLog(@"Value = %@", value);
+            cell.outputTextLabel.text = [NSString stringWithFormat:@"%.2f",number];     // Set value to label
+            NSLog(@"%@ = %@", temp.propertyTitle, value);                               // Console Debugging
         } else 
         {
-            temp = [self.LayoutArray objectAtIndex:indexPath.row];
-            cell.outputTextLabel.text = temp.propertyUnitsMet;
+            cell.outputTextLabel.text = temp.propertyUnitsMet;                          // If value = 0, set units
         }
-        i++;
+        i++;    // Increment value
     }
 }
 

@@ -33,7 +33,7 @@
         BoreDiameter.isInput = YES;
         BoreDiameter.propertyImageName = @"";
         BoreDiameter.propertyDescription = @"This Is Bore Diameter";
-        BoreDiameter.propertyUnitsMet = @"millimetres";
+        BoreDiameter.propertyUnitsMet = @"   millimetres";
         BoreDiameter.propertyUnitsImp = @"";
         
         CylinderProperty *RodDiameter = [[CylinderProperty alloc] init];
@@ -41,7 +41,7 @@
         RodDiameter.isInput = YES;
         RodDiameter.propertyImageName = @"";
         RodDiameter.propertyDescription = @"This is Rod Diameter";
-        RodDiameter.propertyUnitsMet = @"millimetres";
+        RodDiameter.propertyUnitsMet = @"   millimetres";
         RodDiameter.propertyUnitsImp = @"";
         
         CylinderProperty *StrokeLength = [[CylinderProperty alloc] init];
@@ -49,7 +49,7 @@
         StrokeLength.isInput = YES;
         StrokeLength.propertyImageName = @"";
         StrokeLength.propertyDescription = @"This is Stroke Length";
-        StrokeLength.propertyUnitsMet = @"millimetres";
+        StrokeLength.propertyUnitsMet = @"   millimetres";
         StrokeLength.propertyUnitsImp = @"";
         
         CylinderProperty *InputPressure = [[CylinderProperty alloc] init];
@@ -65,7 +65,7 @@
         InputFlow.isInput = YES;
         InputFlow.propertyImageName = @"";
         InputFlow.propertyDescription = @"This is Input Flow";
-        InputFlow.propertyUnitsMet = @"litres per minute";
+        InputFlow.propertyUnitsMet = @"   litres per min";
         InputFlow.propertyUnitsImp = @"";
         
         

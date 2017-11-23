@@ -68,6 +68,12 @@
     [self setReverseForce];
 }
 
+- (void)setInputFlow:(float)inputFlow
+{
+#warning Not Finished
+    _inputFlow = inputFlow;
+}
+
 #pragma mark Calculating Data
 // Calculating Area
 - (void)setBoreArea
@@ -138,9 +144,6 @@
                             [NSNumber numberWithFloat:self.forwardForce],
                             [NSNumber numberWithFloat:self.reverseForce],
                             nil];
-    NSLog(@"%2f", self.boreArea);
-    NSLog(@"%2f", self.boreVolume);
-    
     return data;
 }
 @end
