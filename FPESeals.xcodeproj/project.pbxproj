@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E6121C3F1FC6F191002999AE /* Catalogue.m in Sources */ = {isa = PBXBuildFile; fileRef = E6121C3E1FC6F191002999AE /* Catalogue.m */; };
+		E6121C421FC6F457002999AE /* Catalogues.m in Sources */ = {isa = PBXBuildFile; fileRef = E6121C411FC6F457002999AE /* Catalogues.m */; };
+		E6121C451FC72CF1002999AE /* CatalogueViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E6121C441FC72CF1002999AE /* CatalogueViewCell.m */; };
 		E65280841FC44F93009731AA /* GreySquare.png in Resources */ = {isa = PBXBuildFile; fileRef = E65280831FC44F93009731AA /* GreySquare.png */; };
 		E65280871FC47484009731AA /* InputCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E65280861FC47484009731AA /* InputCell.m */; };
 		E652808A1FC49334009731AA /* OutputCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E65280891FC49334009731AA /* OutputCell.m */; };
@@ -46,6 +49,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		E6121C3D1FC6F191002999AE /* Catalogue.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Catalogue.h; sourceTree = "<group>"; };
+		E6121C3E1FC6F191002999AE /* Catalogue.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Catalogue.m; sourceTree = "<group>"; };
+		E6121C401FC6F457002999AE /* Catalogues.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Catalogues.h; sourceTree = "<group>"; };
+		E6121C411FC6F457002999AE /* Catalogues.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Catalogues.m; sourceTree = "<group>"; };
+		E6121C431FC72CF1002999AE /* CatalogueViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CatalogueViewCell.h; sourceTree = "<group>"; };
+		E6121C441FC72CF1002999AE /* CatalogueViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CatalogueViewCell.m; sourceTree = "<group>"; };
 		E65280831FC44F93009731AA /* GreySquare.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = GreySquare.png; sourceTree = "<group>"; };
 		E65280851FC47484009731AA /* InputCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = InputCell.h; sourceTree = "<group>"; };
 		E65280861FC47484009731AA /* InputCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = InputCell.m; sourceTree = "<group>"; };
@@ -109,6 +118,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		E6121C3C1FC6F092002999AE /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				E6121C3D1FC6F191002999AE /* Catalogue.h */,
+				E6121C3E1FC6F191002999AE /* Catalogue.m */,
+				E6121C401FC6F457002999AE /* Catalogues.h */,
+				E6121C411FC6F457002999AE /* Catalogues.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		E6DB1E7A1FBBB8D700C5B7D5 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
@@ -148,8 +168,11 @@
 		E6DB1E861FBF94F900C5B7D5 /* Catalogue */ = {
 			isa = PBXGroup;
 			children = (
+				E6121C431FC72CF1002999AE /* CatalogueViewCell.h */,
+				E6121C441FC72CF1002999AE /* CatalogueViewCell.m */,
 				E6DB1E821FBD91D500C5B7D5 /* CatalogueViewController.m */,
 				E6DB1E811FBD91D500C5B7D5 /* CatalogueViewController.h */,
+				E6121C3C1FC6F092002999AE /* Model */,
 			);
 			path = Catalogue;
 			sourceTree = "<group>";
@@ -363,13 +386,16 @@
 				E6DB1E7D1FBCF23300C5B7D5 /* TechnicalViewController.m in Sources */,
 				E65280871FC47484009731AA /* InputCell.m in Sources */,
 				E652808A1FC49334009731AA /* OutputCell.m in Sources */,
+				E6121C421FC6F457002999AE /* Catalogues.m in Sources */,
 				E6FEC0BC1FBB615A00949685 /* LocationDetailViewController.m in Sources */,
 				E6FEC0841FBB585600949685 /* AppDelegate.m in Sources */,
+				E6121C3F1FC6F191002999AE /* Catalogue.m in Sources */,
 				E6DB1E891FBF967900C5B7D5 /* CylinderProperty.m in Sources */,
 				E6DB1E801FBCFF9700C5B7D5 /* TechnicalDetailViewController.m in Sources */,
 				E6FEC0B91FBB612800949685 /* MapViewController.m in Sources */,
 				E6FEC0951FBB585600949685 /* main.m in Sources */,
 				E6DB1E8D1FBF980F00C5B7D5 /* CylinderProperties.m in Sources */,
+				E6121C451FC72CF1002999AE /* CatalogueViewCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

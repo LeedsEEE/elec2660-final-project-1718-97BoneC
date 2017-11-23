@@ -7,9 +7,13 @@
 //
 
 #import "CatalogueViewController.h"
+#import "CatalogueViewCell.h"   // Custom Collection View Cell
+#import "Catalogues.h"          // The data model of Catalogues
+#import "Catalogue.h"           // The Catalogue Model
 
 @interface CatalogueViewController ()
 
+@property (strong, nonatomic) Catalogues *list;
 
 @end
 
@@ -20,11 +24,13 @@ static NSString * const reuseIdentifier = @"CatalogueCell";
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    self.list = [[Catalogues alloc] init];
+    
     // Uncomment the following line to preserve selection between presentations
     // self.clearsSelectionOnViewWillAppear = NO;
     
     // Register cell classes
-    [self.collectionView registerClass:[UICollectionViewCell class] forCellWithReuseIdentifier:reuseIdentifier];
+    //[self.collectionView registerClass:[CatalogueViewCell class] forCellWithReuseIdentifier:reuseIdentifier];
     
     // Do any additional setup after loading the view.
 }
@@ -46,55 +52,43 @@ static NSString * const reuseIdentifier = @"CatalogueCell";
 
 #pragma mark <UICollectionViewDataSource>
 
-- (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView {
-#warning Incomplete implementation, return the number of sections
-    return 1;
-}
+// Only 1 section in the Collection View
+- (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView { return 1; }
 
-
+// Number of items is dependant on size of available catalogues
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
-#warning Incomplete implementation, return the number of items
-    return 8;
+    return self.list.avaliableCatalogues.count;
 }
 
-- (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
-    UICollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:reuseIdentifier forIndexPath:indexPath];
+- (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
+{
+    CatalogueViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:reuseIdentifier forIndexPath:indexPath];
     
-    cell.backgroundColor = [UIColor grayColor];
-    // Configure the cell
+    
+    Catalogue *tempCatalogue = [[Catalogue alloc] init];
+    tempCatalogue = [self.list.avaliableCatalogues objectAtIndex:indexPath.row];
+    
+    cell.cellTitleLabel.text = tempCatalogue.Name;
+    cell.cellImageOutlet.image = tempCatalogue.Image;
     
     return cell;
 }
 
+
 #pragma mark <UICollectionViewDelegate>
 
-/*
-// Uncomment this method to specify if the specified item should be highlighted during tracking
-- (BOOL)collectionView:(UICollectionView *)collectionView shouldHighlightItemAtIndexPath:(NSIndexPath *)indexPath {
-	return YES;
-}
-*/
 
-/*
-// Uncomment this method to specify if the specified item should be selected
-- (BOOL)collectionView:(UICollectionView *)collectionView shouldSelectItemAtIndexPath:(NSIndexPath *)indexPath {
-    return YES;
-}
-*/
-
-/*
-// Uncomment these methods to specify if an action menu should be displayed for the specified item, and react to actions performed on the item
-- (BOOL)collectionView:(UICollectionView *)collectionView shouldShowMenuForItemAtIndexPath:(NSIndexPath *)indexPath {
-	return NO;
+- (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
+{
+    Catalogue *tempCatalogue = [[Catalogue alloc] init];
+    tempCatalogue = [self.list.avaliableCatalogues objectAtIndex:indexPath.row];
+    
+    NSString *urlToShow = tempCatalogue.URL;
+    
+    // Advice from: https://stackoverflow.com/questions/40057071/method-openurloptionscompletionhandler-compatibility-in-objective-c
+    [[UIApplication sharedApplication] openURL:[NSURL URLWithString:urlToShow] options:@{} completionHandler:nil];
+    
 }
 
-- (BOOL)collectionView:(UICollectionView *)collectionView canPerformAction:(SEL)action forItemAtIndexPath:(NSIndexPath *)indexPath withSender:(id)sender {
-	return NO;
-}
-
-- (void)collectionView:(UICollectionView *)collectionView performAction:(SEL)action forItemAtIndexPath:(NSIndexPath *)indexPath withSender:(id)sender {
-	
-}
-*/
 
 @end
