@@ -6,7 +6,6 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
-        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -19,15 +18,15 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="company_logo.png" translatesAutoresizingMaskIntoConstraints="NO" id="ytH-vh-vtX">
-                                <rect key="frame" x="16" y="277" width="343" height="113"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="FPE Seals Ltd.bmp" translatesAutoresizingMaskIntoConstraints="NO" id="jTt-99-2a7">
+                                <rect key="frame" x="0.0" y="180" width="375" height="327"/>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="ytH-vh-vtX" firstAttribute="trailing" secondItem="Ze5-6b-2t3" secondAttribute="trailingMargin" id="0Ke-9D-U8X"/>
-                            <constraint firstItem="ytH-vh-vtX" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leadingMargin" id="2r6-sJ-nxp"/>
-                            <constraint firstItem="ytH-vh-vtX" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="5fb-1A-MSD"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="jTt-99-2a7" secondAttribute="trailing" id="gI6-WE-nRB"/>
+                            <constraint firstItem="jTt-99-2a7" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="nlg-vl-Tbs"/>
+                            <constraint firstItem="jTt-99-2a7" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="sAt-ht-Oda"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
@@ -38,6 +37,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="company_logo.png" width="263" height="113"/>
+        <image name="FPE Seals Ltd.bmp" width="774" height="327"/>
     </resources>
 </document>

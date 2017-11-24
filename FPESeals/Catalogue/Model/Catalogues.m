@@ -22,27 +22,27 @@
         Catalogue *CFPR = [[Catalogue alloc] init];
         CFPR.Name = @"Composite & Flexiseal Product Range";
         CFPR.URL = @"http://www.fpeseals.co.uk/brochures/RD_FPE_Composite%20&%20Flexiseal%20Product%20Range%20-%20Issue%203.pdf";
-        CFPR.Image = [UIImage imageNamed:@"GreySquare.png"];
+        CFPR.Image = [UIImage imageNamed:@"CFPR.png"];
         
         Catalogue *IKC = [[Catalogue alloc] init];
         IKC.Name = @"Industrial Kit Catalogue";
         IKC.URL = @"http://www.fpeseals.co.uk/brochures/RD_FPE_Industrial%20Kit%20Catalogue%20-%20Issue%204.pdf";
-        IKC.Image = [UIImage imageNamed:@"GreySquare.png"];
+        IKC.Image = [UIImage imageNamed:@"IKC.png"];
         
         Catalogue *MSPR = [[Catalogue alloc] init];
         MSPR.Name = @"Master Seal Product Range";
         MSPR.URL = @"http://www.fpeseals.co.uk/brochures/RD_FPE_Master%20Seal%20Product%20Range%20-%20Issue%203.pdf";
-        MSPR.Image = [UIImage imageNamed:@"GreySquare.png"];
+        MSPR.Image = [UIImage imageNamed:@"MSPR.png"];
         
         Catalogue *CP = [[Catalogue alloc] init];
         CP.Name = @"Cylinder Parts Catalogue";
         CP.URL = @"http://www.fpeseals.co.uk/brochures/FPE_Cylinder%20Parts%20-%20Issue%202.pdf";
-        CP.Image = [UIImage imageNamed:@"GreySquare.png"];
+        CP.Image = [UIImage imageNamed:@"CP.png"];
         
         Catalogue *MKC = [[Catalogue alloc] init];
-        MKC.Name = @"Mobile Kit Catalogue";
+        MKC.Name = @"Mobile Kit     Catalogue";
         MKC.URL = @"http://www.fpeseals.co.uk/brochures/RD_FPE_Mobile%20Kit%20Catalogue.pdf";
-        MKC.Image = [UIImage imageNamed:@"GreySquare.png"];
+        MKC.Image = [UIImage imageNamed:@"MKC.png"];
         
         Catalogue *BDGC = [[Catalogue alloc] init];
         BDGC.Name = @"Bulldog Gasket Catalogue";
@@ -64,7 +64,7 @@
         [self.avaliableCatalogues addObject:CP];
         [self.avaliableCatalogues addObject:MKC];
         [self.avaliableCatalogues addObject:BDGC];
-        [self.avaliableCatalogues addObject:BDHC];
+        [self.avaliableCatalogues addObject:BDHC];      // Index 6
         
     }
     return self;

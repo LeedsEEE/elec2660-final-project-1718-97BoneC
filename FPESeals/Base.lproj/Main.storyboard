@@ -64,6 +64,9 @@
                         <subviews>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" showsUserLocation="YES" showsPointsOfInterest="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aDF-za-D1O">
                                 <rect key="frame" x="0.0" y="64" width="375" height="554"/>
+                                <connections>
+                                    <outlet property="delegate" destination="N1b-vQ-I4A" id="aRA-Ph-Fok"/>
+                                </connections>
                             </mapView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -78,6 +81,7 @@
                     <navigationItem key="navigationItem" title="Our Offices" id="n5N-kq-1lp"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
+                        <outlet property="mapView" destination="aDF-za-D1O" id="IE4-Qe-FRS"/>
                         <segue destination="hCH-HB-MuV" kind="presentation" identifier="LocationSegue" id="ed7-b6-02E"/>
                     </connections>
                 </viewController>
@@ -109,7 +113,7 @@
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <textField opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="millimetres" textAlignment="center" adjustsFontForContentSizeCategory="YES" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="KSF-oZ-ITA">
+                                        <textField opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="millimetres" textAlignment="center" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="KSF-oZ-ITA">
                                             <rect key="frame" x="160" y="9" width="160" height="30"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                             <nil key="textColor"/>
@@ -308,8 +312,9 @@
         <!--Find Us-->
         <scene sceneID="mcn-Ha-t5q">
             <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="HLn-6w-8AA" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="SYy-dq-tyz" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Find Us" image="first" id="8H8-k3-DZp"/>
+                    <tabBarItem key="tabBarItem" title="Find Us" image="ContactUsIcon" selectedImage="ContactUsIcon" id="8H8-k3-DZp"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="2dS-vY-wd1">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
@@ -320,7 +325,6 @@
                         <segue destination="N1b-vQ-I4A" kind="relationship" relationship="rootViewController" id="KSe-em-pjr"/>
                     </connections>
                 </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="HLn-6w-8AA" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-1" y="783"/>
         </scene>
@@ -346,7 +350,7 @@
         <scene sceneID="FXn-Oe-UNW">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="MJQ-Pc-AhZ" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Technical Calculator" image="second" id="cPa-gy-q4n"/>
+                    <tabBarItem key="tabBarItem" title="Technical Calculator" image="TechnicalIcon" selectedImage="TechnicalIcon" id="cPa-gy-q4n"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="C90-GO-5BY">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
@@ -365,7 +369,7 @@
         <scene sceneID="437-9o-AqC">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="jpv-Jb-9or" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Catalogues" image="first" id="TGC-PO-onz"/>
+                    <tabBarItem key="tabBarItem" title="Catalogues" image="CatalogueIcon" selectedImage="CatalogueIcon" id="TGC-PO-onz"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="19q-6C-2st">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
@@ -378,7 +382,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uLJ-n3-jMz" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2" y="-708"/>
+            <point key="canvasLocation" x="-3" y="-760"/>
         </scene>
         <!--Catalogues-->
         <scene sceneID="12X-GP-Zdi">
@@ -396,21 +400,24 @@
                         </collectionViewFlowLayout>
                         <cells>
                             <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="CatalogueCell" id="c75-Tu-Pec" customClass="CatalogueViewCell">
-                                <rect key="frame" x="113" y="40" width="150" height="165"/>
+                                <rect key="frame" x="113" y="40" width="150" height="175"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
-                                    <rect key="frame" x="0.0" y="0.0" width="150" height="165"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="150" height="175"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="8WT-zv-6NX">
-                                            <rect key="frame" x="0.0" y="0.0" width="150" height="150"/>
-                                            <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            <rect key="frame" x="29" y="1" width="92" height="133"/>
                                             <constraints>
-                                                <constraint firstAttribute="width" secondItem="8WT-zv-6NX" secondAttribute="height" multiplier="1:1" id="AdU-jF-uds"/>
+                                                <constraint firstAttribute="width" secondItem="8WT-zv-6NX" secondAttribute="height" multiplier="800:1160" id="AdU-jF-uds"/>
                                             </constraints>
                                         </imageView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="This Is" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="dEb-oB-DC1">
-                                            <rect key="frame" x="0.0" y="150" width="150" height="15"/>
+                                            <rect key="frame" x="0.0" y="135" width="150" height="40"/>
+                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="40" id="hga-lt-QUL"/>
+                                            </constraints>
                                             <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
@@ -420,13 +427,12 @@
                                 <constraints>
                                     <constraint firstItem="dEb-oB-DC1" firstAttribute="leading" secondItem="c75-Tu-Pec" secondAttribute="leading" id="2nW-5P-SqE"/>
                                     <constraint firstAttribute="trailing" secondItem="dEb-oB-DC1" secondAttribute="trailing" id="Ghg-Me-3nZ"/>
-                                    <constraint firstItem="8WT-zv-6NX" firstAttribute="top" secondItem="c75-Tu-Pec" secondAttribute="top" id="QyQ-Um-mde"/>
-                                    <constraint firstItem="dEb-oB-DC1" firstAttribute="top" secondItem="8WT-zv-6NX" secondAttribute="bottom" id="Uel-72-z48"/>
+                                    <constraint firstItem="8WT-zv-6NX" firstAttribute="centerX" secondItem="c75-Tu-Pec" secondAttribute="centerX" id="Hj3-1R-YrA"/>
+                                    <constraint firstItem="8WT-zv-6NX" firstAttribute="top" secondItem="c75-Tu-Pec" secondAttribute="top" constant="1" id="QyQ-Um-mde"/>
+                                    <constraint firstItem="dEb-oB-DC1" firstAttribute="top" secondItem="8WT-zv-6NX" secondAttribute="bottom" constant="1" id="Uel-72-z48"/>
                                     <constraint firstAttribute="bottom" secondItem="dEb-oB-DC1" secondAttribute="bottom" id="ZUW-kk-AeM"/>
-                                    <constraint firstItem="8WT-zv-6NX" firstAttribute="leading" secondItem="c75-Tu-Pec" secondAttribute="leading" id="qE8-Gb-DJa"/>
-                                    <constraint firstAttribute="trailing" secondItem="8WT-zv-6NX" secondAttribute="trailing" id="r17-QZ-lAX"/>
                                 </constraints>
-                                <size key="customSize" width="150" height="165"/>
+                                <size key="customSize" width="150" height="175"/>
                                 <connections>
                                     <outlet property="cellImageOutlet" destination="8WT-zv-6NX" id="8Nw-p2-1L8"/>
                                     <outlet property="cellTitleLabel" destination="dEb-oB-DC1" id="bPG-DE-Wuq"/>
@@ -442,12 +448,13 @@
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WiI-KL-efD" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="720.79999999999995" y="-708.39580209895053"/>
+            <point key="canvasLocation" x="720.79999999999995" y="-760.56971514242889"/>
         </scene>
     </scenes>
     <resources>
-        <image name="first" width="30" height="30"/>
-        <image name="second" width="30" height="30"/>
+        <image name="CatalogueIcon" width="27" height="27"/>
+        <image name="ContactUsIcon" width="25" height="25"/>
+        <image name="TechnicalIcon" width="25" height="25"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="lRx-Qi-l4w"/>

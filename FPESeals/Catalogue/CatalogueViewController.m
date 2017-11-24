@@ -60,16 +60,24 @@ static NSString * const reuseIdentifier = @"CatalogueCell";
     return self.list.avaliableCatalogues.count;
 }
 
+// Cell for Item
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
 {
+    // Custom cell type (see class file)
     CatalogueViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:reuseIdentifier forIndexPath:indexPath];
     
-    
+    // Temporary Catalogue Instance
     Catalogue *tempCatalogue = [[Catalogue alloc] init];
     tempCatalogue = [self.list.avaliableCatalogues objectAtIndex:indexPath.row];
     
+    // Setting cell data
     cell.cellTitleLabel.text = tempCatalogue.Name;
     cell.cellImageOutlet.image = tempCatalogue.Image;
+    
+    // Fine turning the visual layout
+    cell.cellImageOutlet.layer.cornerRadius = 5;
+    cell.cellImageOutlet.layer.borderWidth = 2;
+    cell.cellImageOutlet.layer.borderColor = [[UIColor blackColor] CGColor];
     
     return cell;
 }
@@ -80,9 +88,13 @@ static NSString * const reuseIdentifier = @"CatalogueCell";
 
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
 {
+    // Temporary Catalogue Instance
     Catalogue *tempCatalogue = [[Catalogue alloc] init];
+    
+    // Getting associated Catalogue
     tempCatalogue = [self.list.avaliableCatalogues objectAtIndex:indexPath.row];
     
+    // Getting URL of associated catalogue URL
     NSString *urlToShow = tempCatalogue.URL;
     
     // Advice from: https://stackoverflow.com/questions/40057071/method-openurloptionscompletionhandler-compatibility-in-objective-c

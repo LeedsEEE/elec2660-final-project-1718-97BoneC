@@ -10,11 +10,26 @@
 		E6121C3F1FC6F191002999AE /* Catalogue.m in Sources */ = {isa = PBXBuildFile; fileRef = E6121C3E1FC6F191002999AE /* Catalogue.m */; };
 		E6121C421FC6F457002999AE /* Catalogues.m in Sources */ = {isa = PBXBuildFile; fileRef = E6121C411FC6F457002999AE /* Catalogues.m */; };
 		E6121C451FC72CF1002999AE /* CatalogueViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E6121C441FC72CF1002999AE /* CatalogueViewCell.m */; };
+		E6121C481FC75927002999AE /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E6121C471FC75920002999AE /* CoreLocation.framework */; settings = {ATTRIBUTES = (Required, ); }; };
+		E6121C4C1FC77555002999AE /* catalogue.png in Resources */ = {isa = PBXBuildFile; fileRef = E6121C491FC77555002999AE /* catalogue.png */; };
+		E6121C4D1FC77555002999AE /* catalogue@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E6121C4A1FC77555002999AE /* catalogue@2x.png */; };
+		E6121C4E1FC77555002999AE /* catalogue@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = E6121C4B1FC77555002999AE /* catalogue@3x.png */; };
+		E6121C521FC7774F002999AE /* technical@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = E6121C4F1FC7774F002999AE /* technical@3x.png */; };
+		E6121C531FC7774F002999AE /* technical.png in Resources */ = {isa = PBXBuildFile; fileRef = E6121C501FC7774F002999AE /* technical.png */; };
+		E6121C541FC7774F002999AE /* technical@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E6121C511FC7774F002999AE /* technical@2x.png */; };
+		E6121C581FC77980002999AE /* ContactUs.png in Resources */ = {isa = PBXBuildFile; fileRef = E6121C551FC77980002999AE /* ContactUs.png */; };
+		E6121C591FC77980002999AE /* ContactUs@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E6121C561FC77980002999AE /* ContactUs@2x.png */; };
+		E6121C5A1FC77980002999AE /* ContactUs@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = E6121C571FC77980002999AE /* ContactUs@3x.png */; };
 		E65280841FC44F93009731AA /* GreySquare.png in Resources */ = {isa = PBXBuildFile; fileRef = E65280831FC44F93009731AA /* GreySquare.png */; };
 		E65280871FC47484009731AA /* InputCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E65280861FC47484009731AA /* InputCell.m */; };
 		E652808A1FC49334009731AA /* OutputCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E65280891FC49334009731AA /* OutputCell.m */; };
 		E652808D1FC4A9F0009731AA /* CylinderCalculations.m in Sources */ = {isa = PBXBuildFile; fileRef = E652808C1FC4A9F0009731AA /* CylinderCalculations.m */; };
-		E6DB1E791FBBB8CC00C5B7D5 /* company_logo.png in Resources */ = {isa = PBXBuildFile; fileRef = E6DB1E781FBBB8CC00C5B7D5 /* company_logo.png */; };
+		E68E4AF71FC77E14008D936F /* FPE Seals Ltd.bmp in Resources */ = {isa = PBXBuildFile; fileRef = E68E4AF61FC77E14008D936F /* FPE Seals Ltd.bmp */; };
+		E68E4AFD1FC85D25008D936F /* IKC.png in Resources */ = {isa = PBXBuildFile; fileRef = E68E4AF81FC85D24008D936F /* IKC.png */; };
+		E68E4AFE1FC85D25008D936F /* CFPR.png in Resources */ = {isa = PBXBuildFile; fileRef = E68E4AF91FC85D24008D936F /* CFPR.png */; };
+		E68E4AFF1FC85D25008D936F /* MSPR.png in Resources */ = {isa = PBXBuildFile; fileRef = E68E4AFA1FC85D24008D936F /* MSPR.png */; };
+		E68E4B001FC85D25008D936F /* CP.png in Resources */ = {isa = PBXBuildFile; fileRef = E68E4AFB1FC85D24008D936F /* CP.png */; };
+		E68E4B011FC85D25008D936F /* MKC.png in Resources */ = {isa = PBXBuildFile; fileRef = E68E4AFC1FC85D24008D936F /* MKC.png */; };
 		E6DB1E7D1FBCF23300C5B7D5 /* TechnicalViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E6DB1E7C1FBCF23300C5B7D5 /* TechnicalViewController.m */; };
 		E6DB1E801FBCFF9700C5B7D5 /* TechnicalDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E6DB1E7F1FBCFF9700C5B7D5 /* TechnicalDetailViewController.m */; };
 		E6DB1E831FBD91D500C5B7D5 /* CatalogueViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E6DB1E821FBD91D500C5B7D5 /* CatalogueViewController.m */; };
@@ -55,6 +70,16 @@
 		E6121C411FC6F457002999AE /* Catalogues.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Catalogues.m; sourceTree = "<group>"; };
 		E6121C431FC72CF1002999AE /* CatalogueViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CatalogueViewCell.h; sourceTree = "<group>"; };
 		E6121C441FC72CF1002999AE /* CatalogueViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CatalogueViewCell.m; sourceTree = "<group>"; };
+		E6121C471FC75920002999AE /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		E6121C491FC77555002999AE /* catalogue.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = catalogue.png; sourceTree = "<group>"; };
+		E6121C4A1FC77555002999AE /* catalogue@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "catalogue@2x.png"; sourceTree = "<group>"; };
+		E6121C4B1FC77555002999AE /* catalogue@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "catalogue@3x.png"; sourceTree = "<group>"; };
+		E6121C4F1FC7774F002999AE /* technical@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "technical@3x.png"; sourceTree = "<group>"; };
+		E6121C501FC7774F002999AE /* technical.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = technical.png; sourceTree = "<group>"; };
+		E6121C511FC7774F002999AE /* technical@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "technical@2x.png"; sourceTree = "<group>"; };
+		E6121C551FC77980002999AE /* ContactUs.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ContactUs.png; sourceTree = "<group>"; };
+		E6121C561FC77980002999AE /* ContactUs@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ContactUs@2x.png"; sourceTree = "<group>"; };
+		E6121C571FC77980002999AE /* ContactUs@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ContactUs@3x.png"; sourceTree = "<group>"; };
 		E65280831FC44F93009731AA /* GreySquare.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = GreySquare.png; sourceTree = "<group>"; };
 		E65280851FC47484009731AA /* InputCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = InputCell.h; sourceTree = "<group>"; };
 		E65280861FC47484009731AA /* InputCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = InputCell.m; sourceTree = "<group>"; };
@@ -62,7 +87,12 @@
 		E65280891FC49334009731AA /* OutputCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OutputCell.m; sourceTree = "<group>"; };
 		E652808B1FC4A9F0009731AA /* CylinderCalculations.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CylinderCalculations.h; sourceTree = "<group>"; };
 		E652808C1FC4A9F0009731AA /* CylinderCalculations.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CylinderCalculations.m; sourceTree = "<group>"; };
-		E6DB1E781FBBB8CC00C5B7D5 /* company_logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = company_logo.png; sourceTree = "<group>"; };
+		E68E4AF61FC77E14008D936F /* FPE Seals Ltd.bmp */ = {isa = PBXFileReference; lastKnownFileType = image.bmp; path = "FPE Seals Ltd.bmp"; sourceTree = "<group>"; };
+		E68E4AF81FC85D24008D936F /* IKC.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = IKC.png; sourceTree = "<group>"; };
+		E68E4AF91FC85D24008D936F /* CFPR.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = CFPR.png; sourceTree = "<group>"; };
+		E68E4AFA1FC85D24008D936F /* MSPR.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = MSPR.png; sourceTree = "<group>"; };
+		E68E4AFB1FC85D24008D936F /* CP.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = CP.png; sourceTree = "<group>"; };
+		E68E4AFC1FC85D24008D936F /* MKC.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = MKC.png; sourceTree = "<group>"; };
 		E6DB1E7B1FBCF23300C5B7D5 /* TechnicalViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TechnicalViewController.h; sourceTree = "<group>"; };
 		E6DB1E7C1FBCF23300C5B7D5 /* TechnicalViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TechnicalViewController.m; sourceTree = "<group>"; };
 		E6DB1E7E1FBCFF9700C5B7D5 /* TechnicalDetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TechnicalDetailViewController.h; sourceTree = "<group>"; };
@@ -98,6 +128,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E6121C481FC75927002999AE /* CoreLocation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -129,11 +160,33 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
+		E6121C461FC75920002999AE /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				E6121C471FC75920002999AE /* CoreLocation.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		E6DB1E7A1FBBB8D700C5B7D5 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				E68E4AF91FC85D24008D936F /* CFPR.png */,
+				E68E4AFB1FC85D24008D936F /* CP.png */,
+				E68E4AF81FC85D24008D936F /* IKC.png */,
+				E68E4AFC1FC85D24008D936F /* MKC.png */,
+				E68E4AFA1FC85D24008D936F /* MSPR.png */,
+				E68E4AF61FC77E14008D936F /* FPE Seals Ltd.bmp */,
+				E6121C551FC77980002999AE /* ContactUs.png */,
+				E6121C561FC77980002999AE /* ContactUs@2x.png */,
+				E6121C571FC77980002999AE /* ContactUs@3x.png */,
+				E6121C501FC7774F002999AE /* technical.png */,
+				E6121C511FC7774F002999AE /* technical@2x.png */,
+				E6121C4F1FC7774F002999AE /* technical@3x.png */,
+				E6121C491FC77555002999AE /* catalogue.png */,
+				E6121C4A1FC77555002999AE /* catalogue@2x.png */,
+				E6121C4B1FC77555002999AE /* catalogue@3x.png */,
 				E65280831FC44F93009731AA /* GreySquare.png */,
-				E6DB1E781FBBB8CC00C5B7D5 /* company_logo.png */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -197,6 +250,7 @@
 				E6FEC09D1FBB585600949685 /* FPESealsTests */,
 				E6FEC0A81FBB585600949685 /* FPESealsUITests */,
 				E6FEC0801FBB585600949685 /* Products */,
+				E6121C461FC75920002999AE /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -352,11 +406,25 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E68E4B001FC85D25008D936F /* CP.png in Resources */,
+				E6121C581FC77980002999AE /* ContactUs.png in Resources */,
+				E68E4AF71FC77E14008D936F /* FPE Seals Ltd.bmp in Resources */,
 				E6FEC0921FBB585600949685 /* LaunchScreen.storyboard in Resources */,
+				E6121C4C1FC77555002999AE /* catalogue.png in Resources */,
 				E6FEC08F1FBB585600949685 /* Assets.xcassets in Resources */,
+				E68E4B011FC85D25008D936F /* MKC.png in Resources */,
+				E6121C4E1FC77555002999AE /* catalogue@3x.png in Resources */,
+				E68E4AFE1FC85D25008D936F /* CFPR.png in Resources */,
+				E6121C541FC7774F002999AE /* technical@2x.png in Resources */,
+				E6121C521FC7774F002999AE /* technical@3x.png in Resources */,
 				E65280841FC44F93009731AA /* GreySquare.png in Resources */,
+				E6121C4D1FC77555002999AE /* catalogue@2x.png in Resources */,
 				E6FEC08D1FBB585600949685 /* Main.storyboard in Resources */,
-				E6DB1E791FBBB8CC00C5B7D5 /* company_logo.png in Resources */,
+				E68E4AFF1FC85D25008D936F /* MSPR.png in Resources */,
+				E6121C591FC77980002999AE /* ContactUs@2x.png in Resources */,
+				E68E4AFD1FC85D25008D936F /* IKC.png in Resources */,
+				E6121C5A1FC77980002999AE /* ContactUs@3x.png in Resources */,
+				E6121C531FC7774F002999AE /* technical.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
