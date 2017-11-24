@@ -20,6 +20,11 @@
 
 @end
 
+// Defining the static view of the UK
+static const float Latitude = 54.778051;
+static const float Longitude = -2.935973;
+static const float Zoom = 8.5;
+
 @implementation MapViewController
 
 - (void)viewDidLoad {
@@ -29,6 +34,8 @@
     self.user = [[CLLocationManager alloc] init];
     [self.user requestWhenInUseAuthorization];
     // Map --> Attributes Inspector --> Show user's Location = YES
+    
+    [self setCentreOfMapForLatitude:Latitude andLongitude:Longitude andScale:Zoom];
     
 }
 
@@ -51,5 +58,13 @@
     }
 }
 
+- (void)setCentreOfMapForLatitude: (float)latitude andLongitude: (float)longitude andScale: (float)scale
+{
+    CLLocationCoordinate2D center = CLLocationCoordinate2DMake(latitude, longitude);
+    MKCoordinateSpan mkScale = MKCoordinateSpanMake(scale, scale);
+    MKCoordinateRegion view = MKCoordinateRegionMake(center, mkScale);
+    [self.mapView setRegion:view animated:YES];
+
+}
 
 @end

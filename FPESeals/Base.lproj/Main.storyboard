@@ -407,7 +407,7 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="8WT-zv-6NX">
-                                            <rect key="frame" x="29" y="1" width="92" height="133"/>
+                                            <rect key="frame" x="29.5" y="1" width="91" height="132"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" secondItem="8WT-zv-6NX" secondAttribute="height" multiplier="800:1160" id="AdU-jF-uds"/>
                                             </constraints>
@@ -429,7 +429,7 @@
                                     <constraint firstAttribute="trailing" secondItem="dEb-oB-DC1" secondAttribute="trailing" id="Ghg-Me-3nZ"/>
                                     <constraint firstItem="8WT-zv-6NX" firstAttribute="centerX" secondItem="c75-Tu-Pec" secondAttribute="centerX" id="Hj3-1R-YrA"/>
                                     <constraint firstItem="8WT-zv-6NX" firstAttribute="top" secondItem="c75-Tu-Pec" secondAttribute="top" constant="1" id="QyQ-Um-mde"/>
-                                    <constraint firstItem="dEb-oB-DC1" firstAttribute="top" secondItem="8WT-zv-6NX" secondAttribute="bottom" constant="1" id="Uel-72-z48"/>
+                                    <constraint firstItem="dEb-oB-DC1" firstAttribute="top" secondItem="8WT-zv-6NX" secondAttribute="bottom" constant="2" id="Uel-72-z48"/>
                                     <constraint firstAttribute="bottom" secondItem="dEb-oB-DC1" secondAttribute="bottom" id="ZUW-kk-AeM"/>
                                 </constraints>
                                 <size key="customSize" width="150" height="175"/>

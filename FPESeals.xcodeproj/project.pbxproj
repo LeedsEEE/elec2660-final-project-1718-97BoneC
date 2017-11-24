@@ -30,6 +30,8 @@
 		E68E4AFF1FC85D25008D936F /* MSPR.png in Resources */ = {isa = PBXBuildFile; fileRef = E68E4AFA1FC85D24008D936F /* MSPR.png */; };
 		E68E4B001FC85D25008D936F /* CP.png in Resources */ = {isa = PBXBuildFile; fileRef = E68E4AFB1FC85D24008D936F /* CP.png */; };
 		E68E4B011FC85D25008D936F /* MKC.png in Resources */ = {isa = PBXBuildFile; fileRef = E68E4AFC1FC85D24008D936F /* MKC.png */; };
+		E68E4B051FC87B5E008D936F /* Office.m in Sources */ = {isa = PBXBuildFile; fileRef = E68E4B041FC87B5E008D936F /* Office.m */; };
+		E68E4B081FC87D33008D936F /* CompanyOffices.m in Sources */ = {isa = PBXBuildFile; fileRef = E68E4B071FC87D33008D936F /* CompanyOffices.m */; };
 		E6DB1E7D1FBCF23300C5B7D5 /* TechnicalViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E6DB1E7C1FBCF23300C5B7D5 /* TechnicalViewController.m */; };
 		E6DB1E801FBCFF9700C5B7D5 /* TechnicalDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E6DB1E7F1FBCFF9700C5B7D5 /* TechnicalDetailViewController.m */; };
 		E6DB1E831FBD91D500C5B7D5 /* CatalogueViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E6DB1E821FBD91D500C5B7D5 /* CatalogueViewController.m */; };
@@ -93,6 +95,10 @@
 		E68E4AFA1FC85D24008D936F /* MSPR.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = MSPR.png; sourceTree = "<group>"; };
 		E68E4AFB1FC85D24008D936F /* CP.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = CP.png; sourceTree = "<group>"; };
 		E68E4AFC1FC85D24008D936F /* MKC.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = MKC.png; sourceTree = "<group>"; };
+		E68E4B031FC87B5E008D936F /* Office.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Office.h; sourceTree = "<group>"; };
+		E68E4B041FC87B5E008D936F /* Office.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Office.m; sourceTree = "<group>"; };
+		E68E4B061FC87D33008D936F /* CompanyOffices.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CompanyOffices.h; sourceTree = "<group>"; };
+		E68E4B071FC87D33008D936F /* CompanyOffices.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CompanyOffices.m; sourceTree = "<group>"; };
 		E6DB1E7B1FBCF23300C5B7D5 /* TechnicalViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TechnicalViewController.h; sourceTree = "<group>"; };
 		E6DB1E7C1FBCF23300C5B7D5 /* TechnicalViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TechnicalViewController.m; sourceTree = "<group>"; };
 		E6DB1E7E1FBCFF9700C5B7D5 /* TechnicalDetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TechnicalDetailViewController.h; sourceTree = "<group>"; };
@@ -168,6 +174,17 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		E68E4B021FC87AAC008D936F /*  Model */ = {
+			isa = PBXGroup;
+			children = (
+				E68E4B031FC87B5E008D936F /* Office.h */,
+				E68E4B041FC87B5E008D936F /* Office.m */,
+				E68E4B061FC87D33008D936F /* CompanyOffices.h */,
+				E68E4B071FC87D33008D936F /* CompanyOffices.m */,
+			);
+			path = " Model";
+			sourceTree = "<group>";
+		};
 		E6DB1E7A1FBBB8D700C5B7D5 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
@@ -214,6 +231,7 @@
 				E6FEC0B71FBB612800949685 /* MapViewController.h */,
 				E6FEC0BB1FBB615A00949685 /* LocationDetailViewController.m */,
 				E6FEC0BA1FBB615A00949685 /* LocationDetailViewController.h */,
+				E68E4B021FC87AAC008D936F /*  Model */,
 			);
 			path = ContactUs;
 			sourceTree = "<group>";
@@ -461,9 +479,11 @@
 				E6DB1E891FBF967900C5B7D5 /* CylinderProperty.m in Sources */,
 				E6DB1E801FBCFF9700C5B7D5 /* TechnicalDetailViewController.m in Sources */,
 				E6FEC0B91FBB612800949685 /* MapViewController.m in Sources */,
+				E68E4B081FC87D33008D936F /* CompanyOffices.m in Sources */,
 				E6FEC0951FBB585600949685 /* main.m in Sources */,
 				E6DB1E8D1FBF980F00C5B7D5 /* CylinderProperties.m in Sources */,
 				E6121C451FC72CF1002999AE /* CatalogueViewCell.m in Sources */,
+				E68E4B051FC87B5E008D936F /* Office.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
