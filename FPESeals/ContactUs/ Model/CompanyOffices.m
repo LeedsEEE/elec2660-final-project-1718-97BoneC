@@ -18,6 +18,7 @@
     self = [super init];
     if (self) {
         
+        // Generating Office Locations
         Office *Darlington = [[Office alloc] init];
         Darlington.name = @"Main Office";
         Darlington.image = [UIImage imageNamed:@""];
@@ -64,11 +65,11 @@
         Kent.email = @"kent@fpeseals.co.uk";
         
         Office *Scotland = [[Office alloc] init];
-        Kent.name = @"Scotland Office";
-        Kent.image = [UIImage imageNamed:@""];
-        Kent.longitude = -2.110449;
-        Kent.latitude = 57.154136;
-        Kent.address = @{
+        Scotland.name = @"Scotland Office";
+        Scotland.image = [UIImage imageNamed:@""];
+        Scotland.longitude = -2.110449;
+        Scotland.latitude = 57.154136;
+        Scotland.address = @{
                          @"Line One"  : @"Swan Seals Ltd",
                          @"Line Two"  : @"5-19 Holland Street",
                          @"City"      : @"Aberdeen",
@@ -78,10 +79,11 @@
         Kent.telephone = @"+441224 648999";
         Kent.email = @"sales@swanseals.co.uk";
         
-        
+        // Intialising Array
         self.offices = [[NSMutableArray alloc] init];
         
-        [self.offices addObject:Darlington];
+        // Adding Offices'
+        [self.offices addObject:Darlington];        // Index 0
         [self.offices addObject:Doncaster];
         [self.offices addObject:Kent];
         [self.offices addObject:Scotland];

@@ -62,7 +62,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" showsUserLocation="YES" showsPointsOfInterest="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aDF-za-D1O">
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" zoomEnabled="NO" scrollEnabled="NO" showsUserLocation="YES" showsPointsOfInterest="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aDF-za-D1O">
                                 <rect key="frame" x="0.0" y="64" width="375" height="554"/>
                                 <connections>
                                     <outlet property="delegate" destination="N1b-vQ-I4A" id="aRA-Ph-Fok"/>
@@ -82,7 +82,7 @@
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="mapView" destination="aDF-za-D1O" id="IE4-Qe-FRS"/>
-                        <segue destination="hCH-HB-MuV" kind="presentation" identifier="LocationSegue" id="ed7-b6-02E"/>
+                        <segue destination="707-qw-COQ" kind="presentation" identifier="LocationSegue" id="1mj-sQ-CdA"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7Pd-Or-yuP" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -185,7 +185,7 @@
             </objects>
             <point key="canvasLocation" x="720.79999999999995" y="-2.2488755622188905"/>
         </scene>
-        <!--X Office-->
+        <!--Location Detail View Controller-->
         <scene sceneID="KZU-Hi-SkI">
             <objects>
                 <viewController id="707-qw-COQ" customClass="LocationDetailViewController" sceneMemberID="viewController">
@@ -193,9 +193,12 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Auo-nE-3WT">
-                                <rect key="frame" x="38" y="95" width="300" height="191"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Auo-nE-3WT">
+                                <rect key="frame" x="16" y="84" width="343" height="218.5"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="Auo-nE-3WT" secondAttribute="height" multiplier="300:191" id="kh1-B6-wfH"/>
+                                </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Address:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WeQ-LD-kcj">
                                 <rect key="frame" x="38" y="323" width="300" height="21"/>
@@ -267,13 +270,33 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="C2b-gc-4p6">
+                                <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                                <color key="backgroundColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <items>
+                                    <navigationItem title="Title" id="cMD-JI-ydG">
+                                        <barButtonItem key="rightBarButtonItem" style="done" systemItem="done" id="A9L-hi-VpT">
+                                            <connections>
+                                                <action selector="pressedDone:" destination="707-qw-COQ" id="dXg-gQ-TO3"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Auo-nE-3WT" firstAttribute="centerX" secondItem="vRm-Cc-DUb" secondAttribute="centerX" id="6J5-GL-IMe"/>
+                            <constraint firstItem="C2b-gc-4p6" firstAttribute="top" secondItem="vRm-Cc-DUb" secondAttribute="top" id="MiS-0U-Rm0"/>
+                            <constraint firstItem="vRm-Cc-DUb" firstAttribute="trailing" secondItem="Auo-nE-3WT" secondAttribute="trailing" constant="16" id="RNF-tQ-z96"/>
+                            <constraint firstItem="Auo-nE-3WT" firstAttribute="top" secondItem="C2b-gc-4p6" secondAttribute="bottom" constant="20" id="UaF-jX-S6E"/>
+                            <constraint firstItem="vRm-Cc-DUb" firstAttribute="trailing" secondItem="C2b-gc-4p6" secondAttribute="trailing" id="iGA-AN-DpF"/>
+                            <constraint firstItem="C2b-gc-4p6" firstAttribute="leading" secondItem="vRm-Cc-DUb" secondAttribute="leading" id="iRR-2p-r1T"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="vRm-Cc-DUb"/>
                     </view>
-                    <navigationItem key="navigationItem" title="X Office" id="1cf-LO-ok1">
-                        <barButtonItem key="rightBarButtonItem" systemItem="done" id="A9L-hi-VpT"/>
-                    </navigationItem>
+                    <toolbarItems/>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="addressCityOutlet" destination="Wzm-c0-gb4" id="FdG-Ol-xDg"/>
                         <outlet property="addressCountyOutlet" destination="WUv-gr-DE3" id="LC8-1S-m3f"/>
@@ -283,11 +306,12 @@
                         <outlet property="emailOutlet" destination="KZm-8r-U7c" id="l0K-a3-MgZ"/>
                         <outlet property="officeImageOutlet" destination="Auo-nE-3WT" id="sjr-nW-j1e"/>
                         <outlet property="telephoneOutlet" destination="jr8-Kq-yGf" id="Ky2-ZL-eTM"/>
+                        <outlet property="titleBarOutlet" destination="cMD-JI-ydG" id="eVc-mA-kG3"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cme-JP-nDN" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2228" y="781.25937031484261"/>
+            <point key="canvasLocation" x="1789.5999999999999" y="781.25937031484261"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="yl2-sM-qoP">
@@ -327,24 +351,6 @@
                 </navigationController>
             </objects>
             <point key="canvasLocation" x="-1" y="783"/>
-        </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="waN-pz-TQ7">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="hCH-HB-MuV" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="8KT-Mc-P0l">
-                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="707-qw-COQ" kind="relationship" relationship="rootViewController" id="rFN-Ex-EHJ"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="cT5-13-NU4" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1502.4000000000001" y="781.70914542728644"/>
         </scene>
         <!--Technical Calculator-->
         <scene sceneID="FXn-Oe-UNW">

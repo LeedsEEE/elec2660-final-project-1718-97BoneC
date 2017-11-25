@@ -10,13 +10,16 @@
 #import <MapKit/MapKit.h>
 #import <CoreLocation/CoreLocation.h>
 
+#import "Office.h"
+#import "CompanyOffices.h"
+#import "LocationDetailViewController.h"
+
 @interface MapViewController () <MKMapViewDelegate, CLLocationManagerDelegate>
 
-// For Users Location
-@property (strong, nonatomic) CLLocationManager *user;
+@property (strong, nonatomic) CLLocationManager *user;      // For Users Location
+@property (weak, nonatomic) IBOutlet MKMapView *mapView;    // For modifying Map
 
-// For modifying Map
-@property (weak, nonatomic) IBOutlet MKMapView *mapView;
+@property (strong, nonatomic) CompanyOffices *company;      // To Annotate Map With Office Locations
 
 @end
 
@@ -35,8 +38,10 @@ static const float Zoom = 8.5;
     [self.user requestWhenInUseAuthorization];
     // Map --> Attributes Inspector --> Show user's Location = YES
     
-    [self setCentreOfMapForLatitude:Latitude andLongitude:Longitude andScale:Zoom];
+    [self setCentreOfMapForLatitude:Latitude andLongitude:Longitude andScale:Zoom];     // Setting static view
     
+    self.company = [[CompanyOffices alloc] init];
+    [self showOfficeLocations];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -54,6 +59,10 @@ static const float Zoom = 8.5;
     
     if ([[segue identifier] isEqualToString:@"LocationSegue"]) {
     
+        LocationDetailViewController *destVC = [segue destinationViewController];
+        
+        Office *tempOffice = [self.company.offices objectAtIndex:0];
+        destVC.selectedOffice = tempOffice;
 #warning Not Finished
     }
 }
@@ -67,4 +76,28 @@ static const float Zoom = 8.5;
 
 }
 
+- (void)showOfficeLocations
+{
+    for (Office *temp in self.company.offices) {
+        
+        MKPointAnnotation *location = [[MKPointAnnotation alloc] init];
+        CLLocationCoordinate2D coords = CLLocationCoordinate2DMake(temp.latitude, temp.longitude);
+        [location setCoordinate:coords];
+        [location setTitle:temp.name];
+        
+        
+        NSLog(@"Location Placed = %@", temp.name);
+        [self.mapView addAnnotation:location];
+    }
+}
+
+//- (MKAnnotationView *)mapView:(MKMapView *)mapView viewForAnnotation:(id<MKAnnotation>)annotation
+//{ }
+
+#pragma mark MKMapView Delegates
+
+- (void)mapView:(MKMapView *)mapView didSelectAnnotationView:(MKAnnotationView *)view
+{
+    [self performSegueWithIdentifier:@"LocationSegue" sender:view];
+}
 @end

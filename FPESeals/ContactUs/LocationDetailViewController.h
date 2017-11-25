@@ -7,7 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Office.h"
 
 @interface LocationDetailViewController : UIViewController
+
+@property (strong, nonatomic) Office *selectedOffice;
 
 @end
