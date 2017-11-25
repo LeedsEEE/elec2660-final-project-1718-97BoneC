@@ -57,13 +57,15 @@ static const float Zoom = 8.5;
     // Get the new view controller using [segue destinationViewController].
     // Pass the selected object to the new view controller.
     
-    if ([[segue identifier] isEqualToString:@"LocationSegue"]) {
-    
-        LocationDetailViewController *destVC = [segue destinationViewController];
-        
-        Office *tempOffice = [self.company.offices objectAtIndex:0];
-        destVC.selectedOffice = tempOffice;
-#warning Not Finished
+    if ([sender isKindOfClass:[MKAnnotationView class]]) {
+        if ([[segue identifier] isEqualToString:@"LocationSegue"]) {
+            MKAnnotationView *location = sender;
+            LocationDetailViewController *destVC = [segue destinationViewController];
+            
+            NSUInteger index = [self determineOfficeIndexForString:location.annotation.title];
+            Office *tempOffice = [self.company.offices objectAtIndex:index];
+            destVC.selectedOffice = tempOffice;
+        }
     }
 }
 
@@ -78,26 +80,44 @@ static const float Zoom = 8.5;
 
 - (void)showOfficeLocations
 {
-    for (Office *temp in self.company.offices) {
+    for (Office *temp in self.company.offices) {        // Loop through every office in array
         
         MKPointAnnotation *location = [[MKPointAnnotation alloc] init];
-        CLLocationCoordinate2D coords = CLLocationCoordinate2DMake(temp.latitude, temp.longitude);
-        [location setCoordinate:coords];
-        [location setTitle:temp.name];
+        CLLocationCoordinate2D coords = CLLocationCoordinate2DMake(temp.latitude, temp.longitude);      // Set Coords
+        [location setCoordinate:coords];    // Set annotation Coords
+        [location setTitle:temp.name];      // Set name (title)
         
         
-        NSLog(@"Location Placed = %@", temp.name);
-        [self.mapView addAnnotation:location];
+        
+        NSLog(@"Location Placed = %@", temp.name);      // Debug
+        [self.mapView addAnnotation:location];          // Add location
+    }
+}
+
+- (NSUInteger)determineOfficeIndexForString:(NSString *)name
+{
+    NSUInteger index = 0;       // Initialising
+    for (Office *temp in self.company.offices) {        // Looping through array of offices
+        if ([name isEqualToString:temp.name]) {         // Checking to see which office name was inputted
+            index = [self.company.offices indexOfObject:temp];      // If names match return index of office
+            break;      // Break for loop
+        }
+    }
+    return index;       // Return the index of the named office
+}
+
+#pragma mark MKMapView Delegates
+
+// Annotation Selected
+- (void)mapView:(MKMapView *)mapView didSelectAnnotationView:(MKAnnotationView *)view
+{
+    if (!(view.annotation == mapView.userLocation)){        // Make sure annotation is not the user
+    // Advice from: https://stackoverflow.com/questions/5947188/how-to-find-out-pin-id-in-map-annotation-view
+    [mapView deselectAnnotation:view.annotation animated:YES];          // To deselect annotation
+    [self performSegueWithIdentifier:@"LocationSegue" sender:view];     // Perform segue
     }
 }
 
 //- (MKAnnotationView *)mapView:(MKMapView *)mapView viewForAnnotation:(id<MKAnnotation>)annotation
 //{ }
-
-#pragma mark MKMapView Delegates
-
-- (void)mapView:(MKMapView *)mapView didSelectAnnotationView:(MKAnnotationView *)view
-{
-    [self performSegueWithIdentifier:@"LocationSegue" sender:view];
-}
 @end

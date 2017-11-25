@@ -76,8 +76,8 @@
                          @"County"    : @"Scotland",
                          @"Postcode"  : @"AB25 3UJ",
                          };
-        Kent.telephone = @"+441224 648999";
-        Kent.email = @"sales@swanseals.co.uk";
+        Scotland.telephone = @"+441224 648999";
+        Scotland.email = @"sales@swanseals.co.uk";
         
         // Intialising Array
         self.offices = [[NSMutableArray alloc] init];
