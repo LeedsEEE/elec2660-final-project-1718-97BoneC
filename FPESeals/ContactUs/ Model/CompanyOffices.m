@@ -36,7 +36,7 @@
         
         Office *Doncaster = [[Office alloc] init];
         Doncaster.name = @"Doncaster Office";
-        Doncaster.image = [UIImage imageNamed:@""];
+        Doncaster.image = [UIImage imageNamed:@"Blank.png"];
         Doncaster.longitude = -1.172724;
         Doncaster.latitude = 53.576210;
         Doncaster.address = @{
@@ -51,7 +51,7 @@
         
         Office *Kent = [[Office alloc] init];
         Kent.name = @"Kent Office";
-        Kent.image = [UIImage imageNamed:@""];
+        Kent.image = [UIImage imageNamed:@"Blank.png"];
         Kent.longitude = 0.518907;
         Kent.latitude = 51.390603;
         Kent.address = @{
@@ -66,7 +66,7 @@
         
         Office *Scotland = [[Office alloc] init];
         Scotland.name = @"Scotland Office";
-        Scotland.image = [UIImage imageNamed:@""];
+        Scotland.image = [UIImage imageNamed:@"Blank.png"];
         Scotland.longitude = -2.110449;
         Scotland.latitude = 57.154136;
         Scotland.address = @{

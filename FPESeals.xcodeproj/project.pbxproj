@@ -42,6 +42,19 @@
 		E6D4AA181FCC90D400A65487 /* CP.png in Resources */ = {isa = PBXBuildFile; fileRef = E6D4AA171FCC90D400A65487 /* CP.png */; };
 		E6D4AA1B1FCC956600A65487 /* BDGC.png in Resources */ = {isa = PBXBuildFile; fileRef = E6D4AA191FCC956600A65487 /* BDGC.png */; };
 		E6D4AA1C1FCC956600A65487 /* BDHC.png in Resources */ = {isa = PBXBuildFile; fileRef = E6D4AA1A1FCC956600A65487 /* BDHC.png */; };
+		E6D4AA211FCCA92E00A65487 /* Pressure.png in Resources */ = {isa = PBXBuildFile; fileRef = E6D4AA1D1FCCA92D00A65487 /* Pressure.png */; };
+		E6D4AA221FCCA92E00A65487 /* Oil Flow.png in Resources */ = {isa = PBXBuildFile; fileRef = E6D4AA1E1FCCA92D00A65487 /* Oil Flow.png */; };
+		E6D4AA231FCCA92E00A65487 /* Rod Side Force.png in Resources */ = {isa = PBXBuildFile; fileRef = E6D4AA1F1FCCA92E00A65487 /* Rod Side Force.png */; };
+		E6D4AA241FCCA92E00A65487 /* Bore Side Force.png in Resources */ = {isa = PBXBuildFile; fileRef = E6D4AA201FCCA92E00A65487 /* Bore Side Force.png */; };
+		E6D4AA261FCCBDAC00A65487 /* Blank.png in Resources */ = {isa = PBXBuildFile; fileRef = E6D4AA251FCCBDAC00A65487 /* Blank.png */; };
+		E6D4AA2D1FCCC56D00A65487 /* AppIcon29pt@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = E6D4AA271FCCC56D00A65487 /* AppIcon29pt@3x.png */; };
+		E6D4AA2E1FCCC56D00A65487 /* AppIcon60pt@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = E6D4AA281FCCC56D00A65487 /* AppIcon60pt@3x.png */; };
+		E6D4AA2F1FCCC56D00A65487 /* AppIcon29pt@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E6D4AA291FCCC56D00A65487 /* AppIcon29pt@2x.png */; };
+		E6D4AA301FCCC56D00A65487 /* AppIcon20pt@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E6D4AA2A1FCCC56D00A65487 /* AppIcon20pt@2x.png */; };
+		E6D4AA311FCCC56D00A65487 /* AppIcon60pt@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E6D4AA2B1FCCC56D00A65487 /* AppIcon60pt@2x.png */; };
+		E6D4AA321FCCC56D00A65487 /* AppIcon20pt@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = E6D4AA2C1FCCC56D00A65487 /* AppIcon20pt@3x.png */; };
+		E6D4AA351FCCC69800A65487 /* AppIcon40pt@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E6D4AA331FCCC69800A65487 /* AppIcon40pt@2x.png */; };
+		E6D4AA361FCCC69800A65487 /* AppIcon40pt@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = E6D4AA341FCCC69800A65487 /* AppIcon40pt@3x.png */; };
 		E6DB1E7D1FBCF23300C5B7D5 /* TechnicalViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E6DB1E7C1FBCF23300C5B7D5 /* TechnicalViewController.m */; };
 		E6DB1E801FBCFF9700C5B7D5 /* TechnicalDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E6DB1E7F1FBCFF9700C5B7D5 /* TechnicalDetailViewController.m */; };
 		E6DB1E831FBD91D500C5B7D5 /* CatalogueViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E6DB1E821FBD91D500C5B7D5 /* CatalogueViewController.m */; };
@@ -119,6 +132,19 @@
 		E6D4AA171FCC90D400A65487 /* CP.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = CP.png; sourceTree = "<group>"; };
 		E6D4AA191FCC956600A65487 /* BDGC.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = BDGC.png; sourceTree = "<group>"; };
 		E6D4AA1A1FCC956600A65487 /* BDHC.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = BDHC.png; sourceTree = "<group>"; };
+		E6D4AA1D1FCCA92D00A65487 /* Pressure.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Pressure.png; sourceTree = "<group>"; };
+		E6D4AA1E1FCCA92D00A65487 /* Oil Flow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Oil Flow.png"; sourceTree = "<group>"; };
+		E6D4AA1F1FCCA92E00A65487 /* Rod Side Force.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Rod Side Force.png"; sourceTree = "<group>"; };
+		E6D4AA201FCCA92E00A65487 /* Bore Side Force.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Bore Side Force.png"; sourceTree = "<group>"; };
+		E6D4AA251FCCBDAC00A65487 /* Blank.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Blank.png; sourceTree = "<group>"; };
+		E6D4AA271FCCC56D00A65487 /* AppIcon29pt@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "AppIcon29pt@3x.png"; sourceTree = "<group>"; };
+		E6D4AA281FCCC56D00A65487 /* AppIcon60pt@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "AppIcon60pt@3x.png"; sourceTree = "<group>"; };
+		E6D4AA291FCCC56D00A65487 /* AppIcon29pt@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "AppIcon29pt@2x.png"; sourceTree = "<group>"; };
+		E6D4AA2A1FCCC56D00A65487 /* AppIcon20pt@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "AppIcon20pt@2x.png"; sourceTree = "<group>"; };
+		E6D4AA2B1FCCC56D00A65487 /* AppIcon60pt@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "AppIcon60pt@2x.png"; sourceTree = "<group>"; };
+		E6D4AA2C1FCCC56D00A65487 /* AppIcon20pt@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "AppIcon20pt@3x.png"; sourceTree = "<group>"; };
+		E6D4AA331FCCC69800A65487 /* AppIcon40pt@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "AppIcon40pt@2x.png"; sourceTree = "<group>"; };
+		E6D4AA341FCCC69800A65487 /* AppIcon40pt@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "AppIcon40pt@3x.png"; sourceTree = "<group>"; };
 		E6DB1E7B1FBCF23300C5B7D5 /* TechnicalViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TechnicalViewController.h; sourceTree = "<group>"; };
 		E6DB1E7C1FBCF23300C5B7D5 /* TechnicalViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TechnicalViewController.m; sourceTree = "<group>"; };
 		E6DB1E7E1FBCFF9700C5B7D5 /* TechnicalDetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TechnicalDetailViewController.h; sourceTree = "<group>"; };
@@ -208,6 +234,19 @@
 		E6DB1E7A1FBBB8D700C5B7D5 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				E6D4AA331FCCC69800A65487 /* AppIcon40pt@2x.png */,
+				E6D4AA341FCCC69800A65487 /* AppIcon40pt@3x.png */,
+				E6D4AA2A1FCCC56D00A65487 /* AppIcon20pt@2x.png */,
+				E6D4AA2C1FCCC56D00A65487 /* AppIcon20pt@3x.png */,
+				E6D4AA291FCCC56D00A65487 /* AppIcon29pt@2x.png */,
+				E6D4AA271FCCC56D00A65487 /* AppIcon29pt@3x.png */,
+				E6D4AA2B1FCCC56D00A65487 /* AppIcon60pt@2x.png */,
+				E6D4AA281FCCC56D00A65487 /* AppIcon60pt@3x.png */,
+				E6D4AA251FCCBDAC00A65487 /* Blank.png */,
+				E6D4AA201FCCA92E00A65487 /* Bore Side Force.png */,
+				E6D4AA1E1FCCA92D00A65487 /* Oil Flow.png */,
+				E6D4AA1D1FCCA92D00A65487 /* Pressure.png */,
+				E6D4AA1F1FCCA92E00A65487 /* Rod Side Force.png */,
 				E6D4AA191FCC956600A65487 /* BDGC.png */,
 				E6D4AA1A1FCC956600A65487 /* BDHC.png */,
 				E6D4AA171FCC90D400A65487 /* CP.png */,
@@ -454,19 +493,25 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E6D4AA241FCCA92E00A65487 /* Bore Side Force.png in Resources */,
 				E6D4AA131FCC86D500A65487 /* Rod Side Volume.png in Resources */,
 				E6121C581FC77980002999AE /* ContactUs.png in Resources */,
+				E6D4AA2F1FCCC56D00A65487 /* AppIcon29pt@2x.png in Resources */,
 				E6D4AA0A1FCA1EAF00A65487 /* LocationMarker2.png in Resources */,
 				E68E4AF71FC77E14008D936F /* FPE Seals Ltd.bmp in Resources */,
 				E6FEC0921FBB585600949685 /* LaunchScreen.storyboard in Resources */,
+				E6D4AA261FCCBDAC00A65487 /* Blank.png in Resources */,
+				E6D4AA321FCCC56D00A65487 /* AppIcon20pt@3x.png in Resources */,
 				E6D4AA0C1FCA216000A65487 /* Darlington.jpg in Resources */,
 				E6D4AA1C1FCC956600A65487 /* BDHC.png in Resources */,
+				E6D4AA351FCCC69800A65487 /* AppIcon40pt@2x.png in Resources */,
 				E6121C4C1FC77555002999AE /* catalogue.png in Resources */,
 				E6D4AA1B1FCC956600A65487 /* BDGC.png in Resources */,
 				E6D4AA121FCC86D500A65487 /* Bore Side Volume.png in Resources */,
 				E6D4AA151FCC86D500A65487 /* Rod Side Area.png in Resources */,
 				E6FEC08F1FBB585600949685 /* Assets.xcassets in Resources */,
 				E68E4B011FC85D25008D936F /* MKC.png in Resources */,
+				E6D4AA221FCCA92E00A65487 /* Oil Flow.png in Resources */,
 				E6121C4E1FC77555002999AE /* catalogue@3x.png in Resources */,
 				E68E4AFE1FC85D25008D936F /* CFPR.png in Resources */,
 				E6121C541FC7774F002999AE /* technical@2x.png in Resources */,
@@ -476,12 +521,19 @@
 				E6D4AA081FCA1D1100A65487 /* LocationMarker.png in Resources */,
 				E6D4AA181FCC90D400A65487 /* CP.png in Resources */,
 				E6121C4D1FC77555002999AE /* catalogue@2x.png in Resources */,
+				E6D4AA361FCCC69800A65487 /* AppIcon40pt@3x.png in Resources */,
+				E6D4AA211FCCA92E00A65487 /* Pressure.png in Resources */,
 				E6FEC08D1FBB585600949685 /* Main.storyboard in Resources */,
 				E68E4AFF1FC85D25008D936F /* MSPR.png in Resources */,
 				E6121C591FC77980002999AE /* ContactUs@2x.png in Resources */,
 				E68E4AFD1FC85D25008D936F /* IKC.png in Resources */,
+				E6D4AA311FCCC56D00A65487 /* AppIcon60pt@2x.png in Resources */,
+				E6D4AA2D1FCCC56D00A65487 /* AppIcon29pt@3x.png in Resources */,
 				E6121C5A1FC77980002999AE /* ContactUs@3x.png in Resources */,
+				E6D4AA301FCCC56D00A65487 /* AppIcon20pt@2x.png in Resources */,
+				E6D4AA2E1FCCC56D00A65487 /* AppIcon60pt@3x.png in Resources */,
 				E6D4AA141FCC86D500A65487 /* Bore Side Area.png in Resources */,
+				E6D4AA231FCCA92E00A65487 /* Rod Side Force.png in Resources */,
 				E6121C531FC7774F002999AE /* technical.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -691,7 +743,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = uk.ac.leeds.el16cgb.FPESeals;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -704,7 +756,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = uk.ac.leeds.el16cgb.FPESeals;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

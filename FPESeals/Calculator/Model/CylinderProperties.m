@@ -32,7 +32,7 @@
         BoreDiameter.propertyTitle = @"Bore Diameter";
         BoreDiameter.isInput = YES;
         BoreDiameter.propertyImageName = @"";
-        BoreDiameter.propertyDescription = @"This Is Bore Diameter";
+        BoreDiameter.propertyDescription = @"Bore Diameter is the cross-sectional length of the cylinder. It is measured by taking the distance between two points on the internal circumference, or similarly two points on the external circumference of the piston.";
         BoreDiameter.propertyUnitsMet = @"   millimetres";
         BoreDiameter.propertyUnitsImp = @"";
         
@@ -40,7 +40,7 @@
         RodDiameter.propertyTitle = @"Rod Diameter";
         RodDiameter.isInput = YES;
         RodDiameter.propertyImageName = @"";
-        RodDiameter.propertyDescription = @"This is Rod Diameter";
+        RodDiameter.propertyDescription = @"Rod Diameter is the cross-sectional length of the hydraulic rod. This value is measured by taking the distance between two points along the rod's external circumference. Note: This is not the value measured from the thread!";
         RodDiameter.propertyUnitsMet = @"   millimetres";
         RodDiameter.propertyUnitsImp = @"";
         
@@ -48,23 +48,23 @@
         StrokeLength.propertyTitle = @"Stroke Length";
         StrokeLength.isInput = YES;
         StrokeLength.propertyImageName = @"Stroke Length.png";
-        StrokeLength.propertyDescription = @"This is Stroke Length";
+        StrokeLength.propertyDescription = @"Stroke Length is typical characterised as the difference between open and closed centres of a hydrualic ram and therefore measured as such.";
         StrokeLength.propertyUnitsMet = @"   millimetres";
         StrokeLength.propertyUnitsImp = @"";
         
         CylinderProperty *InputPressure = [[CylinderProperty alloc] init];
         InputPressure.propertyTitle = @"Pressure";
         InputPressure.isInput = YES;
-        InputPressure.propertyImageName = @"";
-        InputPressure.propertyDescription = @"This is Input Pressure";
+        InputPressure.propertyImageName = @"Pressure.png";
+        InputPressure.propertyDescription = @"This variable refers to the input pressure of the oil into cylinder, as supplied by an external source. Usually at a typical working value, this property can really only be measured via the use of an external pressure gauge, which is then connected into source of oil.";
         InputPressure.propertyUnitsMet = @"bar";
         InputPressure.propertyUnitsImp = @"";
         
         CylinderProperty *InputFlow = [[CylinderProperty alloc] init];
         InputFlow.propertyTitle = @"Oil Flow";
         InputFlow.isInput = YES;
-        InputFlow.propertyImageName = @"";
-        InputFlow.propertyDescription = @"This is Oil Flow";
+        InputFlow.propertyImageName = @"Oil Flow.png";
+        InputFlow.propertyDescription = @"Oil Flow is defined as the rate of oil passing a given point, under a certain time. Similar to pressure, this value will be set by an external source and impacts the rate at which the cylinder will move as well as what sealing components are required.";
         InputFlow.propertyUnitsMet = @"   litres per min";
         InputFlow.propertyUnitsImp = @"";
         
@@ -73,7 +73,7 @@
         BoreArea.propertyTitle = @"Bore Side Area";
         BoreArea.isInput = NO;
         BoreArea.propertyImageName = @"Bore Side Area.png";
-        BoreArea.propertyDescription = @"This is Bore Side Area";
+        BoreArea.propertyDescription = @"Bore Side Area, or Full Bore Area as its sometimes refered to. Is the the working area given by a certain bore diameter, upon which the pressure of the system will act against.";
         BoreArea.propertyUnitsMet = @"millimetres squared";
         BoreArea.propertyUnitsImp = @"";
         
@@ -81,7 +81,7 @@
         RodArea.propertyTitle = @"Rod Side Area";
         RodArea.isInput = NO;
         RodArea.propertyImageName = @"Rod Side Area.png";
-        RodArea.propertyDescription = @"This is Rod Side Area";
+        RodArea.propertyDescription = @"Rod Side Area, or Annular Area as its sometimes refered to. Is the area upon which the pressure of the system acts on to contract the ram. Its value is calulted by removing the area of the rod from that of the bore to give a value representing the ring as shown.";
         RodArea.propertyUnitsMet = @"millimetres squared";
         RodArea.propertyUnitsImp = @"";
         
@@ -89,7 +89,7 @@
         BoreVolume.propertyTitle = @"Bore Side Volume";
         BoreVolume.isInput = NO;
         BoreVolume.propertyImageName = @"Bore Side Volume.png";
-        BoreVolume.propertyDescription = @"This is Bore Side Volume";
+        BoreVolume.propertyDescription = @"Bore Side Volume is defined as the stroke length times a given bore area and so represents the maximum volume of liquid a cylinder will hold when fully extended. Similary, therefore, it also represents the amount of oil needed to fully extend a hydraulic ram.";
         BoreVolume.propertyUnitsMet = @"litres";
         BoreVolume.propertyUnitsImp = @"";
         
@@ -97,23 +97,23 @@
         RodVolume.propertyTitle = @"Rod Side Volume";
         RodVolume.isInput = NO;
         RodVolume.propertyImageName = @"Rod Side Volume.png";
-        RodVolume.propertyDescription = @"This is Rod Side Volume";
+        RodVolume.propertyDescription = @"Rod Side Volume is defined as the stroke length times a given rod area and so represent the maximum volume of a liquid a cylinder will hold when fully contracted. Similary, therefore, its also represents the amount of oil needed to fully contract a hydraulic ram.";
         RodVolume.propertyUnitsMet = @"litres";
         RodVolume.propertyUnitsImp = @"";
         
         CylinderProperty *ForwardForce = [[CylinderProperty alloc] init];
         ForwardForce.propertyTitle = @"Bore Side Force";
         ForwardForce.isInput = NO;
-        ForwardForce.propertyImageName = @"";
-        ForwardForce.propertyDescription = @"This is Forward Stroke Force";
+        ForwardForce.propertyImageName = @"Bore Side Force.png";
+        ForwardForce.propertyDescription = @"Bore Side Force, or Extension Force as it may be known. Is the maximum force a hydraulic ram will provide when undergoing extension. As defined by the bore side area and working pressure.";
         ForwardForce.propertyUnitsMet = @"Newtons";
         ForwardForce.propertyUnitsImp = @"";
         
         CylinderProperty *ReverseForce = [[CylinderProperty alloc] init];
         ReverseForce.propertyTitle = @"Rod Side Force";
         ReverseForce.isInput = NO;
-        ReverseForce.propertyImageName = @"";
-        ReverseForce.propertyDescription = @"This is Reverse Stroke Force";
+        ReverseForce.propertyImageName = @"Rod Side Force.png";
+        ReverseForce.propertyDescription = @"Rod Side Force, or Annular Force as it may be known. Is the maximum force a hydrualic ram will provide when undergoing contraction. As defined by the the rod side area and working pressure.";
         ReverseForce.propertyUnitsMet = @"Newtons";
         ReverseForce.propertyUnitsImp = @"";
         

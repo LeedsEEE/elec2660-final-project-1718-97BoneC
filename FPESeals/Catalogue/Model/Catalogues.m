@@ -20,7 +20,7 @@
         
         // Generating available catalogues
         Catalogue *CFPR = [[Catalogue alloc] init];
-        CFPR.Name = @"Composite & Flexiseal Product Range";
+        CFPR.Name = @"Composite & Flexiseal Range";
         CFPR.URL = @"http://www.fpeseals.co.uk/brochures/RD_FPE_Composite%20&%20Flexiseal%20Product%20Range%20-%20Issue%203.pdf";
         CFPR.Image = [UIImage imageNamed:@"CFPR.png"];
         
