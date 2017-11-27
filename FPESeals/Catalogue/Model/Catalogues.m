@@ -47,12 +47,12 @@
         Catalogue *BDGC = [[Catalogue alloc] init];
         BDGC.Name = @"Bulldog Gasket Catalogue";
         BDGC.URL = @"http://www.fpeseals.co.uk/brochures/2013BulldogGasketeCatalog.pdf";
-        BDGC.Image = [UIImage imageNamed:@"GreySquare.png"];
+        BDGC.Image = [UIImage imageNamed:@"BDGC.png"];
         
         Catalogue *BDHC = [[Catalogue alloc] init];
         BDHC.Name = @"Bulldog Hydraulic Catalogue";
         BDHC.URL = @"http://www.fpeseals.co.uk/brochures/2011BulldogHydraulicCatalog.pdf";
-        BDHC.Image = [UIImage imageNamed:@"GreySquare.png"];
+        BDHC.Image = [UIImage imageNamed:@"BDHC.png"];
         
         // Initialise array
         self.avaliableCatalogues = [[NSMutableArray alloc] init];

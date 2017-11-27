@@ -28,7 +28,6 @@
 		E68E4AFD1FC85D25008D936F /* IKC.png in Resources */ = {isa = PBXBuildFile; fileRef = E68E4AF81FC85D24008D936F /* IKC.png */; };
 		E68E4AFE1FC85D25008D936F /* CFPR.png in Resources */ = {isa = PBXBuildFile; fileRef = E68E4AF91FC85D24008D936F /* CFPR.png */; };
 		E68E4AFF1FC85D25008D936F /* MSPR.png in Resources */ = {isa = PBXBuildFile; fileRef = E68E4AFA1FC85D24008D936F /* MSPR.png */; };
-		E68E4B001FC85D25008D936F /* CP.png in Resources */ = {isa = PBXBuildFile; fileRef = E68E4AFB1FC85D24008D936F /* CP.png */; };
 		E68E4B011FC85D25008D936F /* MKC.png in Resources */ = {isa = PBXBuildFile; fileRef = E68E4AFC1FC85D24008D936F /* MKC.png */; };
 		E68E4B051FC87B5E008D936F /* Office.m in Sources */ = {isa = PBXBuildFile; fileRef = E68E4B041FC87B5E008D936F /* Office.m */; };
 		E68E4B081FC87D33008D936F /* CompanyOffices.m in Sources */ = {isa = PBXBuildFile; fileRef = E68E4B071FC87D33008D936F /* CompanyOffices.m */; };
@@ -40,6 +39,9 @@
 		E6D4AA141FCC86D500A65487 /* Bore Side Area.png in Resources */ = {isa = PBXBuildFile; fileRef = E6D4AA0F1FCC86D500A65487 /* Bore Side Area.png */; };
 		E6D4AA151FCC86D500A65487 /* Rod Side Area.png in Resources */ = {isa = PBXBuildFile; fileRef = E6D4AA101FCC86D500A65487 /* Rod Side Area.png */; };
 		E6D4AA161FCC86D500A65487 /* Stroke Length.png in Resources */ = {isa = PBXBuildFile; fileRef = E6D4AA111FCC86D500A65487 /* Stroke Length.png */; };
+		E6D4AA181FCC90D400A65487 /* CP.png in Resources */ = {isa = PBXBuildFile; fileRef = E6D4AA171FCC90D400A65487 /* CP.png */; };
+		E6D4AA1B1FCC956600A65487 /* BDGC.png in Resources */ = {isa = PBXBuildFile; fileRef = E6D4AA191FCC956600A65487 /* BDGC.png */; };
+		E6D4AA1C1FCC956600A65487 /* BDHC.png in Resources */ = {isa = PBXBuildFile; fileRef = E6D4AA1A1FCC956600A65487 /* BDHC.png */; };
 		E6DB1E7D1FBCF23300C5B7D5 /* TechnicalViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E6DB1E7C1FBCF23300C5B7D5 /* TechnicalViewController.m */; };
 		E6DB1E801FBCFF9700C5B7D5 /* TechnicalDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E6DB1E7F1FBCFF9700C5B7D5 /* TechnicalDetailViewController.m */; };
 		E6DB1E831FBD91D500C5B7D5 /* CatalogueViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E6DB1E821FBD91D500C5B7D5 /* CatalogueViewController.m */; };
@@ -101,7 +103,6 @@
 		E68E4AF81FC85D24008D936F /* IKC.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = IKC.png; sourceTree = "<group>"; };
 		E68E4AF91FC85D24008D936F /* CFPR.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = CFPR.png; sourceTree = "<group>"; };
 		E68E4AFA1FC85D24008D936F /* MSPR.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = MSPR.png; sourceTree = "<group>"; };
-		E68E4AFB1FC85D24008D936F /* CP.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = CP.png; sourceTree = "<group>"; };
 		E68E4AFC1FC85D24008D936F /* MKC.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = MKC.png; sourceTree = "<group>"; };
 		E68E4B031FC87B5E008D936F /* Office.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Office.h; sourceTree = "<group>"; };
 		E68E4B041FC87B5E008D936F /* Office.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Office.m; sourceTree = "<group>"; };
@@ -115,6 +116,9 @@
 		E6D4AA0F1FCC86D500A65487 /* Bore Side Area.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Bore Side Area.png"; sourceTree = "<group>"; };
 		E6D4AA101FCC86D500A65487 /* Rod Side Area.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Rod Side Area.png"; sourceTree = "<group>"; };
 		E6D4AA111FCC86D500A65487 /* Stroke Length.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Stroke Length.png"; sourceTree = "<group>"; };
+		E6D4AA171FCC90D400A65487 /* CP.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = CP.png; sourceTree = "<group>"; };
+		E6D4AA191FCC956600A65487 /* BDGC.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = BDGC.png; sourceTree = "<group>"; };
+		E6D4AA1A1FCC956600A65487 /* BDHC.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = BDHC.png; sourceTree = "<group>"; };
 		E6DB1E7B1FBCF23300C5B7D5 /* TechnicalViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TechnicalViewController.h; sourceTree = "<group>"; };
 		E6DB1E7C1FBCF23300C5B7D5 /* TechnicalViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TechnicalViewController.m; sourceTree = "<group>"; };
 		E6DB1E7E1FBCFF9700C5B7D5 /* TechnicalDetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TechnicalDetailViewController.h; sourceTree = "<group>"; };
@@ -204,6 +208,9 @@
 		E6DB1E7A1FBBB8D700C5B7D5 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				E6D4AA191FCC956600A65487 /* BDGC.png */,
+				E6D4AA1A1FCC956600A65487 /* BDHC.png */,
+				E6D4AA171FCC90D400A65487 /* CP.png */,
 				E6D4AA0F1FCC86D500A65487 /* Bore Side Area.png */,
 				E6D4AA0D1FCC86D400A65487 /* Bore Side Volume.png */,
 				E6D4AA101FCC86D500A65487 /* Rod Side Area.png */,
@@ -213,7 +220,6 @@
 				E6D4AA091FCA1EAF00A65487 /* LocationMarker2.png */,
 				E6D4AA071FCA1D1100A65487 /* LocationMarker.png */,
 				E68E4AF91FC85D24008D936F /* CFPR.png */,
-				E68E4AFB1FC85D24008D936F /* CP.png */,
 				E68E4AF81FC85D24008D936F /* IKC.png */,
 				E68E4AFC1FC85D24008D936F /* MKC.png */,
 				E68E4AFA1FC85D24008D936F /* MSPR.png */,
@@ -449,13 +455,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				E6D4AA131FCC86D500A65487 /* Rod Side Volume.png in Resources */,
-				E68E4B001FC85D25008D936F /* CP.png in Resources */,
 				E6121C581FC77980002999AE /* ContactUs.png in Resources */,
 				E6D4AA0A1FCA1EAF00A65487 /* LocationMarker2.png in Resources */,
 				E68E4AF71FC77E14008D936F /* FPE Seals Ltd.bmp in Resources */,
 				E6FEC0921FBB585600949685 /* LaunchScreen.storyboard in Resources */,
 				E6D4AA0C1FCA216000A65487 /* Darlington.jpg in Resources */,
+				E6D4AA1C1FCC956600A65487 /* BDHC.png in Resources */,
 				E6121C4C1FC77555002999AE /* catalogue.png in Resources */,
+				E6D4AA1B1FCC956600A65487 /* BDGC.png in Resources */,
 				E6D4AA121FCC86D500A65487 /* Bore Side Volume.png in Resources */,
 				E6D4AA151FCC86D500A65487 /* Rod Side Area.png in Resources */,
 				E6FEC08F1FBB585600949685 /* Assets.xcassets in Resources */,
@@ -467,6 +474,7 @@
 				E6D4AA161FCC86D500A65487 /* Stroke Length.png in Resources */,
 				E65280841FC44F93009731AA /* GreySquare.png in Resources */,
 				E6D4AA081FCA1D1100A65487 /* LocationMarker.png in Resources */,
+				E6D4AA181FCC90D400A65487 /* CP.png in Resources */,
 				E6121C4D1FC77555002999AE /* catalogue@2x.png in Resources */,
 				E6FEC08D1FBB585600949685 /* Main.storyboard in Resources */,
 				E68E4AFF1FC85D25008D936F /* MSPR.png in Resources */,
