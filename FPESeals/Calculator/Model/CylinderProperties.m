@@ -47,13 +47,13 @@
         CylinderProperty *StrokeLength = [[CylinderProperty alloc] init];
         StrokeLength.propertyTitle = @"Stroke Length";
         StrokeLength.isInput = YES;
-        StrokeLength.propertyImageName = @"";
+        StrokeLength.propertyImageName = @"Stroke Length.png";
         StrokeLength.propertyDescription = @"This is Stroke Length";
         StrokeLength.propertyUnitsMet = @"   millimetres";
         StrokeLength.propertyUnitsImp = @"";
         
         CylinderProperty *InputPressure = [[CylinderProperty alloc] init];
-        InputPressure.propertyTitle = @"Input Pressure";
+        InputPressure.propertyTitle = @"Pressure";
         InputPressure.isInput = YES;
         InputPressure.propertyImageName = @"";
         InputPressure.propertyDescription = @"This is Input Pressure";
@@ -61,10 +61,10 @@
         InputPressure.propertyUnitsImp = @"";
         
         CylinderProperty *InputFlow = [[CylinderProperty alloc] init];
-        InputFlow.propertyTitle = @"Input Flow";
+        InputFlow.propertyTitle = @"Oil Flow";
         InputFlow.isInput = YES;
         InputFlow.propertyImageName = @"";
-        InputFlow.propertyDescription = @"This is Input Flow";
+        InputFlow.propertyDescription = @"This is Oil Flow";
         InputFlow.propertyUnitsMet = @"   litres per min";
         InputFlow.propertyUnitsImp = @"";
         
@@ -72,7 +72,7 @@
         CylinderProperty *BoreArea = [[CylinderProperty alloc] init];
         BoreArea.propertyTitle = @"Bore Side Area";
         BoreArea.isInput = NO;
-        BoreArea.propertyImageName = @"";
+        BoreArea.propertyImageName = @"Bore Side Area.png";
         BoreArea.propertyDescription = @"This is Bore Side Area";
         BoreArea.propertyUnitsMet = @"millimetres squared";
         BoreArea.propertyUnitsImp = @"";
@@ -80,7 +80,7 @@
         CylinderProperty *RodArea = [[CylinderProperty alloc] init];
         RodArea.propertyTitle = @"Rod Side Area";
         RodArea.isInput = NO;
-        RodArea.propertyImageName = @"";
+        RodArea.propertyImageName = @"Rod Side Area.png";
         RodArea.propertyDescription = @"This is Rod Side Area";
         RodArea.propertyUnitsMet = @"millimetres squared";
         RodArea.propertyUnitsImp = @"";
@@ -88,7 +88,7 @@
         CylinderProperty *BoreVolume = [[CylinderProperty alloc] init];
         BoreVolume.propertyTitle = @"Bore Side Volume";
         BoreVolume.isInput = NO;
-        BoreVolume.propertyImageName = @"";
+        BoreVolume.propertyImageName = @"Bore Side Volume.png";
         BoreVolume.propertyDescription = @"This is Bore Side Volume";
         BoreVolume.propertyUnitsMet = @"litres";
         BoreVolume.propertyUnitsImp = @"";
@@ -96,13 +96,13 @@
         CylinderProperty *RodVolume = [[CylinderProperty alloc] init];
         RodVolume.propertyTitle = @"Rod Side Volume";
         RodVolume.isInput = NO;
-        RodVolume.propertyImageName = @"";
+        RodVolume.propertyImageName = @"Rod Side Volume.png";
         RodVolume.propertyDescription = @"This is Rod Side Volume";
         RodVolume.propertyUnitsMet = @"litres";
         RodVolume.propertyUnitsImp = @"";
         
         CylinderProperty *ForwardForce = [[CylinderProperty alloc] init];
-        ForwardForce.propertyTitle = @"Forward Force";
+        ForwardForce.propertyTitle = @"Bore Side Force";
         ForwardForce.isInput = NO;
         ForwardForce.propertyImageName = @"";
         ForwardForce.propertyDescription = @"This is Forward Stroke Force";
@@ -110,7 +110,7 @@
         ForwardForce.propertyUnitsImp = @"";
         
         CylinderProperty *ReverseForce = [[CylinderProperty alloc] init];
-        ReverseForce.propertyTitle = @"Reverse Force";
+        ReverseForce.propertyTitle = @"Rod Side Force";
         ReverseForce.isInput = NO;
         ReverseForce.propertyImageName = @"";
         ReverseForce.propertyDescription = @"This is Reverse Stroke Force";

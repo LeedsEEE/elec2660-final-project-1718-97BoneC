@@ -16,5 +16,6 @@
 @property (nonatomic) float inputPressure;
 @property (nonatomic) float inputFlow;
 
+@property (strong, nonatomic) NSArray *dataOut;
 - (NSArray *)getData;
 @end

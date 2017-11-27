@@ -17,21 +17,16 @@
 @interface TechnicalViewController ()
 
 // Private Properties
-@property (strong, nonatomic) NSMutableArray *LayoutArray;      // Array for Layout
 @property (strong, nonatomic) CylinderProperties *cylinder;     // Object of Cylinder Properties (to get array to display)
 @property (nonatomic) NSUInteger chosenTextField;               // Integer to store index of current chosen Text Field
 @property (strong, nonatomic) CylinderCalculations *calculator; // Calculator Object
 
-
-// Private Functions
-- (NSMutableArray *)determineLayoutArray:(CylinderProperties *) inputarray;     // Determing the layout
 
 // Private Actions
 - (IBAction)textFieldEdited:(UITextField *) sender;     // UITextField Action
 - (IBAction)backgroundPressed:(id)sender;               // Tap Gesture
 
 @end
-
 
 
 @implementation TechnicalViewController
@@ -43,7 +38,6 @@
     
     // Intialising Objects and Arrays
     self.cylinder = [[CylinderProperties alloc] init];
-    self.LayoutArray = [self determineLayoutArray:self.cylinder];
     self.calculator = [[CylinderCalculations alloc] init];
 
 }
@@ -53,72 +47,51 @@
     // Dispose of any resources that can be recreated.
 }
 
-#pragma mark Layout Setup
-
-- (NSMutableArray *)determineLayoutArray:(CylinderProperties *) inputarray {
-    
-    NSMutableArray *layout = [[NSMutableArray alloc] init];
-    
-    for (int i = 0; i < inputarray.cylinderPropertiesInput.count; i++) {
-        // Transferring Input Properties
-        [layout addObject:[inputarray.cylinderPropertiesInput objectAtIndex:i]];
-    }
-    
-    [layout addObject:inputarray.Blank];        // Adding in blank spacers
-    
-    for (int i = 0; i < inputarray.cylinderPropertiesOuput.count; i++) {
-        // Transferring Input Properties
-        [layout addObject:[inputarray.cylinderPropertiesOuput objectAtIndex:i]];
-    }
-    
-    return layout;
-    
-}
 
 #pragma mark - Table View Data Source
 
 // Number Of Sections in Table
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {  return 1; }    // Only 1 section in Table View
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView { return 2; }    // Only 2 section in Table View
 
 // Number Of Rows in Section
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-
-    NSUInteger count;
-    count = self.LayoutArray.count;       // Number of objects in Cylinder Properties Array
-    return count;
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+    if (section == 0) {
+        return self.cylinder.cylinderPropertiesInput.count;
+    } else if (section == 1) {
+        return self.cylinder.cylinderPropertiesOuput.count;
+    } else {
+        return 0;
+    }
+    
 }
 
 // Cell For Row
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    
-    
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
     CylinderProperty *temp = [[CylinderProperty alloc] init];
-    temp = [self.LayoutArray objectAtIndex:indexPath.row];
     
-    // Determing cell style for row
-    if (temp.isInput) {
-        // Input Style Cell
+    if (indexPath.section == 0 ) {
+        temp = [self.cylinder.cylinderPropertiesInput objectAtIndex:indexPath.row];
         InputCell *cell;
         cell = [tableView dequeueReusableCellWithIdentifier:@"InputCells" forIndexPath:indexPath];
         cell.textLabel.text = temp.propertyTitle;
         cell.inputTextField.placeholder = temp.propertyUnitsMet;
-        cell.inputTextField.tag = indexPath.row;                        //For use later to determine textfields row index
+        cell.inputTextField.tag = indexPath.row;                //For use later to determine textfields row index
         return cell;
-        
-    } else if (!(temp.isInput) && [temp.propertyTitle isEqualToString:@"Blank"]) {
-        // Spacer Style Cell (No Label)
-        UITableViewCell *cell;
-        cell = [tableView dequeueReusableCellWithIdentifier:@"SpacerCell" forIndexPath:indexPath];
-        cell.contentView.tag = indexPath.row;       // To determine which Text Field corresponds to which cell(.contentView)
-        return cell;
-        
-    } else {
-        // Output Style Cell
+    } else if (indexPath.section == 1 ) {
+        temp = [self.cylinder.cylinderPropertiesOuput objectAtIndex:indexPath.row];
         OutputCell *cell;
         cell = [tableView dequeueReusableCellWithIdentifier:@"OutputCells" forIndexPath:indexPath];
         cell.textLabel.text = temp.propertyTitle;
         cell.contentView.tag = indexPath.row;       // To determine which Text Field corresponds to which cell(.contentView)
         cell.outputTextLabel.text = temp.propertyUnitsMet;
+        return cell;
+    } else {
+        // Spacer Style Cell (No Label)
+        UITableViewCell *cell;
+        cell = [tableView dequeueReusableCellWithIdentifier:@"SpacerCell" forIndexPath:indexPath];
+        cell.contentView.tag = indexPath.row;       // To determine which Text Field corresponds to which cell(.contentView)
         return cell;
     }
     
@@ -134,8 +107,12 @@
         
         NSIndexPath *indexPath = [self.tableView indexPathForCell:sender];          // Grabbing the index path of the cell who's accessory button was pressed
         
-        CylinderProperty *tempProperty = [ self.LayoutArray objectAtIndex:indexPath.row];       // Getting assocaited cylinder property temporiarly
-        
+        CylinderProperty *tempProperty;
+        if (indexPath.section == 0 ) {
+            tempProperty = [ self.cylinder.cylinderPropertiesInput objectAtIndex:indexPath.row];       // Getting assocaited cylinder property temporiarly
+        } else if (indexPath.section == 1 ) {
+            tempProperty = [ self.cylinder.cylinderPropertiesOuput objectAtIndex:indexPath.row];       // Getting assocaited cylinder property temporiarly
+        }
         destinationVC.property = tempProperty;      // Setting the destination cylinder property
     }
 }
@@ -211,24 +188,21 @@
 
 - (void) updateValues
 {
-    NSArray *data = [self.calculator getData];      // Array of calculated data from model
-    int i = 6;                                      // For iteration
-    for (NSNumber *value in data) {                 // Looping through values in array
-        //NSUInteger i = [data indexOfObject:value] + 6;
-        float number = [value floatValue];          // Converting to float value
-        NSIndexPath *indexPath = [NSIndexPath indexPathForRow:i inSection:0];       // Generating appropaite indexPath
-        OutputCell *cell = [self.tableView cellForRowAtIndexPath:indexPath];        // Getting appropaite cell
-        CylinderProperty *temp = [[CylinderProperty alloc] init];                   // Getting appropaite property
-        temp = [self.LayoutArray objectAtIndex:indexPath.row];
-        if (!(number == 0))     // If number is non zero
-        {
-            cell.outputTextLabel.text = [NSString stringWithFormat:@"%.2f",number];     // Set value to label
-            NSLog(@"%@ = %@", temp.propertyTitle, value);                               // Console Debugging
-        } else 
-        {
-            cell.outputTextLabel.text = temp.propertyUnitsMet;                          // If value = 0, set units
+    for (NSIndexPath *indexPath in [self.tableView indexPathsForVisibleRows])
+    {
+        NSArray *data = [self.calculator getData];
+        if (indexPath.section == 1) {
+            OutputCell *cell = [self.tableView cellForRowAtIndexPath:indexPath];
+            float value = [[data objectAtIndex:indexPath.row] floatValue];
+            if (!(value == 0))     // If number is non zero
+            {
+                cell.outputTextLabel.text = [NSString stringWithFormat:@"%.2f",value];
+            } else
+            {
+                CylinderProperty *temp = [self.cylinder.cylinderPropertiesOuput objectAtIndex:indexPath.row];
+                cell.outputTextLabel.text = temp.propertyUnitsMet;
+            }
         }
-        i++;    // Increment value
     }
 }
 

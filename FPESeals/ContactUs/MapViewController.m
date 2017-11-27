@@ -12,7 +12,7 @@
 
 #import "Office.h"
 #import "CompanyOffices.h"
-#import "LocationDetailViewController.h"
+#import "LocationDetailViewController.h"        // For Segue
 
 @interface MapViewController () <MKMapViewDelegate, CLLocationManagerDelegate>
 
@@ -50,33 +50,33 @@ static const float Zoom = 8.5;
 }
 
 
+- (void)setCentreOfMapForLatitude: (float)latitude andLongitude: (float)longitude andScale: (float)scale
+{
+    CLLocationCoordinate2D center = CLLocationCoordinate2DMake(latitude, longitude);    // Generate centre coords
+    MKCoordinateSpan mkScale = MKCoordinateSpanMake(scale, scale);                      // Generate 'zoom' scale
+    MKCoordinateRegion view = MKCoordinateRegionMake(center, mkScale);                  // Setting view values
+    [self.mapView setRegion:view animated:YES];                                         // Setting mapView
+    
+}
+
 #pragma mark - Navigation
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
     
-    if ([sender isKindOfClass:[MKAnnotationView class]]) {
-        if ([[segue identifier] isEqualToString:@"LocationSegue"]) {
-            MKAnnotationView *location = sender;
-            LocationDetailViewController *destVC = [segue destinationViewController];
+    if ([sender isKindOfClass:[MKAnnotationView class]]) {      // Eliminating choosing User's Location
+        if ([[segue identifier] isEqualToString:@"LocationSegue"]) {        // Correct Segue
+            MKAnnotationView *location = sender;        // Setting sender at MKAnnotationView
             
-            NSUInteger index = [self determineOfficeIndexForString:location.annotation.title];
-            Office *tempOffice = [self.company.offices objectAtIndex:index];
-            destVC.selectedOffice = tempOffice;
+            LocationDetailViewController *destVC = [segue destinationViewController];   // Next ViewController
+            
+            NSUInteger index = [self determineOfficeIndexForString:location.annotation.title]; // Getting index
+            Office *tempOffice = [self.company.offices objectAtIndex:index];        // Getting Office of index
+            destVC.selectedOffice = tempOffice;                                     // Passing Office of index
         }
     }
 }
 
-- (void)setCentreOfMapForLatitude: (float)latitude andLongitude: (float)longitude andScale: (float)scale
-{
-    CLLocationCoordinate2D center = CLLocationCoordinate2DMake(latitude, longitude);
-    MKCoordinateSpan mkScale = MKCoordinateSpanMake(scale, scale);
-    MKCoordinateRegion view = MKCoordinateRegionMake(center, mkScale);
-    [self.mapView setRegion:view animated:YES];
-
-}
 
 - (void)showOfficeLocations
 {
@@ -88,9 +88,8 @@ static const float Zoom = 8.5;
         [location setTitle:temp.name];      // Set name (title)
         
         
-        
         NSLog(@"Location Placed = %@", temp.name);      // Debug
-        [self.mapView addAnnotation:location];          // Add location
+        [self.mapView addAnnotation:location];          // Add location to map
     }
 }
 
@@ -118,6 +117,23 @@ static const float Zoom = 8.5;
     }
 }
 
-//- (MKAnnotationView *)mapView:(MKMapView *)mapView viewForAnnotation:(id<MKAnnotation>)annotation
-//{ }
+- (MKAnnotationView *)mapView:(MKMapView *)mapView viewForAnnotation:(id<MKAnnotation>)annotation
+{
+    // Advice From: https://developer.apple.com/library/content/documentation/UserExperience/Conceptual/LocationAwarenessPG/AnnotatingMaps/AnnotatingMaps.html
+    
+    if ([annotation isKindOfClass:[MKUserLocation class]])
+    {
+        return nil;     // Ensuring User's Location view isn't changed (default)
+    }
+    else {
+        
+        MKAnnotationView *view = [[MKAnnotationView alloc]              // Initialising annotation view
+                                  initWithAnnotation:annotation
+                                  reuseIdentifier:@"OfficeLocationView"];
+        view.image = [UIImage imageNamed:@"LocationMarker2.png"];               // Setting annoatation view
+        view.centerOffset = CGPointMake(0, -25);                                // Offsetting centre
+        
+        return view;
+    }
+}
 @end

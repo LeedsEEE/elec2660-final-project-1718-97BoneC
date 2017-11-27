@@ -26,6 +26,10 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
+    self.cylinderImageOutlet.image = [UIImage imageNamed:self.property.propertyImageName];
+    self.cylinderImageOutlet.layer.cornerRadius = 5;
+    self.cylinderImageOutlet.layer.borderWidth = 2;
+    self.cylinderImageOutlet.layer.borderColor = [[UIColor blackColor] CGColor];
     self.propertyHeaderOutlet.title = self.property.propertyTitle;
     self.descriptionOutlet.text = self.property.propertyDescription;
     

@@ -41,7 +41,7 @@
     [super viewDidLoad];
     
     self.titleBarOutlet.title = self.selectedOffice.name;           // Title
-    // self.officeImageOutlet.image = self.selectedOffice.image;       // Image
+    self.officeImageOutlet.image = self.selectedOffice.image;       // Image
     self.addressLineOneOutlet.text = [self.selectedOffice.address objectForKey:@"Line One"];    // Address
     self.addressLineTwoOutlet.text = [self.selectedOffice.address objectForKey:@"Line Two"];
     self.addressCityOutlet.text = [self.selectedOffice.address objectForKey:@"City"];

@@ -21,7 +21,7 @@
         // Generating Office Locations
         Office *Darlington = [[Office alloc] init];
         Darlington.name = @"Main Office";
-        Darlington.image = [UIImage imageNamed:@""];
+        Darlington.image = [UIImage imageNamed:@"Darlington.jpg"];
         Darlington.longitude = -1.512830;
         Darlington.latitude = 54.522202;
         Darlington.address = @{
