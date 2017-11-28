@@ -57,9 +57,9 @@
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     if (section == 0) {
-        return self.cylinder.cylinderPropertiesInput.count;
+        return self.cylinder.cylinderPropertiesInput.count;     // Rows in Section 1 = Number of Input Variables
     } else if (section == 1) {
-        return self.cylinder.cylinderPropertiesOuput.count;
+        return self.cylinder.cylinderPropertiesOuput.count;     // Rows in Section 2 = Number of Output Variables
     } else {
         return 0;
     }
@@ -132,7 +132,7 @@
 // Hitting "Done" (Return) Key on keyboard
 - (BOOL)textFieldShouldReturn:(UITextField *)textField {
     
-    [textField resignFirstResponder];
+    [textField resignFirstResponder];       // Removing Keyboard
 
     return YES;
     
@@ -141,10 +141,11 @@
 // When tap gesture is recognised
 - (IBAction)backgroundPressed:(id)sender
 {
-    NSIndexPath *indexPath = [NSIndexPath indexPathForRow:self.chosenTextField inSection:0];
-    InputCell *cell = [self.tableView cellForRowAtIndexPath:indexPath];
-    if ( [cell.inputTextField isFirstResponder]) {
-        [cell.inputTextField resignFirstResponder];
+    NSIndexPath *indexPath = [NSIndexPath indexPathForRow:self.chosenTextField inSection:0];    // Inputs only in first
+                                                                                                //  section
+    InputCell *cell = [self.tableView cellForRowAtIndexPath:indexPath];     // Getting cell of textfields location
+    if ( [cell.inputTextField isFirstResponder]) {                          // Making sure textfield is first responder
+        [cell.inputTextField resignFirstResponder];                         // Resigning keyboard if so
     }
 }
 
@@ -154,12 +155,16 @@
     self.chosenTextField = sender.tag;
     // Help obtained from: https://stackoverflow.com/questions/8483967/how-to-check-text-field-input-at-real-time
     float data = [sender.text doubleValue];     // Converting from string to float
+    NSNumber *value = [NSNumber numberWithFloat:data];
     
-    if (self.chosenTextField == 0)      // Bore Diameter
+    [self.calculator.inputVariables replaceObjectAtIndex:self.chosenTextField withObject:value];
+    
+    [self.calculator calculateValues];
+    
+    /* if (self.chosenTextField == 0)      // Bore Diameter
     {
         NSLog(@"Bore Diameter = %2f", data);
         [self.calculator setBoreDiameter:data];     // Setting value
-        
     }
     else if ( self.chosenTextField == 1)        // Rod Diameter
     {
@@ -180,7 +185,7 @@
     {
         [self.calculator setInputFlow:data];        // Setting value
         NSLog(@"Input Flow = %2f", data);
-    }
+    } */
     
     [self updateValues];        // Update Values shown to User
     

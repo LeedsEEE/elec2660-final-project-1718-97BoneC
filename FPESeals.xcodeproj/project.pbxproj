@@ -320,10 +320,10 @@
 		E6DB1E8A1FBF97BD00C5B7D5 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				E6DB1E881FBF967900C5B7D5 /* CylinderProperty.m */,
 				E6DB1E871FBF967900C5B7D5 /* CylinderProperty.h */,
-				E6DB1E8C1FBF980F00C5B7D5 /* CylinderProperties.m */,
+				E6DB1E881FBF967900C5B7D5 /* CylinderProperty.m */,
 				E6DB1E8B1FBF980F00C5B7D5 /* CylinderProperties.h */,
+				E6DB1E8C1FBF980F00C5B7D5 /* CylinderProperties.m */,
 				E652808B1FC4A9F0009731AA /* CylinderCalculations.h */,
 				E652808C1FC4A9F0009731AA /* CylinderCalculations.m */,
 			);

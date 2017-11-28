@@ -10,12 +10,17 @@
 
 @interface CylinderCalculations : NSObject
 
-@property (nonatomic) float boreDiameter;
-@property (nonatomic) float rodDiameter;
-@property (nonatomic) float strokeLength;
-@property (nonatomic) float inputPressure;
-@property (nonatomic) float inputFlow;
+@property (nonatomic, strong) NSMutableArray *inputVariables;
 
-@property (strong, nonatomic) NSArray *dataOut;
+                                // Index 0 = Bore Diameter
+                                // Index 1 = Rod Diameter
+                                // Index 2 = Stroke Length
+                                // Index 3 = Pressure
+                                // Index 4 = Oil Flow
+
+@property (nonatomic) BOOL units;       // False = Metric,  True = Imperial
+
+- (void) calculateValues;
+
 - (NSArray *)getData;
 @end
