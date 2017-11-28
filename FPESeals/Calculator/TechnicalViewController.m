@@ -53,17 +53,17 @@
 #pragma mark - Table View Data Source
 
 // Number Of Sections in Table
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView { return 2; }    // Only 2 section in Table View
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView { return 3; }    // Only 2 section in Table View
 
 // Number Of Rows in Section
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     if (section == 0) {
         return self.cylinder.cylinderPropertiesInput.count;     // Rows in Section 1 = Number of Input Variables
-    } else if (section == 1) {
-        return self.cylinder.cylinderPropertiesOuput.count;     // Rows in Section 2 = Number of Output Variables
+    } else if (section == 2) {
+        return self.cylinder.cylinderPropertiesOuput.count;     // Rows in Section 3 = Number of Output Variables
     } else {
-        return 0;
+        return 1;
     }
     
 }
@@ -86,7 +86,7 @@
         cell.inputTextField.tag = indexPath.row;                //For use later to determine textfields row index
         return cell;
         }
-    else if (indexPath.section == 1 ) {
+    else if (indexPath.section == 2 ) {
         temp = [self.cylinder.cylinderPropertiesOuput objectAtIndex:indexPath.row];
         OutputCell *cell;
         cell = [tableView dequeueReusableCellWithIdentifier:@"OutputCells" forIndexPath:indexPath];
@@ -120,7 +120,7 @@
         CylinderProperty *tempProperty;
         if (indexPath.section == 0 ) {
             tempProperty = [ self.cylinder.cylinderPropertiesInput objectAtIndex:indexPath.row];       // Getting assocaited cylinder property temporiarly
-        } else if (indexPath.section == 1 ) {
+        } else if (indexPath.section == 2 ) {
             tempProperty = [ self.cylinder.cylinderPropertiesOuput objectAtIndex:indexPath.row];       // Getting assocaited cylinder property temporiarly
         }
         destinationVC.property = tempProperty;      // Setting the destination cylinder property
@@ -179,7 +179,7 @@
 {
     for (NSIndexPath *indexPath in [self.tableView indexPathsForVisibleRows])
     {
-        if (indexPath.section == 1) {
+        if (indexPath.section == 2) {
             CylinderProperty *temp = [self.cylinder.cylinderPropertiesOuput objectAtIndex:indexPath.row];
             OutputCell *cell = [self.tableView cellForRowAtIndexPath:indexPath];
             float value = [[self.calculator.CalculatedValues objectAtIndex:indexPath.row] doubleValue];
@@ -209,9 +209,9 @@
     
     for (NSIndexPath *indexPath in [self.tableView indexPathsForVisibleRows])
     {
+        // Advice from: https://stackoverflow.com/questions/6560888/how-to-delete-the-contents-of-a-uitextfield-programmatically
         if (indexPath.section == 0) {
             InputCell *cell = [self.tableView cellForRowAtIndexPath:indexPath];
-            NSLog(@"%@", cell.inputTextField.text);
             cell.inputTextField.text = nil;
             [self.calculator.inputVariables replaceObjectAtIndex:indexPath.row withObject:@0.0];
         }

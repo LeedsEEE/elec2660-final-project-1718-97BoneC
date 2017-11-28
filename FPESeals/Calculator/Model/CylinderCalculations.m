@@ -187,7 +187,9 @@
     double flowRate = (self.inputFlow / 60.0);      // metres cubed per second
     
     if (self.boreArea != 0) {
-    self.extensionVelocity = (flowRate / self.boreArea);    // metres per second
+        self.extensionVelocity = (flowRate / self.boreArea);    // metres per second
+    } else {
+        self.extensionVelocity = 0;
     }
 }
 
@@ -196,7 +198,9 @@
     double flowRate = (self.inputFlow / 60.0);      // metres cubed per second
     
     if (self.rodArea != 0) {
-    self.contractionVelocity = (flowRate / self.rodArea);    // metres per second
+        self.contractionVelocity = (flowRate / self.rodArea);    // metres per second
+    } else {
+        self.contractionVelocity = 0;
     }
 }
 
