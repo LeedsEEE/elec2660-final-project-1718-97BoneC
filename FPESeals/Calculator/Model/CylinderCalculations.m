@@ -34,6 +34,10 @@
 @property (nonatomic) double extensionVelocity;
 @property (nonatomic) double contractionVelocity;
 
+
+@property (strong, nonatomic) NSArray *OutputTextMetric;
+@property (strong, nonatomic) NSArray *OutputTextImperial;
+
 @end
 
 @implementation CylinderCalculations
@@ -53,10 +57,15 @@
         
         [self calculateValues];     // Sets everything to 0!
         
-        
 
     }
     return self;
+}
+
+- (NSMutableArray *)getData
+{
+    NSMutableArray *arrayOfData = [[NSMutableArray alloc] init];
+    return arrayOfData;
 }
 
 # pragma mark Calculating Data
@@ -75,6 +84,7 @@
     [self calculateExtensionVeloctiy];      // metres per second
     [self calculateContractionVelocity];    // metres per second
     
+    [self createCalculationsArray];
     
 }
 
@@ -176,21 +186,23 @@
 {
     double flowRate = (self.inputFlow / 60.0);      // metres cubed per second
     
+    if (self.boreArea != 0) {
     self.extensionVelocity = (flowRate / self.boreArea);    // metres per second
+    }
 }
 
 - (void) calculateContractionVelocity
 {
     double flowRate = (self.inputFlow / 60.0);      // metres cubed per second
     
+    if (self.rodArea != 0) {
     self.contractionVelocity = (flowRate / self.rodArea);    // metres per second
+    }
 }
 
-
 #pragma mark Outputting Data
-
-- (NSArray *)getData
-{
+- (void) createCalculationsArray{
+    
     double BSA = [self UnitsForArea:self.boreArea];
     double RSA = [self UnitsForArea:self.rodArea];
     double BSV = [self UnitsForVolume:self.boreVolume];
@@ -200,17 +212,16 @@
     double EV = [self UnitsForVelocity:self.extensionVelocity];
     double CV = [self UnitsForVelocity:self.contractionVelocity];
     
-    NSArray *data = [[NSArray alloc] initWithObjects:
-                            [NSNumber numberWithDouble:BSA],
-                            [NSNumber numberWithDouble:RSA],
-                            [NSNumber numberWithDouble:BSV],
-                            [NSNumber numberWithDouble:RSV],
-                            [NSNumber numberWithDouble:BSF],
-                            [NSNumber numberWithDouble:RSF],
-                            [NSNumber numberWithDouble:EV],
-                            [NSNumber numberWithDouble:CV],
-                            nil];
-    return data;
+    self.CalculatedValues = [[NSArray alloc] initWithObjects:
+                         [NSNumber numberWithDouble:BSA],
+                         [NSNumber numberWithDouble:RSA],
+                         [NSNumber numberWithDouble:BSV],
+                         [NSNumber numberWithDouble:RSV],
+                         [NSNumber numberWithDouble:BSF],
+                         [NSNumber numberWithDouble:RSF],
+                         [NSNumber numberWithDouble:EV],
+                         [NSNumber numberWithDouble:CV],
+                         nil];
 }
 
 - (double)UnitsForArea:(double)area

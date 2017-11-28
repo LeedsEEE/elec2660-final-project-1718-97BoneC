@@ -12,15 +12,18 @@
 
 @property (nonatomic, strong) NSMutableArray *inputVariables;
 
-                                // Index 0 = Bore Diameter
-                                // Index 1 = Rod Diameter
-                                // Index 2 = Stroke Length
-                                // Index 3 = Pressure
-                                // Index 4 = Oil Flow
+
+                    // Index 0 = Bore Diameter
+                    // Index 1 = Rod Diameter
+                    // Index 2 = Stroke Length
+                    // Index 3 = Pressure
+                    // Index 4 = Oil Flow
+
+@property (strong, nonatomic) NSArray *CalculatedValues;
 
 @property (nonatomic) BOOL units;       // False = Metric,  True = Imperial
 
 - (void) calculateValues;
 
-- (NSArray *)getData;
+- (NSMutableArray *)getData;
 @end

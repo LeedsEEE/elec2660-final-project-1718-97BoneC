@@ -95,15 +95,15 @@
         <scene sceneID="lSV-Tf-6Ub">
             <objects>
                 <tableViewController id="LIX-qf-Yos" customClass="TechnicalViewController" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" allowsSelection="NO" rowHeight="50" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" id="YsQ-Tu-EWt">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" allowsSelection="NO" rowHeight="50" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="YsQ-Tu-EWt">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <gestureRecognizers/>
                         <color key="separatorColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="detailButton" indentationWidth="10" reuseIdentifier="InputCells" textLabel="EXm-wb-iAZ" style="IBUITableViewCellStyleDefault" id="Hag-Ia-pfI" customClass="InputCell">
-                                <rect key="frame" x="0.0" y="55.5" width="375" height="50"/>
+                                <rect key="frame" x="0.0" y="28" width="375" height="50"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Hag-Ia-pfI" id="gUX-16-qmD">
                                     <rect key="frame" x="0.0" y="0.0" width="327" height="49.5"/>
@@ -135,7 +135,7 @@
                                 </connections>
                             </tableViewCell>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="detailButton" indentationWidth="10" reuseIdentifier="OutputCells" textLabel="vuc-XG-x17" style="IBUITableViewCellStyleDefault" id="rkE-Kn-ZZM" customClass="OutputCell">
-                                <rect key="frame" x="0.0" y="105.5" width="375" height="50"/>
+                                <rect key="frame" x="0.0" y="78" width="375" height="50"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="rkE-Kn-ZZM" id="276-cZ-7v4">
                                     <rect key="frame" x="0.0" y="0.0" width="327" height="49.5"/>
@@ -163,7 +163,7 @@
                                 </connections>
                             </tableViewCell>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="SpacerCell" id="Ig0-8A-qbc">
-                                <rect key="frame" x="0.0" y="155.5" width="375" height="50"/>
+                                <rect key="frame" x="0.0" y="128" width="375" height="50"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Ig0-8A-qbc" id="7tQ-WG-nT1">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="49.5"/>
@@ -178,7 +178,11 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Technical Calculator" id="mSX-te-Flz">
-                        <barButtonItem key="rightBarButtonItem" title="Metric" id="VAj-Uu-UFF"/>
+                        <barButtonItem key="rightBarButtonItem" title="Metric" id="VAj-Uu-UFF">
+                            <connections>
+                                <action selector="UnitsPressed:" destination="LIX-qf-Yos" id="ov4-ut-fwo"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xu9-0J-6a7" userLabel="First Responder" sceneMemberID="firstResponder"/>

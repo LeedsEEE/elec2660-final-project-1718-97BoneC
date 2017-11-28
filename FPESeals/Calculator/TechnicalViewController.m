@@ -21,10 +21,11 @@
 @property (nonatomic) NSUInteger chosenTextField;               // Integer to store index of current chosen Text Field
 @property (strong, nonatomic) CylinderCalculations *calculator; // Calculator Object
 
-
 // Private Actions
 - (IBAction)textFieldEdited:(UITextField *) sender;     // UITextField Action
 - (IBAction)backgroundPressed:(id)sender;               // Tap Gesture
+- (IBAction)UnitsPressed:(UIBarButtonItem *)sender;     // "Units" Tab Bar button
+
 
 @end
 
@@ -39,6 +40,7 @@
     // Intialising Objects and Arrays
     self.cylinder = [[CylinderProperties alloc] init];
     self.calculator = [[CylinderCalculations alloc] init];
+    
 
 }
 
@@ -76,18 +78,26 @@
         InputCell *cell;
         cell = [tableView dequeueReusableCellWithIdentifier:@"InputCells" forIndexPath:indexPath];
         cell.textLabel.text = temp.propertyTitle;
-        cell.inputTextField.placeholder = temp.propertyUnitsMet;
+        if (self.calculator.units == false) {
+            cell.inputTextField.placeholder = temp.propertyUnitsMet;
+        } else {
+            cell.inputTextField.placeholder = temp.propertyUnitsImp;
+        }
         cell.inputTextField.tag = indexPath.row;                //For use later to determine textfields row index
         return cell;
-    } else if (indexPath.section == 1 ) {
+        }
+    else if (indexPath.section == 1 ) {
         temp = [self.cylinder.cylinderPropertiesOuput objectAtIndex:indexPath.row];
         OutputCell *cell;
         cell = [tableView dequeueReusableCellWithIdentifier:@"OutputCells" forIndexPath:indexPath];
         cell.textLabel.text = temp.propertyTitle;
         cell.contentView.tag = indexPath.row;       // To determine which Text Field corresponds to which cell(.contentView)
-        cell.outputTextLabel.text = temp.propertyUnitsMet;
+        if (self.calculator.units == false) {
+            cell.outputTextLabel.text = temp.propertyUnitsMet;  }
+        else { cell.outputTextLabel.text = temp.propertyUnitsImp; }
         return cell;
-    } else {
+        }
+    else {
         // Spacer Style Cell (No Label)
         UITableViewCell *cell;
         cell = [tableView dequeueReusableCellWithIdentifier:@"SpacerCell" forIndexPath:indexPath];
@@ -160,33 +170,7 @@
     [self.calculator.inputVariables replaceObjectAtIndex:self.chosenTextField withObject:value];
     
     [self.calculator calculateValues];
-    
-    /* if (self.chosenTextField == 0)      // Bore Diameter
-    {
-        NSLog(@"Bore Diameter = %2f", data);
-        [self.calculator setBoreDiameter:data];     // Setting value
-    }
-    else if ( self.chosenTextField == 1)        // Rod Diameter
-    {
-        NSLog(@"Rod Diameter = %2f", data);
-        [self.calculator setRodDiameter:data];      // Setting value
-    }
-    else if (self.chosenTextField == 2 )        // Stroke Length
-    {
-        NSLog(@"Stroke Length = %2f", data);
-        [self.calculator setStrokeLength:data];     // Setting value
-    }
-    else if (self.chosenTextField == 3)         // Input Pressure
-    {
-        NSLog(@"Input Pressure = %2f", data);
-        [self.calculator setInputPressure:data];    // Setting value
-    }
-    else if (self.chosenTextField == 4)         // Input Flow
-    {
-        [self.calculator setInputFlow:data];        // Setting value
-        NSLog(@"Input Flow = %2f", data);
-    } */
-    
+
     [self updateValues];        // Update Values shown to User
     
 }
@@ -195,23 +179,45 @@
 {
     for (NSIndexPath *indexPath in [self.tableView indexPathsForVisibleRows])
     {
-        NSArray *data = [self.calculator getData];
         if (indexPath.section == 1) {
+            CylinderProperty *temp = [self.cylinder.cylinderPropertiesOuput objectAtIndex:indexPath.row];
             OutputCell *cell = [self.tableView cellForRowAtIndexPath:indexPath];
-            float value = [[data objectAtIndex:indexPath.row] floatValue];
+            float value = [[self.calculator.CalculatedValues objectAtIndex:indexPath.row] doubleValue];
             if (!(value == 0))     // If number is non zero
             {
                 cell.outputTextLabel.text = [NSString stringWithFormat:@"%.2f",value];
-            } else
+            } else if (self.calculator.units == true)
             {
-                CylinderProperty *temp = [self.cylinder.cylinderPropertiesOuput objectAtIndex:indexPath.row];
+                cell.outputTextLabel.text = temp.propertyUnitsImp;
+            } else {
                 cell.outputTextLabel.text = temp.propertyUnitsMet;
             }
         }
     }
 }
 
+#pragma mark Changing Units
 
-
-
+- (IBAction)UnitsPressed:(UIBarButtonItem *)sender {
+    if (self.calculator.units) {
+        self.calculator.units = false;
+        sender.title = @"Metric";
+    } else {
+        self.calculator.units = true;
+        sender.title = @"Imperial";
+    }
+    
+    for (NSIndexPath *indexPath in [self.tableView indexPathsForVisibleRows])
+    {
+        if (indexPath.section == 0) {
+            InputCell *cell = [self.tableView cellForRowAtIndexPath:indexPath];
+            NSLog(@"%@", cell.inputTextField.text);
+            cell.inputTextField.text = nil;
+            [self.calculator.inputVariables replaceObjectAtIndex:indexPath.row withObject:@0.0];
+        }
+    }
+    
+    [self.tableView reloadData];
+    
+}
 @end
