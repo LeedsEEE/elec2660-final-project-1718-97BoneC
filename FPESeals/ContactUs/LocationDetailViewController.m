@@ -77,10 +77,18 @@
     NSString *numberToCall = [NSString stringWithFormat:@"tel:%@",self.selectedOffice.telephone];
     if ([[UIApplication sharedApplication] canOpenURL:[NSURL URLWithString:numberToCall]])
     {
-        NSLog(@"Number Called");
+        NSLog(@"Calling Number");
     [[UIApplication sharedApplication] openURL:[NSURL URLWithString:numberToCall] options:@{} completionHandler:nil];
     } else {
         NSLog(@"No Phone App Present To Call Number");
+        UIAlertController *phoneWarning = [UIAlertController alertControllerWithTitle:@"Error Dailing Number"
+                                                                              message:@"Unable To Call Number Due Lack Of A Suitable Phone Application"
+                                                                       preferredStyle:UIAlertControllerStyleAlert];
+        UIAlertAction *dismiss = [UIAlertAction actionWithTitle:@"Dismiss"
+                                                          style:UIAlertActionStyleCancel
+                                                        handler:nil];
+        [phoneWarning addAction: dismiss];
+        [self presentViewController:phoneWarning animated:YES completion:nil];
     }
 }
 
@@ -94,6 +102,14 @@
     [[UIApplication sharedApplication] openURL:[NSURL URLWithString:emailAddress] options:@{} completionHandler:nil];
     } else {
         NSLog(@"No Email Client Present To Generate Email");
+        UIAlertController *emailWarning = [UIAlertController alertControllerWithTitle:@"Error Sending Email"
+                                                                              message:@"Unable To Create Email Due To Lack Of A Suitable EMail Application"
+                                                                       preferredStyle:UIAlertControllerStyleAlert];
+        UIAlertAction *dismiss = [UIAlertAction actionWithTitle:@"Dismiss"
+                                                          style:UIAlertActionStyleCancel
+                                                        handler:nil];
+        [emailWarning addAction: dismiss];
+        [self presentViewController:emailWarning animated:YES completion:nil];
     }
     
 }
