@@ -24,13 +24,19 @@
 @property (weak, nonatomic) IBOutlet UILabel *addressPCOutlet;
 
 // Telephone Label
-@property (weak, nonatomic) IBOutlet UILabel *telephoneOutlet;
+@property (weak, nonatomic) IBOutlet UIButton *telephoneButtonOutlet;
 
 // EMail Outlet
-@property (weak, nonatomic) IBOutlet UILabel *emailOutlet;
+@property (weak, nonatomic) IBOutlet UIButton *emailButtonOutlet;
 
 // Done Button
 - (IBAction)pressedDone:(id)sender;
+
+// Call Number
+- (IBAction)callNumber:(id)sender;
+
+// Send Email
+- (IBAction)sendEmail:(id)sender;
 
 @end
 
@@ -47,8 +53,8 @@
     self.addressCityOutlet.text = [self.selectedOffice.address objectForKey:@"City"];
     self.addressCountyOutlet.text = [self.selectedOffice.address objectForKey:@"County"];
     self.addressPCOutlet.text = [self.selectedOffice.address objectForKey:@"Postcode"];
-    self.telephoneOutlet.text = self.selectedOffice.telephone;      // Telephone
-    self.emailOutlet.text = self.selectedOffice.email;              // Email
+    [self.telephoneButtonOutlet setTitle:self.selectedOffice.telephone forState:UIControlStateNormal];     // Telephone
+    [self.emailButtonOutlet setTitle:self.selectedOffice.email forState:UIControlStateNormal];              // Email
     
     
 }
@@ -62,5 +68,33 @@
 {
     // To return back to the Map View
     [self dismissViewControllerAnimated:YES completion:nil];
+}
+
+
+- (IBAction)callNumber:(id)sender
+{
+    // Advice From: https://stackoverflow.com/questions/665769/how-can-i-make-phone-call-in-objective-c
+    NSString *numberToCall = [NSString stringWithFormat:@"tel:%@",self.selectedOffice.telephone];
+    if ([[UIApplication sharedApplication] canOpenURL:[NSURL URLWithString:numberToCall]])
+    {
+        NSLog(@"Number Called");
+    [[UIApplication sharedApplication] openURL:[NSURL URLWithString:numberToCall] options:@{} completionHandler:nil];
+    } else {
+        NSLog(@"No Phone App Present To Call Number");
+    }
+}
+
+
+- (IBAction)sendEmail:(id)sender
+{
+    NSString *emailAddress = [NSString stringWithFormat:@"mailto:%@",self.selectedOffice.email];
+    if ([[UIApplication sharedApplication] canOpenURL:[NSURL URLWithString:emailAddress]])
+    {
+        NSLog(@"Email Client Openning");
+    [[UIApplication sharedApplication] openURL:[NSURL URLWithString:emailAddress] options:@{} completionHandler:nil];
+    } else {
+        NSLog(@"No Email Client Present To Generate Email");
+    }
+    
 }
 @end

@@ -31,7 +31,7 @@
                                @"County"    : @"Co Durham",
                                @"Postcode"  : @"DL1 4WF",
                                };
-        Darlington.telephone = @"+441325 282732";
+        Darlington.telephone = @"+441325-282732";
         Darlington.email = @"sales@fpeseals.co.uk";
         
         Office *Doncaster = [[Office alloc] init];
@@ -46,7 +46,7 @@
                               @"County"    : @"South Yorkshire",
                               @"Postcode"  : @"DN6 7BD",
                               };
-        Doncaster.telephone = @"+441302 727252";
+        Doncaster.telephone = @"+441302-727252";
         Doncaster.email = @"doncaster@fpeseals.co.uk";
         
         Office *Kent = [[Office alloc] init];
@@ -61,7 +61,7 @@
                          @"County"    : @"Kent",
                          @"Postcode"  : @"ME2 4DP",
                          };
-        Kent.telephone = @"+441634 724394";
+        Kent.telephone = @"+441634-724394";
         Kent.email = @"kent@fpeseals.co.uk";
         
         Office *Scotland = [[Office alloc] init];
@@ -76,7 +76,7 @@
                          @"County"    : @"Scotland",
                          @"Postcode"  : @"AB25 3UJ",
                          };
-        Scotland.telephone = @"+441224 648999";
+        Scotland.telephone = @"+441224-648999";
         Scotland.email = @"sales@swanseals.co.uk";
         
         // Intialising Array

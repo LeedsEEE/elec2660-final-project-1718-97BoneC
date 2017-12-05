@@ -46,6 +46,11 @@
 	</array>
 	<key>NSLocationWhenInUseUsageDescription</key>
 	<string>This app needs access to your location to display your position</string>
+	<key>LSApplicationQueriesSchemes</key>
+	<array>
+		<string>mailto</string>
+		<string>tel</string>
+	</array>
 	<key>UISupportedInterfaceOrientations~ipad</key>
 	<array>
 		<string>UIInterfaceOrientationPortrait</string>
