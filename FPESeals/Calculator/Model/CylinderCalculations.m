@@ -88,7 +88,7 @@
     
 }
 
-#pragma mark Input Calculations
+#pragma mark Input Conversions to SI
 
 - (void) calculateLengths {
     
