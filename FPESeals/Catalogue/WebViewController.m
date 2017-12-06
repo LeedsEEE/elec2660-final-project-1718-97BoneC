@@ -38,6 +38,8 @@
     self.PDFViewer = [[WKWebView alloc] initWithFrame:webViewFrame];
     self.PDFViewer.UIDelegate = self;
     [self.view addSubview:self.PDFViewer];
+    // Advice from: https://stackoverflow.com/questions/30737254/wkwebview-added-as-subview-is-not-resized-on-rotation-in-swift
+    [self.PDFViewer setAutoresizingMask:UIViewAutoresizingFlexibleHeight | UIViewAutoresizingFlexibleWidth];
     
 }
 
