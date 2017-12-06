@@ -38,10 +38,12 @@ static const float Zoom = 8.5;
     [self.user requestWhenInUseAuthorization];
     // Map --> Attributes Inspector --> Show user's Location = YES
     
-    [self setCentreOfMapForLatitude:Latitude andLongitude:Longitude andScale:Zoom];     // Setting static view
+    NSLog(@"%f", self.view.bounds.size.width);
     
     self.company = [[CompanyOffices alloc] init];
     [self showOfficeLocations];
+    
+    [self setCentreOfMapForLatitude:Latitude andLongitude:Longitude andScale:Zoom];     // Setting static view
 }
 
 - (void)didReceiveMemoryWarning {
@@ -57,6 +59,21 @@ static const float Zoom = 8.5;
     MKCoordinateRegion view = MKCoordinateRegionMake(center, mkScale);                  // Setting view values
     [self.mapView setRegion:view animated:YES];                                         // Setting mapView
     
+}
+
+- (void)showOfficeLocations
+{
+    for (Office *temp in self.company.offices) {        // Loop through every office in array
+        
+        MKPointAnnotation *location = [[MKPointAnnotation alloc] init];
+        CLLocationCoordinate2D coords = CLLocationCoordinate2DMake(temp.latitude, temp.longitude);      // Set Coords
+        [location setCoordinate:coords];    // Set annotation Coords
+        [location setTitle:temp.name];      // Set name (title)
+        
+        
+        NSLog(@"Location Placed = %@", temp.name);      // Debug
+        [self.mapView addAnnotation:location];          // Add location to map
+    }
 }
 
 #pragma mark - Navigation
@@ -77,21 +94,6 @@ static const float Zoom = 8.5;
     }
 }
 
-
-- (void)showOfficeLocations
-{
-    for (Office *temp in self.company.offices) {        // Loop through every office in array
-        
-        MKPointAnnotation *location = [[MKPointAnnotation alloc] init];
-        CLLocationCoordinate2D coords = CLLocationCoordinate2DMake(temp.latitude, temp.longitude);      // Set Coords
-        [location setCoordinate:coords];    // Set annotation Coords
-        [location setTitle:temp.name];      // Set name (title)
-        
-        
-        NSLog(@"Location Placed = %@", temp.name);      // Debug
-        [self.mapView addAnnotation:location];          // Add location to map
-    }
-}
 
 - (NSUInteger)determineOfficeIndexForString:(NSString *)name
 {
@@ -117,6 +119,7 @@ static const float Zoom = 8.5;
     }
 }
 
+
 - (MKAnnotationView *)mapView:(MKMapView *)mapView viewForAnnotation:(id<MKAnnotation>)annotation
 {
     // Advice From: https://developer.apple.com/library/content/documentation/UserExperience/Conceptual/LocationAwarenessPG/AnnotatingMaps/AnnotatingMaps.html
@@ -127,11 +130,11 @@ static const float Zoom = 8.5;
     }
     else {
         
-        MKAnnotationView *view = [[MKAnnotationView alloc]              // Initialising annotation view
+        MKMarkerAnnotationView *view = [[MKMarkerAnnotationView alloc]              // Initialising annotation view
                                   initWithAnnotation:annotation
                                   reuseIdentifier:@"OfficeLocationView"];
-        view.image = [UIImage imageNamed:@"LocationMarker2.png"];               // Setting annoatation view
-        view.centerOffset = CGPointMake(0, -25);                                // Offsetting centre
+        view.markerTintColor = [UIColor darkGrayColor];
+
         
         return view;
     }

@@ -10,6 +10,7 @@
 #import "CatalogueViewCell.h"   // Custom Collection View Cell
 #import "Catalogues.h"          // The data model of Catalogues
 #import "Catalogue.h"           // The Catalogue Model
+#import "WebViewController.h"   // Next ViewController For Segue
 
 @interface CatalogueViewController ()
 
@@ -40,15 +41,28 @@ static NSString * const reuseIdentifier = @"CatalogueCell";
     // Dispose of any resources that can be recreated.
 }
 
-/*
+
 #pragma mark - Navigation
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+    
+    if ([[segue identifier] isEqualToString:@"viewPDF"]) {
+        
+        // Getting index of selecteded cell
+        CatalogueViewCell *selectedCell = sender;
+        NSIndexPath *indexPath = [self.collectionView indexPathForCell:selectedCell];
+        
+        // Getting desired (selected) Catalogue
+        Catalogue *selectedCatalogue = [self.list.avaliableCatalogues objectAtIndex:indexPath.row];
+        
+        // Next View Controller (PDF Reader)
+        WebViewController *DestVC = [segue  destinationViewController];
+        DestVC.catalogueURLString = selectedCatalogue.URL;
+        
+    }
 }
-*/
+
 
 #pragma mark <UICollectionViewDataSource>
 
@@ -85,7 +99,7 @@ static NSString * const reuseIdentifier = @"CatalogueCell";
 
 #pragma mark <UICollectionViewDelegate>
 
-
+/*
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
 {
     // Temporary Catalogue Instance
@@ -100,7 +114,7 @@ static NSString * const reuseIdentifier = @"CatalogueCell";
     // Advice from: https://stackoverflow.com/questions/40057071/method-openurloptionscompletionhandler-compatibility-in-objective-c
     [[UIApplication sharedApplication] openURL:[NSURL URLWithString:urlToShow] options:@{} completionHandler:nil];
     
-}
+} */
 
 
 @end

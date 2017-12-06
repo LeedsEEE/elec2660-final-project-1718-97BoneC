@@ -26,9 +26,9 @@
                                     <constraint firstAttribute="width" secondItem="3Fu-Lb-O2J" secondAttribute="height" multiplier="1200:650" id="tl5-Jv-ucR"/>
                                 </constraints>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Variable Description -" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="6" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="r4V-8W-rnN">
-                                <rect key="frame" x="16" y="330" width="382" height="329"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Variable Description" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="6" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="r4V-8W-rnN">
+                                <rect key="frame" x="26" y="330" width="362" height="329"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -38,9 +38,9 @@
                             <constraint firstItem="3Fu-Lb-O2J" firstAttribute="top" secondItem="kj9-CR-c6w" secondAttribute="top" constant="28" id="036-o3-vr5"/>
                             <constraint firstItem="kj9-CR-c6w" firstAttribute="trailing" secondItem="3Fu-Lb-O2J" secondAttribute="trailing" constant="16" id="DcZ-e7-Vvk"/>
                             <constraint firstItem="3Fu-Lb-O2J" firstAttribute="leading" secondItem="kj9-CR-c6w" secondAttribute="leading" constant="16" id="FcO-TI-MqX"/>
-                            <constraint firstItem="r4V-8W-rnN" firstAttribute="trailing" secondItem="3Fu-Lb-O2J" secondAttribute="trailing" id="nd6-qg-zhS"/>
+                            <constraint firstItem="r4V-8W-rnN" firstAttribute="trailing" secondItem="3Fu-Lb-O2J" secondAttribute="trailing" constant="-10" id="nd6-qg-zhS"/>
                             <constraint firstItem="kj9-CR-c6w" firstAttribute="bottom" secondItem="r4V-8W-rnN" secondAttribute="bottom" constant="28" id="o9s-Cz-ixy"/>
-                            <constraint firstItem="r4V-8W-rnN" firstAttribute="leading" secondItem="3Fu-Lb-O2J" secondAttribute="leading" id="pSL-XE-Rdk"/>
+                            <constraint firstItem="r4V-8W-rnN" firstAttribute="leading" secondItem="3Fu-Lb-O2J" secondAttribute="leading" constant="10" id="pSL-XE-Rdk"/>
                             <constraint firstItem="r4V-8W-rnN" firstAttribute="top" secondItem="3Fu-Lb-O2J" secondAttribute="bottom" constant="31" id="wRn-2m-xMo"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="kj9-CR-c6w"/>
@@ -121,7 +121,7 @@
                                             <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                             <nil key="textColor"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <textInputTraits key="textInputTraits" autocorrectionType="no" keyboardType="numbersAndPunctuation" returnKeyType="done"/>
+                                            <textInputTraits key="textInputTraits" autocorrectionType="no" keyboardType="numberPad" returnKeyType="done"/>
                                             <connections>
                                                 <action selector="textFieldEdited:" destination="LIX-qf-Yos" eventType="editingChanged" id="YXi-4P-oZf"/>
                                                 <outlet property="delegate" destination="LIX-qf-Yos" id="TdZ-OZ-LOk"/>
@@ -359,7 +359,7 @@
                             </scrollView>
                             <navigationBar contentMode="scaleToFill" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zgm-Ap-F8u">
                                 <rect key="frame" x="0.0" y="20" width="414" height="44"/>
-                                <color key="barTintColor" red="0.93725490570000003" green="0.93725490570000003" blue="0.95686274770000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="barTintColor" red="0.92143100499999997" green="0.92145264149999995" blue="0.92144101860000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <items>
                                     <navigationItem title="Title" id="mFm-5d-LXv">
                                         <barButtonItem key="rightBarButtonItem" systemItem="done" id="221-CQ-GJi">
@@ -372,7 +372,7 @@
                             </navigationBar>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="f03-my-BoT">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="20"/>
-                                <color key="backgroundColor" red="0.93725490570000003" green="0.93725490570000003" blue="0.95686274770000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" red="0.92143100499999997" green="0.92145264149999995" blue="0.92144101860000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -419,6 +419,7 @@
                         <rect key="frame" x="0.0" y="975" width="768" height="49"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                         <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="barTintColor" red="0.92143100499999997" green="0.92145264149999995" blue="0.92144101860000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </tabBar>
                     <connections>
                         <segue destination="jpv-Jb-9or" kind="relationship" relationship="viewControllers" id="pSE-HQ-rkF"/>
@@ -439,6 +440,7 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="2dS-vY-wd1">
                         <rect key="frame" x="0.0" y="20" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" red="0.92143100499999997" green="0.92145264149999995" blue="0.92144101860000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
@@ -458,6 +460,7 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="C90-GO-5BY">
                         <rect key="frame" x="0.0" y="20" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" red="0.92143100499999997" green="0.92145264149999995" blue="0.92144101860000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
@@ -477,6 +480,7 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="19q-6C-2st">
                         <rect key="frame" x="0.0" y="20" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" red="0.92143100499999997" green="0.92145264149999995" blue="0.92144101860000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
@@ -541,6 +545,7 @@
                                 <connections>
                                     <outlet property="cellImageOutlet" destination="8WT-zv-6NX" id="8Nw-p2-1L8"/>
                                     <outlet property="cellTitleLabel" destination="dEb-oB-DC1" id="bPG-DE-Wuq"/>
+                                    <segue destination="pR4-p5-Nc4" kind="show" identifier="viewPDF" id="WHv-M1-C7q"/>
                                 </connections>
                             </collectionViewCell>
                         </cells>
@@ -554,6 +559,40 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WiI-KL-efD" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="720.79999999999995" y="-760.56971514242889"/>
+        </scene>
+        <!--Web View Controller-->
+        <scene sceneID="OWL-sQ-BoA">
+            <objects>
+                <viewController id="pR4-p5-Nc4" customClass="WebViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="NSP-Kl-1Sc">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Jvf-Gn-1uH">
+                                <rect key="frame" x="0.0" y="64" width="414" height="623"/>
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <wkWebViewConfiguration key="configuration">
+                                    <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
+                                    <wkPreferences key="preferences"/>
+                                </wkWebViewConfiguration>
+                            </wkWebView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="fhO-qX-Rqa" firstAttribute="bottom" secondItem="Jvf-Gn-1uH" secondAttribute="bottom" id="6qH-BA-8fz"/>
+                            <constraint firstItem="fhO-qX-Rqa" firstAttribute="trailing" secondItem="Jvf-Gn-1uH" secondAttribute="trailing" id="LRS-Q3-3WZ"/>
+                            <constraint firstItem="Jvf-Gn-1uH" firstAttribute="leading" secondItem="fhO-qX-Rqa" secondAttribute="leading" id="TAi-Zl-phQ"/>
+                            <constraint firstItem="Jvf-Gn-1uH" firstAttribute="top" secondItem="fhO-qX-Rqa" secondAttribute="top" id="gBk-OM-GMA"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="fhO-qX-Rqa"/>
+                    </view>
+                    <connections>
+                        <outlet property="PDFViewer" destination="Jvf-Gn-1uH" id="VbT-nP-mdi"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="SLC-Yg-INl" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1531.8840579710145" y="-761.41304347826087"/>
         </scene>
     </scenes>
     <resources>

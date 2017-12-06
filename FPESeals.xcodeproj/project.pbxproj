@@ -24,6 +24,10 @@
 		E65280871FC47484009731AA /* InputCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E65280861FC47484009731AA /* InputCell.m */; };
 		E652808A1FC49334009731AA /* OutputCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E65280891FC49334009731AA /* OutputCell.m */; };
 		E652808D1FC4A9F0009731AA /* CylinderCalculations.m in Sources */ = {isa = PBXBuildFile; fileRef = E652808C1FC4A9F0009731AA /* CylinderCalculations.m */; };
+		E65536D71FD7026300ACB589 /* Rod Diameter.png in Resources */ = {isa = PBXBuildFile; fileRef = E65536D51FD7026200ACB589 /* Rod Diameter.png */; };
+		E65536D81FD7026300ACB589 /* Bore Diameter.png in Resources */ = {isa = PBXBuildFile; fileRef = E65536D61FD7026300ACB589 /* Bore Diameter.png */; };
+		E65536DB1FD8817200ACB589 /* WebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E65536DA1FD8817200ACB589 /* WebViewController.m */; };
+		E65536DD1FD896DA00ACB589 /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E65536DC1FD896D700ACB589 /* WebKit.framework */; };
 		E68E4AF71FC77E14008D936F /* FPE Seals Ltd.bmp in Resources */ = {isa = PBXBuildFile; fileRef = E68E4AF61FC77E14008D936F /* FPE Seals Ltd.bmp */; };
 		E68E4AFD1FC85D25008D936F /* IKC.png in Resources */ = {isa = PBXBuildFile; fileRef = E68E4AF81FC85D24008D936F /* IKC.png */; };
 		E68E4AFE1FC85D25008D936F /* CFPR.png in Resources */ = {isa = PBXBuildFile; fileRef = E68E4AF91FC85D24008D936F /* CFPR.png */; };
@@ -112,6 +116,11 @@
 		E65280891FC49334009731AA /* OutputCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OutputCell.m; sourceTree = "<group>"; };
 		E652808B1FC4A9F0009731AA /* CylinderCalculations.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CylinderCalculations.h; sourceTree = "<group>"; };
 		E652808C1FC4A9F0009731AA /* CylinderCalculations.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CylinderCalculations.m; sourceTree = "<group>"; };
+		E65536D51FD7026200ACB589 /* Rod Diameter.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Rod Diameter.png"; sourceTree = "<group>"; };
+		E65536D61FD7026300ACB589 /* Bore Diameter.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Bore Diameter.png"; sourceTree = "<group>"; };
+		E65536D91FD8817200ACB589 /* WebViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WebViewController.h; sourceTree = "<group>"; };
+		E65536DA1FD8817200ACB589 /* WebViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WebViewController.m; sourceTree = "<group>"; };
+		E65536DC1FD896D700ACB589 /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
 		E68E4AF61FC77E14008D936F /* FPE Seals Ltd.bmp */ = {isa = PBXFileReference; lastKnownFileType = image.bmp; path = "FPE Seals Ltd.bmp"; sourceTree = "<group>"; };
 		E68E4AF81FC85D24008D936F /* IKC.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = IKC.png; sourceTree = "<group>"; };
 		E68E4AF91FC85D24008D936F /* CFPR.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = CFPR.png; sourceTree = "<group>"; };
@@ -181,6 +190,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E6121C481FC75927002999AE /* CoreLocation.framework in Frameworks */,
+				E65536DD1FD896DA00ACB589 /* WebKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -215,6 +225,7 @@
 		E6121C461FC75920002999AE /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				E65536DC1FD896D700ACB589 /* WebKit.framework */,
 				E6121C471FC75920002999AE /* CoreLocation.framework */,
 			);
 			name = Frameworks;
@@ -234,6 +245,8 @@
 		E6DB1E7A1FBBB8D700C5B7D5 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				E65536D61FD7026300ACB589 /* Bore Diameter.png */,
+				E65536D51FD7026200ACB589 /* Rod Diameter.png */,
 				E6D4AA331FCCC69800A65487 /* AppIcon40pt@2x.png */,
 				E6D4AA341FCCC69800A65487 /* AppIcon40pt@3x.png */,
 				E6D4AA2A1FCCC56D00A65487 /* AppIcon20pt@2x.png */,
@@ -312,6 +325,8 @@
 				E6121C441FC72CF1002999AE /* CatalogueViewCell.m */,
 				E6DB1E821FBD91D500C5B7D5 /* CatalogueViewController.m */,
 				E6DB1E811FBD91D500C5B7D5 /* CatalogueViewController.h */,
+				E65536D91FD8817200ACB589 /* WebViewController.h */,
+				E65536DA1FD8817200ACB589 /* WebViewController.m */,
 				E6121C3C1FC6F092002999AE /* Model */,
 			);
 			path = Catalogue;
@@ -357,8 +372,8 @@
 				E6FEC0821FBB585600949685 /* AppDelegate.h */,
 				E6FEC0831FBB585600949685 /* AppDelegate.m */,
 				E6DB1E861FBF94F900C5B7D5 /* Catalogue */,
-				E6DB1E851FBF94E000C5B7D5 /* ContactUs */,
 				E6DB1E841FBF94C400C5B7D5 /* Calculator */,
+				E6DB1E851FBF94E000C5B7D5 /* ContactUs */,
 				E6FEC08B1FBB585600949685 /* Main.storyboard */,
 				E6FEC08E1FBB585600949685 /* Assets.xcassets */,
 				E6FEC0901FBB585600949685 /* LaunchScreen.storyboard */,
@@ -500,6 +515,7 @@
 				E6D4AA0A1FCA1EAF00A65487 /* LocationMarker2.png in Resources */,
 				E68E4AF71FC77E14008D936F /* FPE Seals Ltd.bmp in Resources */,
 				E6FEC0921FBB585600949685 /* LaunchScreen.storyboard in Resources */,
+				E65536D71FD7026300ACB589 /* Rod Diameter.png in Resources */,
 				E6D4AA261FCCBDAC00A65487 /* Blank.png in Resources */,
 				E6D4AA321FCCC56D00A65487 /* AppIcon20pt@3x.png in Resources */,
 				E6D4AA0C1FCA216000A65487 /* Darlington.jpg in Resources */,
@@ -511,6 +527,7 @@
 				E6D4AA151FCC86D500A65487 /* Rod Side Area.png in Resources */,
 				E6FEC08F1FBB585600949685 /* Assets.xcassets in Resources */,
 				E68E4B011FC85D25008D936F /* MKC.png in Resources */,
+				E65536D81FD7026300ACB589 /* Bore Diameter.png in Resources */,
 				E6D4AA221FCCA92E00A65487 /* Oil Flow.png in Resources */,
 				E6121C4E1FC77555002999AE /* catalogue@3x.png in Resources */,
 				E68E4AFE1FC85D25008D936F /* CFPR.png in Resources */,
@@ -572,6 +589,7 @@
 				E6DB1E801FBCFF9700C5B7D5 /* TechnicalDetailViewController.m in Sources */,
 				E6FEC0B91FBB612800949685 /* MapViewController.m in Sources */,
 				E68E4B081FC87D33008D936F /* CompanyOffices.m in Sources */,
+				E65536DB1FD8817200ACB589 /* WebViewController.m in Sources */,
 				E6FEC0951FBB585600949685 /* main.m in Sources */,
 				E6DB1E8D1FBF980F00C5B7D5 /* CylinderProperties.m in Sources */,
 				E6121C451FC72CF1002999AE /* CatalogueViewCell.m in Sources */,

@@ -31,7 +31,7 @@
         CylinderProperty *BoreDiameter = [[CylinderProperty alloc] init];
         BoreDiameter.propertyTitle = @"Bore Diameter";
         BoreDiameter.isInput = YES;
-        BoreDiameter.propertyImageName = @"";
+        BoreDiameter.propertyImageName = @"Bore Diameter.png";
         BoreDiameter.propertyDescription = @"Bore Diameter is the cross-sectional length of the cylinder. It is measured by taking the distance between two points on the internal circumference, or similarly two points on the external circumference of the piston.";
         BoreDiameter.propertyUnitsMet = @"   millimetres";
         BoreDiameter.propertyUnitsImp = @"inches";
@@ -39,7 +39,7 @@
         CylinderProperty *RodDiameter = [[CylinderProperty alloc] init];
         RodDiameter.propertyTitle = @"Rod Diameter";
         RodDiameter.isInput = YES;
-        RodDiameter.propertyImageName = @"";
+        RodDiameter.propertyImageName = @"Rod Diameter.png";
         RodDiameter.propertyDescription = @"Rod Diameter is the cross-sectional length of the hydraulic rod. This value is measured by taking the distance between two points along the rod's external circumference. Note: This is not the value measured from the thread!";
         RodDiameter.propertyUnitsMet = @"   millimetres";
         RodDiameter.propertyUnitsImp = @"inches";
