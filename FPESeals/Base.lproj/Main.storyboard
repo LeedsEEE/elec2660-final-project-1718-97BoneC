@@ -576,11 +576,17 @@
                                     <wkPreferences key="preferences"/>
                                 </wkWebViewConfiguration>
                             </wkWebView>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="n9V-40-18d">
+                                <rect key="frame" x="189" y="350" width="37" height="37"/>
+                                <color key="color" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="n9V-40-18d" firstAttribute="centerX" secondItem="NSP-Kl-1Sc" secondAttribute="centerX" id="3oW-qH-DfT"/>
                             <constraint firstItem="fhO-qX-Rqa" firstAttribute="bottom" secondItem="Jvf-Gn-1uH" secondAttribute="bottom" id="6qH-BA-8fz"/>
                             <constraint firstItem="fhO-qX-Rqa" firstAttribute="trailing" secondItem="Jvf-Gn-1uH" secondAttribute="trailing" id="LRS-Q3-3WZ"/>
+                            <constraint firstItem="n9V-40-18d" firstAttribute="centerY" secondItem="NSP-Kl-1Sc" secondAttribute="centerY" id="RoI-Lv-6yL"/>
                             <constraint firstItem="Jvf-Gn-1uH" firstAttribute="leading" secondItem="fhO-qX-Rqa" secondAttribute="leading" id="TAi-Zl-phQ"/>
                             <constraint firstItem="Jvf-Gn-1uH" firstAttribute="top" secondItem="fhO-qX-Rqa" secondAttribute="top" id="gBk-OM-GMA"/>
                         </constraints>
@@ -588,6 +594,7 @@
                     </view>
                     <connections>
                         <outlet property="PDFViewer" destination="Jvf-Gn-1uH" id="VbT-nP-mdi"/>
+                        <outlet property="loadingIndicator" destination="n9V-40-18d" id="Nwz-EV-yqn"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SLC-Yg-INl" userLabel="First Responder" sceneMemberID="firstResponder"/>
