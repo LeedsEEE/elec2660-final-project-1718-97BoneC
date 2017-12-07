@@ -7,60 +7,68 @@
 //
 
 #import "MapViewController.h"
-#import <MapKit/MapKit.h>
-#import <CoreLocation/CoreLocation.h>
+#import <MapKit/MapKit.h>                   // Map View
+#import <CoreLocation/CoreLocation.h>       // Users' Location
 
-#import "Office.h"
-#import "CompanyOffices.h"
+#import "Office.h"                          // Office Properties
+#import "CompanyOffices.h"                  // Office Data
+
 #import "LocationDetailViewController.h"        // For Segue
+
+
 
 @interface MapViewController () <MKMapViewDelegate, CLLocationManagerDelegate>
 
 @property (strong, nonatomic) CLLocationManager *user;      // For Users Location
 @property (weak, nonatomic) IBOutlet MKMapView *mapView;    // For modifying Map
+@property (nonatomic) float zoomLevel;                      // Inital Zoom Level
 
 @property (strong, nonatomic) CompanyOffices *company;      // To Annotate Map With Office Locations
 
 @end
 
 // Defining the static view of the UK
-static const float Latitude = 54.778051;
-static const float Longitude = -2.935973;
-static const float Zoom = 8.5;
+static const float Latitude = 54.5;
+static const float Longitude = -2.5;
+static const float Zoom = 7.5;
 
 @implementation MapViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
+
     // To allow the user's location to be displayed on the map
     self.user = [[CLLocationManager alloc] init];
     [self.user requestWhenInUseAuthorization];
     // Map --> Attributes Inspector --> Show user's Location = YES
     
-    NSLog(@"%f", self.view.bounds.size.width);
+    self.company = [[CompanyOffices alloc] init];       // Intialising
+    [self showOfficeLocations];                         // Custom Method (see below)
     
-    self.company = [[CompanyOffices alloc] init];
-    [self showOfficeLocations];
+    // A linear formulea to determine the scale depending on map hieght
+    if (self.view.bounds.size.height > self.view.bounds.size.width){
+        self.zoomLevel = ((736.0 - self.mapView.bounds.size.height)/80) + Zoom; }   // If Hieght > Width
+    else {
+        self.zoomLevel = ((736.0 - self.mapView.bounds.size.width)/80) + Zoom;  }   // If Width > Height
     
-    [self setCentreOfMapForLatitude:Latitude andLongitude:Longitude andScale:Zoom];     // Setting static view
+    [self setCentreOfMapForLatitude:Latitude andLongitude:Longitude andScale:self.zoomLevel];     // Setting static view
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
+- (void)didReceiveMemoryWarning {   [super didReceiveMemoryWarning];    }
 
 
+
+// Setting area shown on the Map View
 - (void)setCentreOfMapForLatitude: (float)latitude andLongitude: (float)longitude andScale: (float)scale
 {
     CLLocationCoordinate2D center = CLLocationCoordinate2DMake(latitude, longitude);    // Generate centre coords
     MKCoordinateSpan mkScale = MKCoordinateSpanMake(scale, scale);                      // Generate 'zoom' scale
     MKCoordinateRegion view = MKCoordinateRegionMake(center, mkScale);                  // Setting view values
     [self.mapView setRegion:view animated:YES];                                         // Setting mapView
-    
 }
 
+
+// Looping through Data Model and generating office locations on map
 - (void)showOfficeLocations
 {
     for (Office *temp in self.company.offices) {        // Loop through every office in array
@@ -70,11 +78,11 @@ static const float Zoom = 8.5;
         [location setCoordinate:coords];    // Set annotation Coords
         [location setTitle:temp.name];      // Set name (title)
         
-        
-        NSLog(@"Location Placed = %@", temp.name);      // Debug
         [self.mapView addAnnotation:location];          // Add location to map
     }
 }
+
+
 
 #pragma mark - Navigation
 
@@ -87,13 +95,12 @@ static const float Zoom = 8.5;
             
             LocationDetailViewController *destVC = [segue destinationViewController];   // Next ViewController
             
-            NSUInteger index = [self determineOfficeIndexForString:location.annotation.title]; // Getting index
+            NSUInteger index = [self determineOfficeIndexForString:location.annotation.title]; // Getting index using custom method below
             Office *tempOffice = [self.company.offices objectAtIndex:index];        // Getting Office of index
             destVC.selectedOffice = tempOffice;                                     // Passing Office of index
         }
     }
 }
-
 
 - (NSUInteger)determineOfficeIndexForString:(NSString *)name
 {
@@ -107,12 +114,15 @@ static const float Zoom = 8.5;
     return index;       // Return the index of the named office
 }
 
+
+
 #pragma mark MKMapView Delegates
 
 // Annotation Selected
 - (void)mapView:(MKMapView *)mapView didSelectAnnotationView:(MKAnnotationView *)view
 {
     if (!(view.annotation == mapView.userLocation)){        // Make sure annotation is not the user
+        
     // Advice from: https://stackoverflow.com/questions/5947188/how-to-find-out-pin-id-in-map-annotation-view
     [mapView deselectAnnotation:view.annotation animated:YES];          // To deselect annotation
     [self performSegueWithIdentifier:@"LocationSegue" sender:view];     // Perform segue
