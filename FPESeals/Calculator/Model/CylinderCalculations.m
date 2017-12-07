@@ -6,14 +6,11 @@
 //  Copyright © 2017 University Of Leeds. All rights reserved.
 //
 
-
-// Advice obtained from: https://www.youtube.com/watch?v=ZqKbN_C4Yvg&list=PL9qPUrlLU4jSlonxFqhWKBu2c_sWY-mzg at 35 mins plus
-
 #import "CylinderCalculations.h"
 
 @interface CylinderCalculations ()
 
-// Privately edit the values of the following properties (Create private setter)
+// Privately edit the values of the following properties
 
 @property (nonatomic) double conversionConstant;
 @property (nonatomic) double nonStandard;   //.. Units
@@ -34,14 +31,13 @@
 @property (nonatomic) double extensionVelocity;
 @property (nonatomic) double contractionVelocity;
 
-
-@property (strong, nonatomic) NSArray *OutputTextMetric;
-@property (strong, nonatomic) NSArray *OutputTextImperial;
-
 @end
 
+
+// Methods
 @implementation CylinderCalculations
 
+// Custom Intialiser
 - (instancetype)init
 {
     self = [super init];
@@ -56,21 +52,23 @@
                                nil];
         
         [self calculateValues];     // Sets everything to 0!
-        
-
     }
     return self;
 }
 
+// Getting Output Data from class
 - (NSMutableArray *)getData
 {
     NSMutableArray *arrayOfData = [[NSMutableArray alloc] init];
     return arrayOfData;
 }
 
+
 # pragma mark Calculating Data
+
 - (void) calculateValues {
     
+    // All functions detailed below
     [self calculateLengths];        // millimetres or inches to metres
     [self calculatePressures];      // bar or psi to pascal
     [self calculateFlow];           // litres or gallons to metres^3 per min
@@ -88,7 +86,7 @@
     
 }
 
-#pragma mark Input Conversions to SI
+#pragma mark Input Conversions to SI Units
 
 - (void) calculateLengths {
     
@@ -138,10 +136,12 @@
 
 #pragma mark Output Calculations
 
+// Area
 - (void) calculateBoreArea
 {
     self.boreArea = [self areaFromDiameter:self.boreDiameter];      // Metres squared
 }
+
 
 - (void) calculateRodArea
 {
@@ -162,6 +162,8 @@
     return (powf(radius, 2)) * M_PI;
 }
 
+
+// Volume
 - (void) calculateBoreVolume
 {
     self.boreVolume = self.boreArea * self.strokeLength;    // Metres cubed
@@ -172,6 +174,8 @@
     self.rodVolume = self.rodArea * self.strokeLength;      // Metres cubed
 }
 
+
+// Force
 - (void) calculateBoreForce
 {
     self.forwardForce = self.inputPressure * self.boreArea;
@@ -182,6 +186,8 @@
     self.reverseForce = self.inputPressure * self.rodArea;
 }
 
+
+// Velocity
 - (void) calculateExtensionVeloctiy
 {
     double flowRate = (self.inputFlow / 60.0);      // metres cubed per second
@@ -203,6 +209,8 @@
         self.contractionVelocity = 0;
     }
 }
+
+
 
 #pragma mark Outputting Data
 - (void) createCalculationsArray{
@@ -228,6 +236,8 @@
                          nil];
 }
 
+
+
 - (double)UnitsForArea:(double)area
 {
     if (self.units == false) {                      // Metric
@@ -239,6 +249,7 @@
     
     return (area * self.conversionConstant);
 }
+
 
 - (double) UnitsForVolume:(double)volume
 {
@@ -252,6 +263,8 @@
     return (volume * self.conversionConstant);
 }
 
+
+
 - (double) UnitsForForce:(double)force
 {
     if (self.units == false) {                      // Metric
@@ -263,6 +276,8 @@
     
     return (force * self.conversionConstant);
 }
+
+
 
 - (double) UnitsForVelocity:(double)velocity
 {

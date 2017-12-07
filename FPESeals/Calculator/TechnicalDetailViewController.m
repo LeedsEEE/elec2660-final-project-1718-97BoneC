@@ -10,45 +10,44 @@
 
 @interface TechnicalDetailViewController ()
 
-// Image Viewer
-@property (weak, nonatomic) IBOutlet UIImageView *cylinderImageOutlet;
+@property (weak, nonatomic) IBOutlet UIImageView *cylinderImageOutlet;      // Image Viewer
 
-// Main Body Title
-@property (weak, nonatomic) IBOutlet UINavigationItem *propertyHeaderOutlet;
+@property (weak, nonatomic) IBOutlet UINavigationItem *propertyHeaderOutlet;    // Main Body Title
 
-// Body Description Label
-@property (weak, nonatomic) IBOutlet UILabel *descriptionOutlet;
+@property (weak, nonatomic) IBOutlet UILabel *descriptionOutlet;        // Body Description Label
+
 @end
 
 @implementation TechnicalDetailViewController
 
-- (void)viewDidLoad {
+- (void)viewDidLoad
+{
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+
+    // Setting associated view cylinder properties
+    self.cylinderImageOutlet.image = [UIImage imageNamed:self.property.propertyImageName];      // Image Viewer
     
-    self.cylinderImageOutlet.image = [UIImage imageNamed:self.property.propertyImageName];
+    // Adjusting image properties
     self.cylinderImageOutlet.layer.cornerRadius = 5;
     self.cylinderImageOutlet.layer.borderWidth = 2;
     self.cylinderImageOutlet.layer.borderColor = [[UIColor blackColor] CGColor];
-    self.propertyHeaderOutlet.title = self.property.propertyTitle;
-    self.descriptionOutlet.text = self.property.propertyDescription;
     
+    self.propertyHeaderOutlet.title = self.property.propertyTitle;          // Main  Body Title
+    
+    self.descriptionOutlet.text = self.property.propertyDescription;        // Body Description Label
+    
+    // If device is in Landscape, intent is for image to dominate the screen
     if (self.view.bounds.size.width > self.view.bounds.size.height) {       // Landscape Orientation
         
         // Advice From: https://stackoverflow.com/questions/25887009/ios-uinavigationcontroller-hide-navigationbar
-        [self.navigationController setNavigationBarHidden:YES animated:YES];
-        [self.tabBarController.tabBar setHidden:YES];
+        [self.navigationController setNavigationBarHidden:YES animated:YES];        // Hide Navigation Bar
+        [self.tabBarController.tabBar setHidden:YES];                               // Hide Tab Bar
     }
-    
-    //Temporary Image Placeholder
-    
-    
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
+
+- (void)didReceiveMemoryWarning {   [super didReceiveMemoryWarning];    }
+
 
 // Advice From: http://pinkstone.co.uk/how-to-handle-device-rotation-since-ios-8/
 -(void)viewWillTransitionToSize:(CGSize)size withTransitionCoordinator:(id<UIViewControllerTransitionCoordinator>)coordinator
@@ -56,15 +55,17 @@
     // Hiding or showing Navigation and Tab Bar depending on orientation
     if (size.width > size.height)
     {
-        [self.navigationController setNavigationBarHidden:YES animated:YES];
+        // If in landscape
+        [self.navigationController setNavigationBarHidden:YES animated:YES];            // Hide Nav and Tab
         [self.tabBarController.tabBar setHidden:YES];
-        self.cylinderImageOutlet.layer.borderColor = [[UIColor whiteColor] CGColor];
+        self.cylinderImageOutlet.layer.borderColor = [[UIColor whiteColor] CGColor];    // Set Image Border to White
     }
     else
     {
-        [self.navigationController setNavigationBarHidden:NO animated:YES];
+        // If in Portrait
+        [self.navigationController setNavigationBarHidden:NO animated:YES];             // Show Nav and Tab
         [self.tabBarController.tabBar setHidden:NO];
-        self.cylinderImageOutlet.layer.borderColor = [[UIColor blackColor] CGColor];
+        self.cylinderImageOutlet.layer.borderColor = [[UIColor blackColor] CGColor];    // Set Image Border to Black
     }
 }
 

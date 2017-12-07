@@ -12,7 +12,6 @@
 
 @property (nonatomic, strong) NSMutableArray *inputVariables;
 
-
                     // Index 0 = Bore Diameter
                     // Index 1 = Rod Diameter
                     // Index 2 = Stroke Length
@@ -23,7 +22,7 @@
 
 @property (nonatomic) BOOL units;       // False = Metric,  True = Imperial
 
-- (void) calculateValues;
+- (void) calculateValues;   // Computes Outputs
 
-- (NSMutableArray *)getData;
+- (NSMutableArray *)getData;    // Returns array of Outputs
 @end

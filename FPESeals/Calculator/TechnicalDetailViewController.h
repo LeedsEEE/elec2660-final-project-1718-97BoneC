@@ -11,6 +11,7 @@
 
 @interface TechnicalDetailViewController : UIViewController
 
+// For Navigation (Segue)
 @property (strong, nonatomic) CylinderProperty *property;
 
 @end

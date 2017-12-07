@@ -10,16 +10,10 @@
 
 @interface CylinderProperty : NSObject
 
-@property (strong, nonatomic) NSString *propertyTitle;
-
-@property (nonatomic) BOOL isInput;
-
-@property (strong, nonatomic) NSString *propertyImageName;
-
-@property (strong, nonatomic) NSString *propertyDescription;
-
-@property (strong, nonatomic) NSString *propertyUnitsMet;
-
-@property (strong, nonatomic) NSString *propertyUnitsImp;
+@property (strong, nonatomic) NSString *propertyTitle;              // Title
+@property (strong, nonatomic) NSString *propertyImageName;          // Image
+@property (strong, nonatomic) NSString *propertyDescription;        // Description
+@property (strong, nonatomic) NSString *propertyUnitsMet;           // Metric Units
+@property (strong, nonatomic) NSString *propertyUnitsImp;           // Imperial Units
 
 @end

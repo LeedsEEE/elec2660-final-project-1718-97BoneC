@@ -9,7 +9,7 @@
 #import "TechnicalViewController.h"
 
 #import "CylinderProperty.h"                    // Data Class
-#import "CylinderProperties.h"                  // Data Model
+#import "CylinderData.h"                  // Data Model
 #import "CylinderCalculations.h"                // Computing Class
 
 #import "InputCell.h"       // Custom Input Cell (For Text Box)
@@ -21,37 +21,36 @@
 @interface TechnicalViewController ()
 
 // Private Properties
-@property (strong, nonatomic) CylinderProperties *cylinder;     // Object of Cylinder Properties (to get array to display)
-@property (nonatomic) NSUInteger chosenTextField;               // Integer to store index of current chosen Text Field
-@property (strong, nonatomic) CylinderCalculations *calculator; // Calculator Object
+@property (strong, nonatomic) CylinderData *cylinderData;     // Object of Cylinder Properties (to get array to display)
+@property (strong, nonatomic) CylinderCalculations *calculator;     // Calculator Object
+@property (nonatomic) NSUInteger chosenTextField;                   // Integer to store index of current chosen Text Field
 
 // Private Actions
 - (IBAction)textFieldEdited:(UITextField *) sender;     // UITextField Action
 - (IBAction)backgroundPressed:(id)sender;               // Tap Gesture
 - (IBAction)UnitsPressed:(UIBarButtonItem *)sender;     // "Units" Tab Bar button
 
-
 @end
 
 
+// Methods
 @implementation TechnicalViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    self.tableView.allowsSelection = NO;    // Disables Selecting rows
+    self.tableView.allowsSelection = NO;    // Disables Selecting rows (Only want to select detail icons)
     
     // Intialising Objects and Arrays
-    self.cylinder = [[CylinderProperties alloc] init];
+    self.cylinderData = [[CylinderData alloc] init];
     self.calculator = [[CylinderCalculations alloc] init];
     
 
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
+- (void)didReceiveMemoryWarning {   [super didReceiveMemoryWarning];    }
+
+
 
 
 #pragma mark - Table View Data Source
@@ -62,14 +61,17 @@
 // Number Of Rows in Section
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
+    // Inputs Section
     if (section == 0) {
-        return self.cylinder.cylinderPropertiesInput.count;     // Rows in Section 1 = Number of Input Variables
-    } else if (section == 2) {
-        return self.cylinder.cylinderPropertiesOuput.count;     // Rows in Section 3 = Number of Output Variables
-    } else {
-        return 1;
-    }
+        return self.cylinderData.cylinderPropertiesInput.count;  }   // Rows in Section 1 = Number of Input Variables
     
+    // Section 1 = Spacer
+    
+    // Output Section
+    else if (section == 2) {
+        return self.cylinderData.cylinderPropertiesOuput.count;  }   // Rows in Section 3 = Number of Output Variables
+    
+    else {  return 1;   }
 }
 
 // Cell For Row
@@ -77,57 +79,66 @@
 {
     CylinderProperty *temp = [[CylinderProperty alloc] init];
     
-    if (indexPath.section == 0 ) {
-        temp = [self.cylinder.cylinderPropertiesInput objectAtIndex:indexPath.row];
-        InputCell *cell;
-        cell = [tableView dequeueReusableCellWithIdentifier:@"InputCells" forIndexPath:indexPath];
-        cell.textLabel.text = temp.propertyTitle;
-        if (self.calculator.units == false) {
-            cell.inputTextField.placeholder = temp.propertyUnitsMet;
-        } else {
-            cell.inputTextField.placeholder = temp.propertyUnitsImp;
-        }
-        cell.inputTextField.tag = indexPath.row;                //For use later to determine textfields row index
-        return cell;
-        }
-    else if (indexPath.section == 2 ) {
-        temp = [self.cylinder.cylinderPropertiesOuput objectAtIndex:indexPath.row];
-        OutputCell *cell;
-        cell = [tableView dequeueReusableCellWithIdentifier:@"OutputCells" forIndexPath:indexPath];
-        cell.textLabel.text = temp.propertyTitle;
-        cell.contentView.tag = indexPath.row;       // To determine which Text Field corresponds to which cell(.contentView)
-        if (self.calculator.units == false) {
-            cell.outputTextLabel.text = temp.propertyUnitsMet;  }
-        else { cell.outputTextLabel.text = temp.propertyUnitsImp; }
-        return cell;
-        }
-    else {
-        // Spacer Style Cell (No Label)
-        UITableViewCell *cell;
-        cell = [tableView dequeueReusableCellWithIdentifier:@"SpacerCell" forIndexPath:indexPath];
-        cell.contentView.tag = indexPath.row;       // To determine which Text Field corresponds to which cell(.contentView)
+    if (indexPath.section == 0 )    // Inputs
+    {
+        InputCell *cell = [tableView dequeueReusableCellWithIdentifier:@"InputCells" forIndexPath:indexPath];   // Storyboard Cell Reference
+        
+        temp = [self.cylinderData.cylinderPropertiesInput objectAtIndex:indexPath.row];     // Associated Cylinder Property
+        
+        if (!self.calculator.units) {   cell.inputTextField.placeholder = temp.propertyUnitsMet; }      // If Metric Units
+        
+        else {  cell.inputTextField.placeholder = temp.propertyUnitsImp; }     // If Imperial Units
+        
+        cell.textLabel.text = temp.propertyTitle;       // Setting Title
+        cell.inputTextField.tag = indexPath.row;        //For use later to determine textfields row index
         return cell;
     }
     
+    else if (indexPath.section == 2 )   // Outputs
+    {
+        OutputCell *cell = [tableView dequeueReusableCellWithIdentifier:@"OutputCells" forIndexPath:indexPath];  // Storyboard Cell Reference
+        
+        temp = [self.cylinderData.cylinderPropertiesOuput objectAtIndex:indexPath.row];     // Associated Cylinder Property
+        
+        if (!self.calculator.units) {   cell.outputTextLabel.text = temp.propertyUnitsMet;  }   // If Metric Units
+        
+        else { cell.outputTextLabel.text = temp.propertyUnitsImp; }     // If Imperial Units
+        
+        cell.textLabel.text = temp.propertyTitle;       // Setting Title
+        return cell;
+    }
+    
+    else {      // Spacer Style Cell (No Label)
+        
+        UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"SpacerCell" forIndexPath:indexPath];  // Storyboard Cell Reference
+        return cell;
+    }
 }
+
 
 #pragma mark - Navigation
 
+// Preperation Before Navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     
+    // Ensuring correct segue
     if ([[segue identifier] isEqualToString:@"PropertyDetail"]) {       // Segue Identifier = "PropertyDetail"
         
         TechnicalDetailViewController *destinationVC = [segue destinationViewController];       // Destination View Controller
         
-        NSIndexPath *indexPath = [self.tableView indexPathForCell:sender];          // Grabbing the index path of the cell who's accessory button was pressed
+        NSIndexPath *indexPath = [self.tableView indexPathForCell:sender];          // Index Path of the cells accessory button which was pressed
         
         CylinderProperty *tempProperty;
-        if (indexPath.section == 0 ) {
-            tempProperty = [ self.cylinder.cylinderPropertiesInput objectAtIndex:indexPath.row];       // Getting assocaited cylinder property temporiarly
-        } else if (indexPath.section == 2 ) {
-            tempProperty = [ self.cylinder.cylinderPropertiesOuput objectAtIndex:indexPath.row];       // Getting assocaited cylinder property temporiarly
+        if (indexPath.section == 0 )    // Inputs
+        {
+            tempProperty = [ self.cylinderData.cylinderPropertiesInput objectAtIndex:indexPath.row];       // Getting assocaited cylinder property
         }
-        destinationVC.property = tempProperty;      // Setting the destination cylinder property
+        else if (indexPath.section == 2 )   // Outputs
+        {
+            tempProperty = [ self.cylinderData.cylinderPropertiesOuput objectAtIndex:indexPath.row];       // Getting assocaited cylinder property
+        }
+        
+        destinationVC.property = tempProperty;      // Passing the selected cylinder property
     }
 }
 
@@ -137,16 +148,17 @@
 
 - (BOOL)textFieldShouldBeginEditing:(UITextField *)textField
 {
-    // Gets the row index of the current (about to be editted) text field
+    // Gets the row index of the current (about to be editted) text field to use in resigning keyboard
     // Help obtained from: https://stackoverflow.com/questions/5732438/how-to-get-uitableviewcells-index-from-its-edited-uitextfield
     self.chosenTextField = textField.tag;
     return YES;
 }
 
 // Hitting "Done" (Return) Key on keyboard
+// Not needed when number pad is used
 - (BOOL)textFieldShouldReturn:(UITextField *)textField {
     
-    [textField resignFirstResponder];       // Removing Keyboard
+    [textField resignFirstResponder];       // Dismissing Keyboard
 
     return YES;
     
@@ -155,73 +167,83 @@
 // When tap gesture is recognised
 - (IBAction)backgroundPressed:(id)sender
 {
-    NSIndexPath *indexPath = [NSIndexPath indexPathForRow:self.chosenTextField inSection:0];    // Inputs only in first
-                                                                                                //  section
-    InputCell *cell = [self.tableView cellForRowAtIndexPath:indexPath];     // Getting cell of textfields location
+    // self.chosenTextField is a NSUInteger NOT a UITextField
+    NSIndexPath *indexPath = [NSIndexPath indexPathForRow:self.chosenTextField inSection:0];    // User only inputs in first section (TextFields)
+    
+    InputCell *cell = [self.tableView cellForRowAtIndexPath:indexPath];     // Getting cell for textfields location
+    
     if ( [cell.inputTextField isFirstResponder]) {                          // Making sure textfield is first responder
         [cell.inputTextField resignFirstResponder];                         // Resigning keyboard if so
     }
 }
 
 // Getting "Live" entered data
-- (IBAction)textFieldEdited:(UITextField *)sender
+- (IBAction)textFieldEdited:(UITextField *)sender       // Value Changed
 {
-    self.chosenTextField = sender.tag;
-    // Help obtained from: https://stackoverflow.com/questions/8483967/how-to-check-text-field-input-at-real-time
-    float data = [sender.text doubleValue];     // Converting from string to float
-    NSNumber *value = [NSNumber numberWithFloat:data];
-    
-    [self.calculator.inputVariables replaceObjectAtIndex:self.chosenTextField withObject:value];
-    
-    [self.calculator calculateValues];
+    self.chosenTextField = sender.tag;          // Updating viewcontroller about chosen textfield
 
-    [self updateValues];        // Update Values shown to User
+    float data = [sender.text doubleValue];             // Converting string to double
+    NSNumber *value = [NSNumber numberWithFloat:data];      // Creating NSNumber Object to enter value into array
+    
+    [self.calculator.inputVariables replaceObjectAtIndex:self.chosenTextField withObject:value];    // Update Data Model (Cylinder Calculations)
+    
+    [self.calculator calculateValues];      // Cylinder Calculations Method
+
+    [self updateValues];        // Update Values shown to User (see below)
     
 }
 
+// Updates Values of Labels
 - (void) updateValues
 {
-    for (NSIndexPath *indexPath in [self.tableView indexPathsForVisibleRows])
+    for (NSIndexPath *indexPath in [self.tableView indexPathsForVisibleRows])       // Grabs Index Path of currently visible rows
     {
-        if (indexPath.section == 2) {
-            CylinderProperty *temp = [self.cylinder.cylinderPropertiesOuput objectAtIndex:indexPath.row];
-            OutputCell *cell = [self.tableView cellForRowAtIndexPath:indexPath];
-            float value = [[self.calculator.CalculatedValues objectAtIndex:indexPath.row] doubleValue];
+        if (indexPath.section == 2)     // Output Section
+        {
+            CylinderProperty *temp = [self.cylinderData.cylinderPropertiesOuput objectAtIndex:indexPath.row];   // Associated Cylinder Property
+            
+            OutputCell *cell = [self.tableView cellForRowAtIndexPath:indexPath];        // Associated Cell to update
+            
+            float value = [[self.calculator.CalculatedValues objectAtIndex:indexPath.row] floatValue];  // Getting Assocaited Value for cell
+            
             if (!(value == 0))     // If number is non zero
-            {
-                cell.outputTextLabel.text = [NSString stringWithFormat:@"%.2f",value];
-            } else if (self.calculator.units == true)
-            {
-                cell.outputTextLabel.text = temp.propertyUnitsImp;
-            } else {
-                cell.outputTextLabel.text = temp.propertyUnitsMet;
-            }
+            {   cell.outputTextLabel.text = [NSString stringWithFormat:@"%.2f",value];  }   // Display Value
+            
+            else if (self.calculator.units == true)
+            {   cell.outputTextLabel.text = temp.propertyUnitsImp;  }       // If Imperial Units
+            else
+            {   cell.outputTextLabel.text = temp.propertyUnitsMet;  }       // If Metric Units
         }
     }
 }
 
+
 #pragma mark Changing Units
 
+// Pressing 'Units' Navigation Button
 - (IBAction)UnitsPressed:(UIBarButtonItem *)sender {
-    if (self.calculator.units) {
+    
+    if (self.calculator.units)  {           // If Imperial Set Metric
         self.calculator.units = false;
         sender.title = @"Metric";
-    } else {
+    } else  {                               // If Metric Set Imperial
         self.calculator.units = true;
         sender.title = @"Imperial";
     }
     
-    for (NSIndexPath *indexPath in [self.tableView indexPathsForVisibleRows])
+    // Clearing Inputted Data
+    for (NSIndexPath *indexPath in [self.tableView indexPathsForVisibleRows])       // Index Paths for visible rows
     {
         // Advice from: https://stackoverflow.com/questions/6560888/how-to-delete-the-contents-of-a-uitextfield-programmatically
         if (indexPath.section == 0) {
+            // Setting String in textfield to nil / " "
             InputCell *cell = [self.tableView cellForRowAtIndexPath:indexPath];
             cell.inputTextField.text = nil;
+            // Updating Model
             [self.calculator.inputVariables replaceObjectAtIndex:indexPath.row withObject:@0.0];
         }
     }
-    
+    // Force tableview to reload (and regenerate cells)
     [self.tableView reloadData];
-    
 }
 @end

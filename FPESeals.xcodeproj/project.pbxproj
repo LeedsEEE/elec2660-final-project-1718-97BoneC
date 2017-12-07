@@ -63,7 +63,7 @@
 		E6DB1E801FBCFF9700C5B7D5 /* TechnicalDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E6DB1E7F1FBCFF9700C5B7D5 /* TechnicalDetailViewController.m */; };
 		E6DB1E831FBD91D500C5B7D5 /* CatalogueViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E6DB1E821FBD91D500C5B7D5 /* CatalogueViewController.m */; };
 		E6DB1E891FBF967900C5B7D5 /* CylinderProperty.m in Sources */ = {isa = PBXBuildFile; fileRef = E6DB1E881FBF967900C5B7D5 /* CylinderProperty.m */; };
-		E6DB1E8D1FBF980F00C5B7D5 /* CylinderProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = E6DB1E8C1FBF980F00C5B7D5 /* CylinderProperties.m */; };
+		E6DB1E8D1FBF980F00C5B7D5 /* CylinderData.m in Sources */ = {isa = PBXBuildFile; fileRef = E6DB1E8C1FBF980F00C5B7D5 /* CylinderData.m */; };
 		E6FEC0841FBB585600949685 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E6FEC0831FBB585600949685 /* AppDelegate.m */; };
 		E6FEC08D1FBB585600949685 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E6FEC08B1FBB585600949685 /* Main.storyboard */; };
 		E6FEC08F1FBB585600949685 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E6FEC08E1FBB585600949685 /* Assets.xcassets */; };
@@ -162,8 +162,8 @@
 		E6DB1E821FBD91D500C5B7D5 /* CatalogueViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CatalogueViewController.m; sourceTree = "<group>"; };
 		E6DB1E871FBF967900C5B7D5 /* CylinderProperty.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CylinderProperty.h; sourceTree = "<group>"; };
 		E6DB1E881FBF967900C5B7D5 /* CylinderProperty.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CylinderProperty.m; sourceTree = "<group>"; };
-		E6DB1E8B1FBF980F00C5B7D5 /* CylinderProperties.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CylinderProperties.h; sourceTree = "<group>"; };
-		E6DB1E8C1FBF980F00C5B7D5 /* CylinderProperties.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CylinderProperties.m; sourceTree = "<group>"; };
+		E6DB1E8B1FBF980F00C5B7D5 /* CylinderData.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CylinderData.h; sourceTree = "<group>"; };
+		E6DB1E8C1FBF980F00C5B7D5 /* CylinderData.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CylinderData.m; sourceTree = "<group>"; };
 		E6FEC07F1FBB585600949685 /* FPESeals.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FPESeals.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E6FEC0821FBB585600949685 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		E6FEC0831FBB585600949685 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -337,8 +337,8 @@
 			children = (
 				E6DB1E871FBF967900C5B7D5 /* CylinderProperty.h */,
 				E6DB1E881FBF967900C5B7D5 /* CylinderProperty.m */,
-				E6DB1E8B1FBF980F00C5B7D5 /* CylinderProperties.h */,
-				E6DB1E8C1FBF980F00C5B7D5 /* CylinderProperties.m */,
+				E6DB1E8B1FBF980F00C5B7D5 /* CylinderData.h */,
+				E6DB1E8C1FBF980F00C5B7D5 /* CylinderData.m */,
 				E652808B1FC4A9F0009731AA /* CylinderCalculations.h */,
 				E652808C1FC4A9F0009731AA /* CylinderCalculations.m */,
 			);
@@ -591,7 +591,7 @@
 				E68E4B081FC87D33008D936F /* CompanyOffices.m in Sources */,
 				E65536DB1FD8817200ACB589 /* WebViewController.m in Sources */,
 				E6FEC0951FBB585600949685 /* main.m in Sources */,
-				E6DB1E8D1FBF980F00C5B7D5 /* CylinderProperties.m in Sources */,
+				E6DB1E8D1FBF980F00C5B7D5 /* CylinderData.m in Sources */,
 				E6121C451FC72CF1002999AE /* CatalogueViewCell.m in Sources */,
 				E68E4B051FC87B5E008D936F /* Office.m in Sources */,
 			);
