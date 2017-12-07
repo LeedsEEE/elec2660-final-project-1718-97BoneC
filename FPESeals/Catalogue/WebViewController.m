@@ -15,6 +15,7 @@
 @property (strong, nonatomic) IBOutlet WKWebView *PDFViewer;                        // WebView
 @property (weak, nonatomic) IBOutlet UIActivityIndicatorView *loadingIndicator;     // UI Activitiy Indicator
 
+
 @end
 
 
@@ -99,4 +100,6 @@
 }
 
 
+- (IBAction)tapGesture:(id)sender {
+}
 @end

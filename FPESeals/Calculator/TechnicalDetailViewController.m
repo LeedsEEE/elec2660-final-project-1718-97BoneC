@@ -16,6 +16,7 @@
 
 @property (weak, nonatomic) IBOutlet UILabel *descriptionOutlet;        // Body Description Label
 
+- (IBAction)tapGesture:(id)sender;
 @end
 
 @implementation TechnicalDetailViewController
@@ -69,4 +70,23 @@
     }
 }
 
+// Tapping on view to reveal/hide Nav and Tab Bar when in Landscape (full image view)
+- (IBAction)tapGesture:(id)sender {
+    
+    if (self.view.bounds.size.width > self.view.bounds.size.height) // When device is in landscape
+    {
+        if ([self.navigationController isNavigationBarHidden]) {    // If Hidden
+            
+            // Show Nav and Tab
+            [self.navigationController setNavigationBarHidden:NO animated:YES];
+            [self.tabBarController.tabBar setHidden:NO];    }
+        else {                                                      // If Revealed
+            // Hide Nav and Tab
+            [self.navigationController setNavigationBarHidden:YES animated:YES];
+            [self.tabBarController.tabBar setHidden:YES];
+            
+        }
+    }
+    
+}
 @end
