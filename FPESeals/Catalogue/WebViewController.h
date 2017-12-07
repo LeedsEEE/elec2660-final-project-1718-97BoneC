@@ -11,6 +11,7 @@
 
 @interface WebViewController : UIViewController
 
+// For Navigation (Segue)
 @property (strong, nonatomic) NSString *catalogueName;
 @property (strong, nonatomic) NSString *catalogueURLString;
 

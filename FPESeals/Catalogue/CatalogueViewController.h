@@ -10,4 +10,6 @@
 
 @interface CatalogueViewController : UICollectionViewController
 
+// Nothing Public To Declare
+
 @end

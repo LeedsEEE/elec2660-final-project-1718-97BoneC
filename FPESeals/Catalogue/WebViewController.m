@@ -10,23 +10,24 @@
 
 // Advice From: https://iostpoint.wordpress.com/2016/08/05/implement-wkwebview-in-ios/
 
-@interface WebViewController () <WKUIDelegate, WKNavigationDelegate>
-@property (strong, nonatomic) IBOutlet WKWebView *PDFViewer;
-@property (weak, nonatomic) IBOutlet UIActivityIndicatorView *loadingIndicator;
+@interface WebViewController () <WKUIDelegate, WKNavigationDelegate>    // WebKit Delegates
 
+@property (strong, nonatomic) IBOutlet WKWebView *PDFViewer;                        // WebView
+@property (weak, nonatomic) IBOutlet UIActivityIndicatorView *loadingIndicator;     // UI Activitiy Indicator
 
 @end
+
 
 @implementation WebViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    [self intialiseWebViewer];      // WKWebView
+    [self intialiseWebViewer];      // WKWebView    (See Below)
     
-    [self createURLRequest];        // NSURL Request
+    [self createURLRequest];        // NSURL Request    (See Below)
     
-    [self loadingProgress];         // Activity Indicator
+    [self loadingProgress];         // Activity Indicator   (See Below)
 }
 
 - (void)didReceiveMemoryWarning {   [super didReceiveMemoryWarning];    }
@@ -41,9 +42,10 @@
     self.PDFViewer.UIDelegate = self;
     self.PDFViewer.navigationDelegate = self;
     
-    // Adding View
+    // Adding WebView to interface
     [self.view addSubview:self.PDFViewer];
     
+    // Allow for autoresing
     // Advice from: https://stackoverflow.com/questions/30737254/wkwebview-added-as-subview-is-not-resized-on-rotation-in-swift
     [self.PDFViewer setAutoresizingMask:UIViewAutoresizingFlexibleHeight | UIViewAutoresizingFlexibleWidth];
 }
@@ -52,7 +54,7 @@
 - (void)createURLRequest
 {
     // Getting Catalogue from website (URL)
-    NSURL *catalogueURL = [NSURL URLWithString:self.catalogueURLString];
+    NSURL *catalogueURL = [NSURL URLWithString:self.catalogueURLString];            // See Model --> 'Catalogues.m' for URL
     NSURLRequest *requestURL = [[NSURLRequest alloc] initWithURL:catalogueURL];
     [self.PDFViewer loadRequest:requestURL];
 }
@@ -66,6 +68,7 @@
     
 }
 
+// Acivity (Share) Button Pressed
 - (IBAction)shareCatalogue:(id)sender
 {
     // Advice from: https://www.grapecity.com/en/blogs/adding-a-share-button-to-an-objective-c-ios-app
@@ -88,6 +91,7 @@
 
 #pragma mark WKWebView Navigation Delegates
 
+// Called when all data from URL Request is obtained and visual loading is about to begin
 - (void)webView:(WKWebView *)webView didFinishNavigation:(WKNavigation *)navigation
 {
     // Stop Animating Activity Indicator

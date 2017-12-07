@@ -1,5 +1,5 @@
 //
-//  Catalogues.h
+//  CatalogueData.h
 //  FPESeals
 //
 //  Created by Christopher Bone on 23/11/2017.
@@ -7,10 +7,12 @@
 //
 
 #import <Foundation/Foundation.h>
+
+// To Create Array of Objects Which Contain UIImages
 #import <UIKit/UIKit.h>
 
 
-@interface Catalogues : NSObject
+@interface CatalogueData : NSObject
 
 @property (strong, nonatomic) NSMutableArray *avaliableCatalogues;
 

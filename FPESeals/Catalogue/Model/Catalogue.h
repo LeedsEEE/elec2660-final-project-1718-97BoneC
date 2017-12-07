@@ -7,12 +7,13 @@
 //
 
 #import <Foundation/Foundation.h>
-#import <UIKit/UIKit.h>
+
+#import <UIKit/UIKit.h>     // So class can have a UIImage property
 
 @interface Catalogue : NSObject
 
-@property (strong, nonatomic) NSString *Name;
-@property (strong, nonatomic) NSString *URL;
-@property (strong, nonatomic) UIImage *Image;
+@property (strong, nonatomic) NSString *Name;   // For Label and Sharing
+@property (strong, nonatomic) NSString *URL;    // URL to get Catalogue Data
+@property (strong, nonatomic) UIImage *Image;   // Image for Collection View
 
 @end

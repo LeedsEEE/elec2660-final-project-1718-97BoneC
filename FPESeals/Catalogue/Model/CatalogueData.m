@@ -1,22 +1,29 @@
 //
-//  Catalogues.m
+//  CatalogueData.m
 //  FPESeals
 //
 //  Created by Christopher Bone on 23/11/2017.
 //  Copyright © 2017 University Of Leeds. All rights reserved.
 //
 
-#import "Catalogues.h"
+#import "CatalogueData.h"
 #import "Catalogue.h"
 
 
-@implementation Catalogues
+@implementation CatalogueData
 
+// Custom Initialiser
 - (instancetype)init
 {
     self = [super init];
     if (self) {
         
+        /*
+         Catalogue Class *InstanceName = [Initalise]
+         InstanceName.name  = Name Of Catalogue         (String)
+         InstanceName.URL   = URL Address of Catalogue  (String)
+         InstanceName.Image = UIImage with given name   (UIImage)
+         */
         
         // Generating available catalogues
         Catalogue *CFPR = [[Catalogue alloc] init];
@@ -59,11 +66,11 @@
         
         // Add Catalogues to the array
         [self.avaliableCatalogues addObject:CFPR];      // Index 0
-        [self.avaliableCatalogues addObject:MSPR];
-        [self.avaliableCatalogues addObject:IKC];
-        [self.avaliableCatalogues addObject:CP];
-        [self.avaliableCatalogues addObject:MKC];
-        [self.avaliableCatalogues addObject:BDGC];
+        [self.avaliableCatalogues addObject:MSPR];      // Index 1
+        [self.avaliableCatalogues addObject:IKC];       // Index 2
+        [self.avaliableCatalogues addObject:CP];        // Index 3
+        [self.avaliableCatalogues addObject:MKC];       // Index 4
+        [self.avaliableCatalogues addObject:BDGC];      // Index 5
         [self.avaliableCatalogues addObject:BDHC];      // Index 6
         
     }

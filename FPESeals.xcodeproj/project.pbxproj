@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		E6121C3F1FC6F191002999AE /* Catalogue.m in Sources */ = {isa = PBXBuildFile; fileRef = E6121C3E1FC6F191002999AE /* Catalogue.m */; };
-		E6121C421FC6F457002999AE /* Catalogues.m in Sources */ = {isa = PBXBuildFile; fileRef = E6121C411FC6F457002999AE /* Catalogues.m */; };
+		E6121C421FC6F457002999AE /* CatalogueData.m in Sources */ = {isa = PBXBuildFile; fileRef = E6121C411FC6F457002999AE /* CatalogueData.m */; };
 		E6121C451FC72CF1002999AE /* CatalogueViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E6121C441FC72CF1002999AE /* CatalogueViewCell.m */; };
 		E6121C481FC75927002999AE /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E6121C471FC75920002999AE /* CoreLocation.framework */; settings = {ATTRIBUTES = (Required, ); }; };
 		E6121C4C1FC77555002999AE /* catalogue.png in Resources */ = {isa = PBXBuildFile; fileRef = E6121C491FC77555002999AE /* catalogue.png */; };
@@ -95,8 +95,8 @@
 /* Begin PBXFileReference section */
 		E6121C3D1FC6F191002999AE /* Catalogue.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Catalogue.h; sourceTree = "<group>"; };
 		E6121C3E1FC6F191002999AE /* Catalogue.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Catalogue.m; sourceTree = "<group>"; };
-		E6121C401FC6F457002999AE /* Catalogues.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Catalogues.h; sourceTree = "<group>"; };
-		E6121C411FC6F457002999AE /* Catalogues.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Catalogues.m; sourceTree = "<group>"; };
+		E6121C401FC6F457002999AE /* CatalogueData.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CatalogueData.h; sourceTree = "<group>"; };
+		E6121C411FC6F457002999AE /* CatalogueData.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CatalogueData.m; sourceTree = "<group>"; };
 		E6121C431FC72CF1002999AE /* CatalogueViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CatalogueViewCell.h; sourceTree = "<group>"; };
 		E6121C441FC72CF1002999AE /* CatalogueViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CatalogueViewCell.m; sourceTree = "<group>"; };
 		E6121C471FC75920002999AE /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
@@ -216,8 +216,8 @@
 			children = (
 				E6121C3D1FC6F191002999AE /* Catalogue.h */,
 				E6121C3E1FC6F191002999AE /* Catalogue.m */,
-				E6121C401FC6F457002999AE /* Catalogues.h */,
-				E6121C411FC6F457002999AE /* Catalogues.m */,
+				E6121C401FC6F457002999AE /* CatalogueData.h */,
+				E6121C411FC6F457002999AE /* CatalogueData.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -581,7 +581,7 @@
 				E6DB1E7D1FBCF23300C5B7D5 /* TechnicalViewController.m in Sources */,
 				E65280871FC47484009731AA /* InputCell.m in Sources */,
 				E652808A1FC49334009731AA /* OutputCell.m in Sources */,
-				E6121C421FC6F457002999AE /* Catalogues.m in Sources */,
+				E6121C421FC6F457002999AE /* CatalogueData.m in Sources */,
 				E6FEC0BC1FBB615A00949685 /* LocationDetailViewController.m in Sources */,
 				E6FEC0841FBB585600949685 /* AppDelegate.m in Sources */,
 				E6121C3F1FC6F191002999AE /* Catalogue.m in Sources */,

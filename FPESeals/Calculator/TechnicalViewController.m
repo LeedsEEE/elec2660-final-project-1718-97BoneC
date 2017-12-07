@@ -7,12 +7,16 @@
 //
 
 #import "TechnicalViewController.h"
-#import "CylinderProperty.h"
-#import "CylinderProperties.h"
-#import "TechnicalDetailViewController.h"
-#import "InputCell.h"
-#import "OutputCell.h"
-#import "CylinderCalculations.h"
+
+#import "CylinderProperty.h"                    // Data Class
+#import "CylinderProperties.h"                  // Data Model
+#import "CylinderCalculations.h"                // Computing Class
+
+#import "InputCell.h"       // Custom Input Cell (For Text Box)
+#import "OutputCell.h"      // Custom Output Cell (For Text Label)
+
+#import "TechnicalDetailViewController.h"       // For Navigation (Segue)
+
 
 @interface TechnicalViewController ()
 

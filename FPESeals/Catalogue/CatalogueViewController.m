@@ -7,27 +7,31 @@
 //
 
 #import "CatalogueViewController.h"
-#import "CatalogueViewCell.h"   // Custom Collection View Cell
-#import "Catalogues.h"          // The data model of Catalogues
-#import "Catalogue.h"           // The Catalogue Model
-#import "WebViewController.h"   // Next ViewController For Segue
+#import "CatalogueViewCell.h"           // Custom Collection View Cell
+#import "CatalogueData.h"               // The data model of Catalogues
+#import "Catalogue.h"                   // The Catalogue Model
+#import "WebViewController.h"           // Next ViewController For Segue
 
+
+// Private Properties
 @interface CatalogueViewController ()
 
-@property (strong, nonatomic) Catalogues *list;     // Data Model
+@property (strong, nonatomic) CatalogueData *data;     // Data Model
 
 @end
 
+
+// Methods
 @implementation CatalogueViewController
 
-static NSString * const reuseIdentifier = @"CatalogueCell";
+static NSString * const reuseIdentifier = @"CatalogueCell"; // To Identify Cell on Storyboard
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
     
-    self.list = [[Catalogues alloc] init];
-
+    self.data = [[CatalogueData alloc] init];  // Intialise Catalogue Data
+    //
 }
 
 - (void)didReceiveMemoryWarning {       [super didReceiveMemoryWarning];        }
@@ -42,11 +46,11 @@ static NSString * const reuseIdentifier = @"CatalogueCell";
     if ([[segue identifier] isEqualToString:@"viewPDF"]) {
         
         // Getting index of selecteded cell
-        CatalogueViewCell *selectedCell = sender;
+        CatalogueViewCell *selectedCell = sender;   // Only cells will produce 'viewPDF' segue
         NSIndexPath *indexPath = [self.collectionView indexPathForCell:selectedCell];
         
         // Getting desired (selected) Catalogue
-        Catalogue *selectedCatalogue = [self.list.avaliableCatalogues objectAtIndex:indexPath.row];
+        Catalogue *selectedCatalogue = [self.data.avaliableCatalogues objectAtIndex:indexPath.row];
         
         // Next View Controller (PDF Reader)
         WebViewController *DestVC = [segue  destinationViewController];
@@ -65,7 +69,7 @@ static NSString * const reuseIdentifier = @"CatalogueCell";
 
 // Number of items is dependant on size of available catalogues
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
-    return self.list.avaliableCatalogues.count;
+    return self.data.avaliableCatalogues.count;
 }
 
 
@@ -76,7 +80,7 @@ static NSString * const reuseIdentifier = @"CatalogueCell";
     CatalogueViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:reuseIdentifier forIndexPath:indexPath];
     
     // Corresponding catalogue
-    Catalogue *tempCatalogue = [self.list.avaliableCatalogues objectAtIndex:indexPath.row];
+    Catalogue *tempCatalogue = [self.data.avaliableCatalogues objectAtIndex:indexPath.row];
     
     // Setting cell data
     cell.cellTitleLabel.text = tempCatalogue.Name;
