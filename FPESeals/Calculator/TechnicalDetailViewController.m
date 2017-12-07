@@ -43,6 +43,7 @@
         // Advice From: https://stackoverflow.com/questions/25887009/ios-uinavigationcontroller-hide-navigationbar
         [self.navigationController setNavigationBarHidden:YES animated:YES];        // Hide Navigation Bar
         [self.tabBarController.tabBar setHidden:YES];                               // Hide Tab Bar
+        self.cylinderImageOutlet.layer.borderColor = [[UIColor whiteColor] CGColor];
     }
 }
 

@@ -111,14 +111,14 @@
         
         CylinderProperty *ExtensionVelocity = [[CylinderProperty alloc] init];
         ExtensionVelocity.propertyTitle = @"Extension Velocity";
-        ExtensionVelocity.propertyImageName = @"";
+        ExtensionVelocity.propertyImageName = @"Extension Velocity.png";
         ExtensionVelocity.propertyDescription = @"Extension Velocity is the average speed at which the hydraulic ram is expect to move when extending the rod. Its value is largely dependant on the input flow and and bore side volume.";
         ExtensionVelocity.propertyUnitsMet = @"metres per second";
         ExtensionVelocity.propertyUnitsImp = @"inches per second";
         
         CylinderProperty *ContractionVelocity = [[CylinderProperty alloc] init];
         ContractionVelocity.propertyTitle = @"Contraction Velocity";
-        ContractionVelocity.propertyImageName = @"";
+        ContractionVelocity.propertyImageName = @"Contraction Velocity.png";
         ContractionVelocity.propertyDescription = @"Contraction Velocity is the average speed at which the hydraulic ram is expected to move when contracting. Its value is largely dependant on input flow and rod side volume.";
         ContractionVelocity.propertyUnitsMet = @"metres per second";
         ContractionVelocity.propertyUnitsImp = @"inches per second";

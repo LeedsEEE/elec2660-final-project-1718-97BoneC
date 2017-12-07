@@ -20,6 +20,8 @@
 		E6121C581FC77980002999AE /* ContactUs.png in Resources */ = {isa = PBXBuildFile; fileRef = E6121C551FC77980002999AE /* ContactUs.png */; };
 		E6121C591FC77980002999AE /* ContactUs@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E6121C561FC77980002999AE /* ContactUs@2x.png */; };
 		E6121C5A1FC77980002999AE /* ContactUs@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = E6121C571FC77980002999AE /* ContactUs@3x.png */; };
+		E61EBBAC1FD9FC970044EF70 /* Contraction Velocity.png in Resources */ = {isa = PBXBuildFile; fileRef = E61EBBAA1FD9FC970044EF70 /* Contraction Velocity.png */; };
+		E61EBBAD1FD9FC970044EF70 /* Extension Velocity.png in Resources */ = {isa = PBXBuildFile; fileRef = E61EBBAB1FD9FC970044EF70 /* Extension Velocity.png */; };
 		E65280841FC44F93009731AA /* GreySquare.png in Resources */ = {isa = PBXBuildFile; fileRef = E65280831FC44F93009731AA /* GreySquare.png */; };
 		E65280871FC47484009731AA /* InputCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E65280861FC47484009731AA /* InputCell.m */; };
 		E652808A1FC49334009731AA /* OutputCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E65280891FC49334009731AA /* OutputCell.m */; };
@@ -109,6 +111,8 @@
 		E6121C551FC77980002999AE /* ContactUs.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ContactUs.png; sourceTree = "<group>"; };
 		E6121C561FC77980002999AE /* ContactUs@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ContactUs@2x.png"; sourceTree = "<group>"; };
 		E6121C571FC77980002999AE /* ContactUs@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ContactUs@3x.png"; sourceTree = "<group>"; };
+		E61EBBAA1FD9FC970044EF70 /* Contraction Velocity.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Contraction Velocity.png"; sourceTree = "<group>"; };
+		E61EBBAB1FD9FC970044EF70 /* Extension Velocity.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Extension Velocity.png"; sourceTree = "<group>"; };
 		E65280831FC44F93009731AA /* GreySquare.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = GreySquare.png; sourceTree = "<group>"; };
 		E65280851FC47484009731AA /* InputCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = InputCell.h; sourceTree = "<group>"; };
 		E65280861FC47484009731AA /* InputCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = InputCell.m; sourceTree = "<group>"; };
@@ -245,6 +249,8 @@
 		E6DB1E7A1FBBB8D700C5B7D5 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				E61EBBAA1FD9FC970044EF70 /* Contraction Velocity.png */,
+				E61EBBAB1FD9FC970044EF70 /* Extension Velocity.png */,
 				E65536D61FD7026300ACB589 /* Bore Diameter.png */,
 				E65536D51FD7026200ACB589 /* Rod Diameter.png */,
 				E6D4AA331FCCC69800A65487 /* AppIcon40pt@2x.png */,
@@ -515,6 +521,7 @@
 				E6D4AA0A1FCA1EAF00A65487 /* LocationMarker2.png in Resources */,
 				E68E4AF71FC77E14008D936F /* FPE Seals Ltd.bmp in Resources */,
 				E6FEC0921FBB585600949685 /* LaunchScreen.storyboard in Resources */,
+				E61EBBAC1FD9FC970044EF70 /* Contraction Velocity.png in Resources */,
 				E65536D71FD7026300ACB589 /* Rod Diameter.png in Resources */,
 				E6D4AA261FCCBDAC00A65487 /* Blank.png in Resources */,
 				E6D4AA321FCCC56D00A65487 /* AppIcon20pt@3x.png in Resources */,
@@ -528,6 +535,7 @@
 				E6FEC08F1FBB585600949685 /* Assets.xcassets in Resources */,
 				E68E4B011FC85D25008D936F /* MKC.png in Resources */,
 				E65536D81FD7026300ACB589 /* Bore Diameter.png in Resources */,
+				E61EBBAD1FD9FC970044EF70 /* Extension Velocity.png in Resources */,
 				E6D4AA221FCCA92E00A65487 /* Oil Flow.png in Resources */,
 				E6121C4E1FC77555002999AE /* catalogue@3x.png in Resources */,
 				E68E4AFE1FC85D25008D936F /* CFPR.png in Resources */,

@@ -56,7 +56,7 @@
 #pragma mark - Table View Data Source
 
 // Number Of Sections in Table
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView { return 3; }    // Only 2 section in Table View
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView { return 2; }    // Only 2 section in Table View
 
 // Number Of Rows in Section
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
@@ -65,11 +65,9 @@
     if (section == 0) {
         return self.cylinderData.cylinderPropertiesInput.count;  }   // Rows in Section 1 = Number of Input Variables
     
-    // Section 1 = Spacer
-    
     // Output Section
-    else if (section == 2) {
-        return self.cylinderData.cylinderPropertiesOuput.count;  }   // Rows in Section 3 = Number of Output Variables
+    else if (section == 1) {
+        return self.cylinderData.cylinderPropertiesOuput.count;  }   // Rows in Section 2 = Number of Output Variables
     
     else {  return 1;   }
 }
@@ -94,7 +92,7 @@
         return cell;
     }
     
-    else if (indexPath.section == 2 )   // Outputs
+    else if (indexPath.section == 1 )   // Outputs
     {
         OutputCell *cell = [tableView dequeueReusableCellWithIdentifier:@"OutputCells" forIndexPath:indexPath];  // Storyboard Cell Reference
         
@@ -115,6 +113,21 @@
     }
 }
 
+- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
+{
+    if (section == 0)
+    {
+        return @"Please Input Data...";
+    }
+    else if (section == 1)
+    {
+        return @"Calculated Outputs...";
+    }
+    else
+    {
+        return nil;
+    }
+}
 
 #pragma mark - Navigation
 
@@ -133,7 +146,7 @@
         {
             tempProperty = [ self.cylinderData.cylinderPropertiesInput objectAtIndex:indexPath.row];       // Getting assocaited cylinder property
         }
-        else if (indexPath.section == 2 )   // Outputs
+        else if (indexPath.section == 1 )   // Outputs
         {
             tempProperty = [ self.cylinderData.cylinderPropertiesOuput objectAtIndex:indexPath.row];       // Getting assocaited cylinder property
         }
@@ -198,7 +211,7 @@
 {
     for (NSIndexPath *indexPath in [self.tableView indexPathsForVisibleRows])       // Grabs Index Path of currently visible rows
     {
-        if (indexPath.section == 2)     // Output Section
+        if (indexPath.section == 1)     // Output Section
         {
             CylinderProperty *temp = [self.cylinderData.cylinderPropertiesOuput objectAtIndex:indexPath.row];   // Associated Cylinder Property
             
