@@ -68,13 +68,21 @@
 
 - (IBAction)shareCatalogue:(id)sender
 {
+    // Advice from: https://www.grapecity.com/en/blogs/adding-a-share-button-to-an-objective-c-ios-app
+    // Preparing data to share
     NSString *catalogue = self.catalogueName;
     NSURL *catalogueURL = [NSURL URLWithString:self.catalogueURLString];
+    
+    // Array of data to share
     NSArray *activityItems = @[catalogue, catalogueURL];
+    
+    // Creating Activity View Controller
     UIActivityViewController *shareViewController = [[UIActivityViewController alloc]
                                                      initWithActivityItems:activityItems
                                                      applicationActivities:nil];
+    // Any Excluded Activities?
     shareViewController.excludedActivityTypes = @[];
+    
     [self presentViewController:shareViewController animated:YES completion:nil];
 }
 

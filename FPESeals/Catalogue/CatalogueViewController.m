@@ -56,10 +56,12 @@ static NSString * const reuseIdentifier = @"CatalogueCell";
 }
 
 
+
 #pragma mark UICollectionView DataSource Methods
 
 // Only 1 section in the Collection View
 - (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView { return 1; }
+
 
 // Number of items is dependant on size of available catalogues
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
@@ -87,26 +89,5 @@ static NSString * const reuseIdentifier = @"CatalogueCell";
     
     return cell;
 }
-
-
-#pragma mark UICollectionView Delegate Methods
-
-/*
-- (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
-{
-    // Temporary Catalogue Instance
-    Catalogue *tempCatalogue = [[Catalogue alloc] init];
-    
-    // Getting associated Catalogue
-    tempCatalogue = [self.list.avaliableCatalogues objectAtIndex:indexPath.row];
-    
-    // Getting URL of associated catalogue URL
-    NSString *urlToShow = tempCatalogue.URL;
-    
-    // Advice from: https://stackoverflow.com/questions/40057071/method-openurloptionscompletionhandler-compatibility-in-objective-c
-    [[UIApplication sharedApplication] openURL:[NSURL URLWithString:urlToShow] options:@{} completionHandler:nil];
-    
-} */
-
 
 @end

@@ -33,6 +33,13 @@
     self.propertyHeaderOutlet.title = self.property.propertyTitle;
     self.descriptionOutlet.text = self.property.propertyDescription;
     
+    if (self.view.bounds.size.width > self.view.bounds.size.height) {       // Landscape Orientation
+        
+        // Advice From: https://stackoverflow.com/questions/25887009/ios-uinavigationcontroller-hide-navigationbar
+        [self.navigationController setNavigationBarHidden:YES animated:YES];
+        [self.tabBarController.tabBar setHidden:YES];
+    }
+    
     //Temporary Image Placeholder
     
     
@@ -43,14 +50,22 @@
     // Dispose of any resources that can be recreated.
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+// Advice From: http://pinkstone.co.uk/how-to-handle-device-rotation-since-ios-8/
+-(void)viewWillTransitionToSize:(CGSize)size withTransitionCoordinator:(id<UIViewControllerTransitionCoordinator>)coordinator
+{
+    // Hiding or showing Navigation and Tab Bar depending on orientation
+    if (size.width > size.height)
+    {
+        [self.navigationController setNavigationBarHidden:YES animated:YES];
+        [self.tabBarController.tabBar setHidden:YES];
+        self.cylinderImageOutlet.layer.borderColor = [[UIColor whiteColor] CGColor];
+    }
+    else
+    {
+        [self.navigationController setNavigationBarHidden:NO animated:YES];
+        [self.tabBarController.tabBar setHidden:NO];
+        self.cylinderImageOutlet.layer.borderColor = [[UIColor blackColor] CGColor];
+    }
 }
-*/
 
 @end
