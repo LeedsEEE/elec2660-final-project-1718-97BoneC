@@ -14,7 +14,7 @@
 
 @interface CatalogueViewController ()
 
-@property (strong, nonatomic) Catalogues *list;
+@property (strong, nonatomic) Catalogues *list;     // Data Model
 
 @end
 
@@ -22,31 +22,23 @@
 
 static NSString * const reuseIdentifier = @"CatalogueCell";
 
-- (void)viewDidLoad {
+- (void)viewDidLoad
+{
     [super viewDidLoad];
     
     self.list = [[Catalogues alloc] init];
-    
-    // Uncomment the following line to preserve selection between presentations
-    // self.clearsSelectionOnViewWillAppear = NO;
-    
-    // Register cell classes
-    //[self.collectionView registerClass:[CatalogueViewCell class] forCellWithReuseIdentifier:reuseIdentifier];
-    
-    // Do any additional setup after loading the view.
+
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
+- (void)didReceiveMemoryWarning {       [super didReceiveMemoryWarning];        }
 
 
 #pragma mark - Navigation
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    
+// Preparation before navigation
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    // Ensuring correct segue
     if ([[segue identifier] isEqualToString:@"viewPDF"]) {
         
         // Getting index of selecteded cell
@@ -59,12 +51,12 @@ static NSString * const reuseIdentifier = @"CatalogueCell";
         // Next View Controller (PDF Reader)
         WebViewController *DestVC = [segue  destinationViewController];
         DestVC.catalogueURLString = selectedCatalogue.URL;
-        
+        DestVC.catalogueName = selectedCatalogue.Name;
     }
 }
 
 
-#pragma mark <UICollectionViewDataSource>
+#pragma mark UICollectionView DataSource Methods
 
 // Only 1 section in the Collection View
 - (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView { return 1; }
@@ -74,15 +66,15 @@ static NSString * const reuseIdentifier = @"CatalogueCell";
     return self.list.avaliableCatalogues.count;
 }
 
-// Cell for Item
-- (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
+
+- (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView
+                  cellForItemAtIndexPath:(NSIndexPath *)indexPath
 {
     // Custom cell type (see class file)
     CatalogueViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:reuseIdentifier forIndexPath:indexPath];
     
-    // Temporary Catalogue Instance
-    Catalogue *tempCatalogue = [[Catalogue alloc] init];
-    tempCatalogue = [self.list.avaliableCatalogues objectAtIndex:indexPath.row];
+    // Corresponding catalogue
+    Catalogue *tempCatalogue = [self.list.avaliableCatalogues objectAtIndex:indexPath.row];
     
     // Setting cell data
     cell.cellTitleLabel.text = tempCatalogue.Name;
@@ -97,7 +89,7 @@ static NSString * const reuseIdentifier = @"CatalogueCell";
 }
 
 
-#pragma mark <UICollectionViewDelegate>
+#pragma mark UICollectionView Delegate Methods
 
 /*
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath

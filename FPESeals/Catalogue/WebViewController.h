@@ -11,6 +11,7 @@
 
 @interface WebViewController : UIViewController
 
+@property (strong, nonatomic) NSString *catalogueName;
 @property (strong, nonatomic) NSString *catalogueURLString;
 
 @end

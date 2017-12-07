@@ -592,6 +592,13 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="fhO-qX-Rqa"/>
                     </view>
+                    <navigationItem key="navigationItem" id="3EY-A5-5Hp">
+                        <barButtonItem key="rightBarButtonItem" systemItem="action" id="sda-aD-xsV">
+                            <connections>
+                                <action selector="shareCatalogue:" destination="pR4-p5-Nc4" id="jnk-jR-HGs"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="PDFViewer" destination="Jvf-Gn-1uH" id="VbT-nP-mdi"/>
                         <outlet property="loadingIndicator" destination="n9V-40-18d" id="Nwz-EV-yqn"/>

@@ -8,6 +8,7 @@
 
 #import "WebViewController.h"
 
+// Advice From: https://iostpoint.wordpress.com/2016/08/05/implement-wkwebview-in-ios/
 
 @interface WebViewController () <WKUIDelegate, WKNavigationDelegate>
 @property (strong, nonatomic) IBOutlet WKWebView *PDFViewer;
@@ -65,6 +66,17 @@
     
 }
 
+- (IBAction)shareCatalogue:(id)sender
+{
+    NSString *catalogue = self.catalogueName;
+    NSURL *catalogueURL = [NSURL URLWithString:self.catalogueURLString];
+    NSArray *activityItems = @[catalogue, catalogueURL];
+    UIActivityViewController *shareViewController = [[UIActivityViewController alloc]
+                                                     initWithActivityItems:activityItems
+                                                     applicationActivities:nil];
+    shareViewController.excludedActivityTypes = @[];
+    [self presentViewController:shareViewController animated:YES completion:nil];
+}
 
 #pragma mark WKWebView Navigation Delegates
 
