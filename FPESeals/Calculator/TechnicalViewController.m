@@ -97,8 +97,12 @@
         OutputCell *cell = [tableView dequeueReusableCellWithIdentifier:@"OutputCells" forIndexPath:indexPath];  // Storyboard Cell Reference
         
         temp = [self.cylinderData.cylinderPropertiesOuput objectAtIndex:indexPath.row];     // Associated Cylinder Property
+        float value = [[self.calculator.CalculatedValues objectAtIndex:indexPath.row] floatValue];
         
-        if (!self.calculator.units) {   cell.outputTextLabel.text = temp.propertyUnitsMet;  }   // If Metric Units
+        if (value > 0 ) {       // If value in calculator to display
+            cell.outputTextLabel.text = [NSString stringWithFormat:@"%.2f", value];
+        }
+        else if (!self.calculator.units) {   cell.outputTextLabel.text = temp.propertyUnitsMet;  }   // If Metric Units
         
         else { cell.outputTextLabel.text = temp.propertyUnitsImp; }     // If Imperial Units
         
@@ -244,6 +248,9 @@
         sender.title = @"Imperial";
     }
     
+    // Moves TableView View to the top row
+    [self.tableView scrollToRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0] atScrollPosition:UITableViewScrollPositionTop animated:NO];
+    
     // Clearing Inputted Data
     for (NSIndexPath *indexPath in [self.tableView indexPathsForVisibleRows])       // Index Paths for visible rows
     {
@@ -256,6 +263,8 @@
             [self.calculator.inputVariables replaceObjectAtIndex:indexPath.row withObject:@0.0];
         }
     }
+    [self.calculator calculateValues];      // Cylinder Calculations Method
+    
     // Force tableview to reload (and regenerate cells)
     [self.tableView reloadData];
 }

@@ -56,13 +56,6 @@
     return self;
 }
 
-// Getting Output Data from class
-- (NSMutableArray *)getData
-{
-    NSMutableArray *arrayOfData = [[NSMutableArray alloc] init];
-    return arrayOfData;
-}
-
 
 # pragma mark Calculating Data
 

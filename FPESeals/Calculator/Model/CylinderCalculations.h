@@ -24,5 +24,4 @@
 
 - (void) calculateValues;   // Computes Outputs
 
-- (NSMutableArray *)getData;    // Returns array of Outputs
 @end
