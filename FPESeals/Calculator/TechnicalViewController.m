@@ -184,6 +184,7 @@
     return YES;
 }
 
+// When resigning keyboard
 - (BOOL)textFieldShouldEndEditing:(UITextField *)textField
 {
     [self checkInputtedData];       // See Below
@@ -193,10 +194,28 @@
 // Making Sure Correct Data Is Entered
 - (void)checkInputtedData
 {
+    NSNumber *limit = [NSNumber numberWithInt:10000000];
+    for (NSNumber *value in self.calculator.inputVariables) {
+        
+        if (value > limit) {
+            UIAlertController *dataWarning = [UIAlertController alertControllerWithTitle:@"Warning!"
+                                                                                 message:@"Your Entered Value Is Too Large To Process: Please Adjust Entered Value [MAX: 10000000]"
+                                                                             preferredStyle:UIAlertControllerStyleAlert];
+            
+            UIAlertAction *dismiss = [UIAlertAction actionWithTitle:@"Dismiss"
+                                                              style:UIAlertActionStyleCancel
+                                                            handler:nil];
+            [dataWarning addAction: dismiss];                                            // Adding Alert Dismiss Button
+            [self presentViewController:dataWarning animated:YES completion:nil];        // Presenting Alert to User
+        }
+        
+    }
+    
+    
     NSNumber *first = [self.calculator.inputVariables objectAtIndex:0];     // Entered Value for Bore Diameter
     NSNumber *second = [self.calculator.inputVariables objectAtIndex:1];    // Entered Value For Rod Diameter
     
-    if (second > first) {   // Rod Diameter can't be smaller than the bore (can't have negative area, check CylinderCalculations Class)
+    if ((second > first) && !(first == 0) && !(second == 0)) {   // Rod Diameter can't be smaller than the bore (can't have negative area, check CylinderCalculations Class)
         UIAlertController *rodDataWarning = [UIAlertController alertControllerWithTitle:@"Warning!"
                                                                              message:@"Rod Diameter is Greater Than Bore Diameter: Please Check Values and Change As Necessary"
                                                                       preferredStyle:UIAlertControllerStyleAlert];
