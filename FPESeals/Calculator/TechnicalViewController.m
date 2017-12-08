@@ -117,21 +117,25 @@
     }
 }
 
+
+// Headers For Sections
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
 {
     if (section == 0)
     {
-        return @"Please Input Data...";
+        return @"Please Input Data...";     // Input Data Section
     }
     else if (section == 1)
     {
-        return @"Calculated Outputs...";
+        return @"Calculated Outputs...";    // Output Data Section
     }
     else
     {
         return nil;
     }
 }
+
+
 
 #pragma mark - Navigation
 
@@ -178,7 +182,32 @@
     [textField resignFirstResponder];       // Dismissing Keyboard
 
     return YES;
+}
+
+- (BOOL)textFieldShouldEndEditing:(UITextField *)textField
+{
+    [self checkInputtedData];       // See Below
+    return YES;                     // Allows User to finish editing text field and move to another object on view
+}
+
+// Making Sure Correct Data Is Entered
+- (void)checkInputtedData
+{
+    NSNumber *first = [self.calculator.inputVariables objectAtIndex:0];     // Entered Value for Bore Diameter
+    NSNumber *second = [self.calculator.inputVariables objectAtIndex:1];    // Entered Value For Rod Diameter
     
+    if (second > first) {   // Rod Diameter can't be smaller than the bore (can't have negative area, check CylinderCalculations Class)
+        UIAlertController *rodDataWarning = [UIAlertController alertControllerWithTitle:@"Warning!"
+                                                                             message:@"Rod Diameter is Greater Than Bore Diameter: Please Check Values and Change As Necessary"
+                                                                      preferredStyle:UIAlertControllerStyleAlert];
+        
+        UIAlertAction *dismiss = [UIAlertAction actionWithTitle:@"Dismiss"
+                                                          style:UIAlertActionStyleCancel
+                                                        handler:nil];
+        [rodDataWarning addAction: dismiss];                                            // Adding Alert Dismiss Button
+        [self presentViewController:rodDataWarning animated:YES completion:nil];        // Presenting Alert to User
+        
+    }
 }
 
 // When tap gesture is recognised
@@ -209,6 +238,7 @@
     [self updateValues];        // Update Values shown to User (see below)
     
 }
+
 
 // Updates Values of Labels
 - (void) updateValues
@@ -248,7 +278,7 @@
         sender.title = @"Imperial";
     }
     
-    // Moves TableView View to the top row
+    // Moves TableView view to the top row
     [self.tableView scrollToRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0] atScrollPosition:UITableViewScrollPositionTop animated:NO];
     
     // Clearing Inputted Data
