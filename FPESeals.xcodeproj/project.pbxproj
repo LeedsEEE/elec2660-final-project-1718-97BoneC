@@ -37,6 +37,7 @@
 		E68E4B011FC85D25008D936F /* MKC.png in Resources */ = {isa = PBXBuildFile; fileRef = E68E4AFC1FC85D24008D936F /* MKC.png */; };
 		E68E4B051FC87B5E008D936F /* Office.m in Sources */ = {isa = PBXBuildFile; fileRef = E68E4B041FC87B5E008D936F /* Office.m */; };
 		E68E4B081FC87D33008D936F /* CompanyOffices.m in Sources */ = {isa = PBXBuildFile; fileRef = E68E4B071FC87D33008D936F /* CompanyOffices.m */; };
+		E691F3DC1FDAC6EE00DE24FF /* READ ME.rtf in Resources */ = {isa = PBXBuildFile; fileRef = E691F3DB1FDAC6EE00DE24FF /* READ ME.rtf */; };
 		E6D4AA081FCA1D1100A65487 /* LocationMarker.png in Resources */ = {isa = PBXBuildFile; fileRef = E6D4AA071FCA1D1100A65487 /* LocationMarker.png */; };
 		E6D4AA0A1FCA1EAF00A65487 /* LocationMarker2.png in Resources */ = {isa = PBXBuildFile; fileRef = E6D4AA091FCA1EAF00A65487 /* LocationMarker2.png */; };
 		E6D4AA0C1FCA216000A65487 /* Darlington.jpg in Resources */ = {isa = PBXBuildFile; fileRef = E6D4AA0B1FCA216000A65487 /* Darlington.jpg */; };
@@ -134,6 +135,7 @@
 		E68E4B041FC87B5E008D936F /* Office.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Office.m; sourceTree = "<group>"; };
 		E68E4B061FC87D33008D936F /* CompanyOffices.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CompanyOffices.h; sourceTree = "<group>"; };
 		E68E4B071FC87D33008D936F /* CompanyOffices.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CompanyOffices.m; sourceTree = "<group>"; };
+		E691F3DB1FDAC6EE00DE24FF /* READ ME.rtf */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.rtf; path = "READ ME.rtf"; sourceTree = "<group>"; };
 		E6D4AA071FCA1D1100A65487 /* LocationMarker.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = LocationMarker.png; sourceTree = "<group>"; };
 		E6D4AA091FCA1EAF00A65487 /* LocationMarker2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = LocationMarker2.png; sourceTree = "<group>"; };
 		E6D4AA0B1FCA216000A65487 /* Darlington.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Darlington.jpg; sourceTree = "<group>"; };
@@ -354,6 +356,7 @@
 		E6FEC0761FBB585600949685 = {
 			isa = PBXGroup;
 			children = (
+				E691F3DB1FDAC6EE00DE24FF /* READ ME.rtf */,
 				E6FEC0811FBB585600949685 /* FPESeals */,
 				E6FEC09D1FBB585600949685 /* FPESealsTests */,
 				E6FEC0A81FBB585600949685 /* FPESealsUITests */,
@@ -514,6 +517,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E691F3DC1FDAC6EE00DE24FF /* READ ME.rtf in Resources */,
 				E6D4AA241FCCA92E00A65487 /* Bore Side Force.png in Resources */,
 				E6D4AA131FCC86D500A65487 /* Rod Side Volume.png in Resources */,
 				E6121C581FC77980002999AE /* ContactUs.png in Resources */,
