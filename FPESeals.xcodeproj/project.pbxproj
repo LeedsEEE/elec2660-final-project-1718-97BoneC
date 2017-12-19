@@ -22,6 +22,7 @@
 		E6121C5A1FC77980002999AE /* ContactUs@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = E6121C571FC77980002999AE /* ContactUs@3x.png */; };
 		E61EBBAC1FD9FC970044EF70 /* Contraction Velocity.png in Resources */ = {isa = PBXBuildFile; fileRef = E61EBBAA1FD9FC970044EF70 /* Contraction Velocity.png */; };
 		E61EBBAD1FD9FC970044EF70 /* Extension Velocity.png in Resources */ = {isa = PBXBuildFile; fileRef = E61EBBAB1FD9FC970044EF70 /* Extension Velocity.png */; };
+		E64703581FE9D5460089DCE1 /* Retraction Velocity.png in Resources */ = {isa = PBXBuildFile; fileRef = E64703571FE9D5460089DCE1 /* Retraction Velocity.png */; };
 		E65280841FC44F93009731AA /* GreySquare.png in Resources */ = {isa = PBXBuildFile; fileRef = E65280831FC44F93009731AA /* GreySquare.png */; };
 		E65280871FC47484009731AA /* InputCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E65280861FC47484009731AA /* InputCell.m */; };
 		E652808A1FC49334009731AA /* OutputCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E65280891FC49334009731AA /* OutputCell.m */; };
@@ -114,6 +115,7 @@
 		E6121C571FC77980002999AE /* ContactUs@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ContactUs@3x.png"; sourceTree = "<group>"; };
 		E61EBBAA1FD9FC970044EF70 /* Contraction Velocity.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Contraction Velocity.png"; sourceTree = "<group>"; };
 		E61EBBAB1FD9FC970044EF70 /* Extension Velocity.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Extension Velocity.png"; sourceTree = "<group>"; };
+		E64703571FE9D5460089DCE1 /* Retraction Velocity.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Retraction Velocity.png"; sourceTree = "<group>"; };
 		E65280831FC44F93009731AA /* GreySquare.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = GreySquare.png; sourceTree = "<group>"; };
 		E65280851FC47484009731AA /* InputCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = InputCell.h; sourceTree = "<group>"; };
 		E65280861FC47484009731AA /* InputCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = InputCell.m; sourceTree = "<group>"; };
@@ -251,6 +253,7 @@
 		E6DB1E7A1FBBB8D700C5B7D5 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				E64703571FE9D5460089DCE1 /* Retraction Velocity.png */,
 				E61EBBAA1FD9FC970044EF70 /* Contraction Velocity.png */,
 				E61EBBAB1FD9FC970044EF70 /* Extension Velocity.png */,
 				E65536D61FD7026300ACB589 /* Bore Diameter.png */,
@@ -537,6 +540,7 @@
 				E6D4AA121FCC86D500A65487 /* Bore Side Volume.png in Resources */,
 				E6D4AA151FCC86D500A65487 /* Rod Side Area.png in Resources */,
 				E6FEC08F1FBB585600949685 /* Assets.xcassets in Resources */,
+				E64703581FE9D5460089DCE1 /* Retraction Velocity.png in Resources */,
 				E68E4B011FC85D25008D936F /* MKC.png in Resources */,
 				E65536D81FD7026300ACB589 /* Bore Diameter.png in Resources */,
 				E61EBBAD1FD9FC970044EF70 /* Extension Velocity.png in Resources */,
@@ -769,7 +773,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = DERCF8XLHN;
 				INFOPLIST_FILE = FPESeals/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = uk.ac.leeds.el16cgb.FPESeals;
@@ -783,7 +787,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = DERCF8XLHN;
 				INFOPLIST_FILE = FPESeals/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = uk.ac.leeds.el16cgb.FPESeals;
